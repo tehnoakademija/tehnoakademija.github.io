@@ -199,7 +199,7 @@ ul { list-style: none; }
 /* --- HERO --- */
 .hero {
   position: relative;
-  padding: 160px 0 100px;
+  padding: 120px 0 60px;  /* <-- REGULĒT AUGŠU/APAKŠU ATSTATI: pirmais skaitlis = augša, otrais = apakša */
   text-align: center;
   background: linear-gradient(180deg, #fffbf5 0%, #f5ede2 40%, #ede0d0 100%);
   overflow: hidden;
@@ -957,7 +957,7 @@ ul { list-style: none; }
   .nav-links a { padding: 0.75rem 0; font-size: 1rem; }
   .nav-hamburger { display: flex; }
 
-  .hero { padding: 130px 0 60px; }
+  .hero { padding: 100px 0 40px; }
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1.05rem; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
