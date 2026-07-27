@@ -82,15 +82,21 @@
       <div class="content-grid-2">
         <div>
           <h3 style="color:#153C4A;">Ko sagaidīt 120 minūšu laikā?</h3>
-          <ul>
+          <ul style="line-height:2.4;">
             <li><strong>Iekārtu demonstrācija:</strong> Redziet lāzerus, 3D printerus un CNC frēzes darbībā, veicot reālus uzdevumus.</li>
             <li><strong>Ātrais prototipēšana:</strong> Izpratne par to, cik ātri ideja var kļūt par fizisku objektu.</li>
             <li><strong>Tehnoloģiju izvēle:</strong> Konsultācijas par piemērotāko iekārtu konkrētiem mērķiem vai industrijām.</li>
             <li><strong>Interaktīva līdzdalība:</strong> Iespēja pašiem pamēģināt palaist marķēšanas vai griešanas procesus.</li>
           </ul>
-          <div style="display:flex; gap:1rem; margin-top:1.5rem; flex-wrap:wrap;">
-            <span style="background:rgba(44,124,141,0.15);color:#2C7C8D;padding:0.4rem 1rem;border-radius:99px;font-weight:600;font-size:0.9rem;">⏱️ Ilgums: 1-2h</span>
-            <span style="background:rgba(213,118,57,0.15);color:#D57639;padding:0.4rem 1rem;border-radius:99px;font-weight:600;font-size:0.9rem;">👥 Grupas: līdz 20 pers.</span>
+          <div style="display:flex; gap:1.5rem; margin-top:2rem; flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div style="width:3px;height:28px;background:#2C7C8D;"></div>
+              <div><strong style="color:#153C4A;font-size:1rem;">1–2 stundas</strong><br><span style="color:#7a95a2;font-size:0.85rem;">Ilgums</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;">
+              <div style="width:3px;height:28px;background:#D57639;"></div>
+              <div><strong style="color:#153C4A;font-size:1rem;">Līdz 20 cilvēkiem</strong><br><span style="color:#7a95a2;font-size:0.85rem;">Grupas izmērs</span></div>
+            </div>
           </div>
         </div>
         <div class="content-image">
@@ -99,27 +105,36 @@
       </div>
 
       <!-- Demo veidi -->
-      <h3 style="color:#153C4A; text-align:center; margin-top:3rem;">Demonstrāciju veidi</h3>
-      <div class="equipment-showcase" style="margin-top:1.5rem;">
-        <div class="equipment-card" style="background:#fff; border:1px solid #e4d9cc;">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/bambu-lab-p2s-ducks.webp?v=1773822577" alt="3D printēšanas demonstrācija" loading="lazy">
-          <h4 style="color:#153C4A;">3D Printēšanas demo</h4>
+      <div style="text-align:center; margin-top:3rem;">
+        <span class="section-label">Pieci virzieni</span>
+        <h2 class="section-title">Demonstrāciju veidi</h2>
+        <p class="section-subtitle">Katra demonstrācija ir pielāgota konkrētai tehnoloģijai — izvēlies to, kas visvairāk interesē.</p>
+      </div>
+      <div class="cards-grid" style="grid-template-columns: repeat(5, 1fr); margin-top:1.5rem;">
+        <div class="card">
+          <div class="card-icon teal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M7 21h10"/><path d="M12 17v4"/></svg></div>
+          <h3>3D Printēšana</h3>
+          <p>Iepazīstiet FDM drukas tehnoloģiju — no digitāla modeļa līdz fiziskam objektam. Demonstrācijā redzēsiet pilnu ciklu: modeļa sagatavošanu, drukas parametru iestatīšanu un reālu printēšanas procesu ar Bambu Lab printeriem.</p>
         </div>
-        <div class="equipment-card" style="background:#fff; border:1px solid #e4d9cc;">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/Lazera_projekts.png?v=1773759768" alt="Lāzertehnoloģiju demonstrācija" loading="lazy">
-          <h4 style="color:#153C4A;">Lāzertehnoloģiju demo</h4>
+        <div class="card">
+          <div class="card-icon orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h3>CO2 Lāzertehnoloģijas</h3>
+          <p>Uzziniet, kā darbojas CO2 lāzergriezējs — no stara ģenerēšanas līdz precīzam griezumam. Demonstrācijā redzēsiet gravēšanu uz koka, ādas un akrila, kā arī materiālu griešanu ar augstu precizitāti.</p>
         </div>
-        <div class="equipment-card" style="background:#fff; border:1px solid #e4d9cc;">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/1477128674180906.jpg?v=1773759997" alt="CNC frēzēšanas demonstrācija" loading="lazy">
-          <h4 style="color:#153C4A;">CNC Frēzēšanas demo</h4>
+        <div class="card">
+          <div class="card-icon green"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="22" y2="12"/></svg></div>
+          <h3>CNC Frēzēšana</h3>
+          <p>Datorvadāma frēzēšana kokam, plastmasai un mīkstajiem metāliem. Parādīsim 3D modeļa sagatavošanu, G-koda ģenerēšanu un reālu frēzēšanas procesu — no digitāla rasējuma līdz taustāmai detaļai.</p>
         </div>
-        <div class="equipment-card" style="background:#fff; border:1px solid #e4d9cc;">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ploteresana-1.webp?v=1773759898" alt="Vizuālās reklāmas demonstrācija" loading="lazy">
-          <h4 style="color:#153C4A;">Vizuālās reklāmas demo</h4>
+        <div class="card">
+          <div class="card-icon teal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/></svg></div>
+          <h3>Vinila Plotera griešana</h3>
+          <p>Precīza vinila plēvju griešana uzlīmēm, dekoratīviem elementiem un reklāmas materiāliem. No vektora faila līdz gatavai uzlīmei — ātrs un iespaidīgs process, ko viegli apgūt.</p>
         </div>
-        <div class="equipment-card" style="background:#fff; border:1px solid #e4d9cc;">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/mactron_iekarta.png?v=1773745061" alt="Industriālās marķēšanas demonstrācija" loading="lazy">
-          <h4 style="color:#153C4A;">Industriālā marķēšana</h4>
+        <div class="card">
+          <div class="card-icon orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <h3>Industriālā marķēšana</h3>
+          <p>Šķiedru lāzera tehnoloģija metāla virsmu permanentai marķēšanai. Redzēsiet, kā uz tērauda, alumīnija un citiem metāliem iespējams izveidot precīzus, neizdzēšamus marķējumus — sērijas numurus, logotipus, dekoratīvus elementus.</p>
         </div>
       </div>
     </div>
@@ -137,10 +152,6 @@
       <div class="contact-form-box" style="max-width:700px; margin:0 auto;">
         <form class="service-form" data-form-id="meistarklases_pieteikums">
           <div class="form-status"></div>
-          <div style="display:flex; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;">
-            <span style="background:rgba(44,124,141,0.15);color:#2C7C8D;padding:0.4rem 1rem;border-radius:99px;font-weight:600;font-size:0.9rem;">⏱️ Ilgums: 1-2h</span>
-            <span style="background:rgba(213,118,57,0.15);color:#D57639;padding:0.4rem 1rem;border-radius:99px;font-weight:600;font-size:0.9rem;">👥 Grupas: līdz 20 pers.</span>
-          </div>
           <div class="form-group">
             <label for="mk_vards">Vārds / Uzņēmums *</label>
             <input type="text" id="mk_vards" name="vards" placeholder="Jūsu vārds vai uzņēmuma nosaukums" required>
