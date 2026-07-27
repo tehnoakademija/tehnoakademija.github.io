@@ -82,15 +82,8 @@ ul { list-style: none; }
 /* --- SECTION HEADERS --- */
 .section { padding: 5rem 0; }
 .section-sm { padding: 3rem 0; }
-.section-header { text-align: left; margin-bottom: 3.5rem; }
-.section-header-right { text-align: right; }
-.section-header-right .section-subtitle { margin-left: auto; margin-right: 0; }
-.section-header .section-subtitle { max-width: 650px; }
-
-@media (max-width:768px) {
-  .section-header, .section-header-right { text-align: left; }
-  .section-header-right .section-subtitle { margin-left: 0; }
-}
+.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-header .section-subtitle { max-width: 700px; margin: 0 auto; }
 
 .section-title {
   font-size: 2.5rem;
