@@ -22,9 +22,11 @@ Bratus Tehnoloģiju Akadēmijas oficiālā mājaslapa — tehnoloģiju nodarbīb
 
 ## 🎨 Krāsu palete
 
+- **Fons:** Silts krēmbalts (#fffbf5) — identisks 3dpakalpojumi.lv
+- **Virsma:** #f5ede2 (gaiši silts bēšs)
 - **Teksts:** #153C4A
-- **Fons:** Tumši zils gradients (#0B1A2E)
 - **Akcenti:** #2C7C8D (teal), #D57639 (oranžs), #81A850 (zaļš)
+- **Fonti:** `Plus Jakarta Sans` (virsraksti), `Inter` (pamatteksts) — identiski 3dpakalpojumi.lv
 
 ## 🛠️ Tehnoloģijas
 
