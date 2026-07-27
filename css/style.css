@@ -342,18 +342,16 @@ ul { list-style: none; }
 
 .btn-lg { font-size: 1.1rem; padding: 1rem 2.5rem; }
 
-/* --- STATS BAR --- */
+/* --- STATS BAR (iekš hero) --- */
 .stats-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  margin-top: -40px;
   position: relative;
-  z-index: 10;
-  padding: 0 2rem;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
+  z-index: 3;
+  max-width: 1100px;
+  margin: 3rem auto 0 auto;
+  padding: 0 2rem 3rem 2rem;
 }
 
 .stat-card {
@@ -962,7 +960,7 @@ ul { list-style: none; }
   .hero { padding: 130px 0 60px; }
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1.05rem; }
-  .stats-bar { grid-template-columns: repeat(2, 1fr); margin-top: -20px; gap: 1rem; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .cards-grid { grid-template-columns: 1fr; }
   .contact-grid, .locations-grid, .content-grid-2 { grid-template-columns: 1fr; gap: 2rem; }
   .section-title { font-size: 1.8rem; }
