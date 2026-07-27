@@ -132,7 +132,8 @@ ul { list-style: none; }
 .nav-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 2rem;
   height: 72px;
   max-width: 1280px;
   margin: 0 auto;
