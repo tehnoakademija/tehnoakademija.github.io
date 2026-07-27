@@ -59,8 +59,9 @@
   </nav>
 
   <!-- PAGE HERO -->
-  <section class="page-hero">
-    <div class="container">
+  <section class="page-hero" style="position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:-10px; background-image:url('https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-73.jpg?v=1785147714'); background-size:cover; background-position:center 40%; filter:blur(6px); opacity:0.35; z-index:0;"></div>
+    <div class="container" style="position:relative; z-index:1;">
       <span class="section-label">Interešu izglītība</span>
       <h1>Tehnoloģiju nodarbības skolās</h1>
       <p>Sagatavojam jauniešus nākotnes industrijai. Praktiskas nodarbības, kurās skolēni apgūst digitālo dizainu, rasēšanu un reālu darbu ar modernākajām CNC ražošanas iekārtām.</p>
@@ -83,7 +84,7 @@
       <div class="content-grid-2">
         <div>
           <h3>Ko bērni iegūst mūsu nodarbībās?</h3>
-          <ul>
+          <ul style="line-height:2.2;">
             <li><strong>Digitālā dizaina prasmes:</strong> Darbs ar CAD programmatūrām un vektorgrafiku.</li>
             <li><strong>Telpiskā domāšana:</strong> 3D modeļu izstrāde un izpratne par proporcijām.</li>
             <li><strong>Problēmu risināšana:</strong> Inženiertehnisku izaicinājumu un kļūdu analīze ražošanas procesā.</li>
@@ -92,19 +93,23 @@
           </ul>
         </div>
         <div class="content-image">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/WhatsApp_Image_2026-02-02_at_14.01.17.jpg?v=1770115899" alt="Bērns ar 3D printētu raķeti tehnoloģiju nodarbībā" loading="lazy">
+          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL05886.jpg?v=1785147884" alt="Bērni darbojas ar tehnoloģijām nodarbībā" loading="lazy">
         </div>
       </div>
 
       <!-- Iekārtas -->
-      <h3 style="text-align:center; margin-top:3rem;">Iekārtas, ar kurām strādājam</h3>
+      <div style="text-align:center; margin-top:3rem;">
+        <span class="section-label">Mūsu rīki</span>
+        <h2 class="section-title">Iekārtas, ar kurām strādājam</h2>
+        <p class="section-subtitle">Piecas profesionālas ražošanas tehnoloģijas, ko bērni apgūst praksē</p>
+      </div>
       <div class="equipment-showcase">
         <div class="equipment-card">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/bambu-lab-p2s-ducks.webp?v=1773822577" alt="Bambu Lab 3D printeris nodarbībās" loading="lazy">
+          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL07728.jpg?v=1785148014" alt="Bambu Lab 3D printeris nodarbībās" loading="lazy">
           <h4>3D Printeri</h4>
         </div>
         <div class="equipment-card">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/Lazera_projekts.png?v=1773759768" alt="CO₂ lāzergravētāja projekts" loading="lazy">
+          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-124.jpg?v=1785148145" alt="CO₂ lāzergravētāja projekts" loading="lazy">
           <h4>CO₂ Lāzeri</h4>
         </div>
         <div class="equipment-card">
@@ -112,7 +117,7 @@
           <h4>CNC Frēzes</h4>
         </div>
         <div class="equipment-card">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ploteresana-1.webp?v=1773759898" alt="Plotergriezējs darbībā" loading="lazy">
+          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-163.jpg?v=1785148344" alt="Plotergriezējs darbībā" loading="lazy">
           <h4>Ploteri</h4>
         </div>
         <div class="equipment-card">
@@ -134,22 +139,22 @@
 
       <div class="content-grid-2">
         <div class="content-image">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL05618.jpg?v=1767705917" alt="Bērns pie plotera tehnoloģiju nodarbībā" loading="lazy">
+          <img src="https://kekava.lv/wp-content/uploads/2023/05/Majaslapas-raksta-titulslaids6.png" alt="Skolēni tehnoloģiju nodarbībā" loading="lazy">
         </div>
         <div>
-          <ul class="school-list" style="display:grid; grid-template-columns: 1fr 1fr; gap:0.4rem;">
-            <li style="color:#153C4A;">Ķekavas vidusskola</li>
-            <li style="color:#153C4A;">Ķekavas vidusskolas sākumskola</li>
-            <li style="color:#153C4A;">Pļavniekkalna sākumskola</li>
-            <li style="color:#153C4A;">Ropažu vidusskola</li>
-            <li style="color:#153C4A;">Ulbrokas vidusskola</li>
-            <li style="color:#153C4A;">Olaines 1. vidusskola</li>
-            <li style="color:#153C4A;">Olaines 2. vidusskola</li>
-            <li style="color:#153C4A;">Berģu Mūzikas un Mākslas pamatskola</li>
-            <li style="color:#153C4A;">Vangažu vidusskola</li>
-            <li style="color:#153C4A;">Mārupes pamatskola</li>
-            <li style="color:#153C4A;">Jaunmārupes pamatskola</li>
-          </ul>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem;">
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Ķekavas vidusskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Ķekavas vidusskolas sākumskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Pļavniekkalna sākumskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Ropažu vidusskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Ulbrokas vidusskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Olaines 1. vidusskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Olaines 2. vidusskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Berģu Mūzikas un Mākslas pamatskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Vangažu vidusskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Mārupes pamatskola</div>
+            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Jaunmārupes pamatskola</div>
+          </div>
         </div>
       </div>
     </div>
