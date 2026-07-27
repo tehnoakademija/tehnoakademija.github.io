@@ -727,7 +727,7 @@ ul { list-style: none; }
 }
 
 .team-card p { color: #7a95a2; font-size: 0.85rem; margin-bottom: 1rem; }
-.team-card .phone { color: #2C7C8D; font-weight: 700; font-size: 0.95rem; }
+.team-card .phone { display:block; color: #2C7C8D; font-weight: 700; font-size: 0.95rem; margin-top:0.5rem; }
 
 /* --- LOCATIONS --- */
 .locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
