@@ -247,9 +247,10 @@ ul { list-style: none; }
   font-weight: 900;
   color: #153C4A;
   line-height: 1.15;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem auto;
   letter-spacing: -0.02em;
   max-width: 700px;
+  text-align: center;
 }
 
 .hero p {
@@ -258,6 +259,7 @@ ul { list-style: none; }
   max-width: 580px;
   margin: 0 auto 2.5rem auto;
   line-height: 1.6;
+  text-align: center;
 }
 
 .hero-actions {
@@ -487,6 +489,7 @@ ul { list-style: none; }
 .cta-banner .btn { margin: 0 0.5rem; }
 
 /* --- FAQ --- */
+#faq .section-title { text-align: center; }
 .faq-list { max-width: 800px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid #e4d9cc; }
 
