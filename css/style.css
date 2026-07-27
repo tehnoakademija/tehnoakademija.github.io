@@ -82,7 +82,15 @@ ul { list-style: none; }
 /* --- SECTION HEADERS --- */
 .section { padding: 5rem 0; }
 .section-sm { padding: 3rem 0; }
-.section-header { text-align: center; margin-bottom: 3.5rem; }
+.section-header { text-align: left; margin-bottom: 3.5rem; }
+.section-header-right { text-align: right; }
+.section-header-right .section-subtitle { margin-left: auto; margin-right: 0; }
+.section-header .section-subtitle { max-width: 650px; }
+
+@media (max-width:768px) {
+  .section-header, .section-header-right { text-align: left; }
+  .section-header-right .section-subtitle { margin-left: 0; }
+}
 
 .section-title {
   font-size: 2.5rem;
@@ -199,8 +207,8 @@ ul { list-style: none; }
 /* --- HERO --- */
 .hero {
   position: relative;
-  padding: 120px 0 60px;  /* <-- REGULĒT AUGŠU/APAKŠU ATSTATI: pirmais skaitlis = augša, otrais = apakša */
-  text-align: center;
+  padding: 120px 0 60px;
+  text-align: left;
   background: linear-gradient(180deg, #fffbf5 0%, #f5ede2 40%, #ede0d0 100%);
   overflow: hidden;
 }
@@ -236,23 +244,9 @@ ul { list-style: none; }
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 0;
   padding: 0 2rem;
-}
-
-.hero-badge {
-  display: inline-block;
-  background: rgba(44,124,141,0.1);
-  color: #2C7C8D;
-  font-size: 0.85rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  padding: 0.4rem 1.2rem;
-  border-radius: 4px;
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(44,124,141,0.2);
 }
 
 .hero h1 {
@@ -262,28 +256,22 @@ ul { list-style: none; }
   line-height: 1.15;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
-}
-
-.hero h1 span {
-  background: linear-gradient(135deg, #D57639, #f0a060);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  max-width: 700px;
 }
 
 .hero p {
   font-size: 1.3rem;
   color: #4a6b7a;
-  max-width: 650px;
-  margin: 0 auto 2.5rem;
+  max-width: 580px;
+  margin: 0 0 2.5rem 0;
   line-height: 1.6;
 }
 
 .hero-actions {
   display: flex;
   gap: 1rem;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 /* --- POGAS --- */
