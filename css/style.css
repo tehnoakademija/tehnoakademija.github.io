@@ -203,34 +203,32 @@ ul { list-style: none; }
   position: relative;
   padding: 120px 0 60px;
   text-align: center;
-  background: linear-gradient(180deg, #fffbf5 0%, #f5ede2 40%, #ede0d0 100%);
+  background: #153C4A;
   overflow: hidden;
 }
 
-/* Fona attēls ar blur — MAINĪT BLUR STIPRUMU ŠEIT: */
+/* Ass fona attēls */
 .hero::after {
   content: '';
   position: absolute;
-  top: -20px; left: -20px;
-  width: calc(100% + 40px); height: calc(100% + 40px);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-image: url('https://cdn.shopify.com/s/files/1/0720/6325/4803/files/WhatsApp_Image_2026-02-02_at_14.01.17.jpg?v=1770115899');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
-  filter: blur(6px);                    /* <-- MAINĪT BLUR STIPRUMU: lielāks skaitlis = vairāk blur */
-  opacity: 0.35;                        /* <-- MAINĪT CAURREDZAMĪBU: 0 = neredzams, 1 = pilnībā redzams */
+  opacity: 0.45;
   z-index: 0;
   pointer-events: none;
 }
 
+/* Tumšais pārklājums lasāmībai */
 .hero::before {
   content: '';
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: radial-gradient(ellipse at 20% 50%, rgba(44,124,141,0.06) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 30%, rgba(213,118,57,0.05) 0%, transparent 60%),
-              radial-gradient(ellipse at 50% 80%, rgba(129,168,80,0.04) 0%, transparent 50%);
+  background: rgba(15, 36, 46, 0.72);
   z-index: 1;
   pointer-events: none;
 }
@@ -246,17 +244,18 @@ ul { list-style: none; }
 .hero h1 {
   font-size: 3.8rem;
   font-weight: 900;
-  color: #153C4A;
+  color: #fff;
   line-height: 1.15;
   margin: 0 auto 1.5rem auto;
   letter-spacing: -0.02em;
   max-width: 700px;
   text-align: center;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
 }
 
 .hero p {
   font-size: 1.3rem;
-  color: #4a6b7a;
+  color: rgba(255,255,255,0.9);
   max-width: 580px;
   margin: 0 auto 2.5rem auto;
   line-height: 1.6;
@@ -265,7 +264,7 @@ ul { list-style: none; }
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -295,11 +294,11 @@ ul { list-style: none; }
 .btn-primary:hover { background: #c0652e; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(213,118,57,0.35); }
 
 .btn-secondary {
-  background: #fff;
-  color: #153C4A;
-  border: 1px solid #e4d9cc;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.5);
 }
-.btn-secondary:hover { background: #f5ede2; border-color: #d4c9bc; }
+.btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: #fff; color: #fff; }
 
 .btn-teal {
   background: #2C7C8D;
@@ -328,37 +327,42 @@ ul { list-style: none; }
 
 /* --- STATS BAR (iekš hero) --- */
 .stats-bar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
   position: relative;
   z-index: 3;
   max-width: 1100px;
   margin: 3rem auto 0 auto;
-  padding: 0 2rem 3rem 2rem;
+  padding: 2rem 2rem 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 .stat-card {
-  background: #fff;
-  border: 1px solid #e4d9cc;
-  border-radius: 4px;
-  padding: 1.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-.stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+.stat-card:hover { transform: none; box-shadow: none; }
 
 .stat-number {
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   font-weight: 900;
-  color: #D57639;
+  color: #fff;
   line-height: 1;
-  margin-bottom: 0.4rem;
 }
 
-.stat-label { font-size: 0.9rem; color: #7a95a2; font-weight: 500; }
+.stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 500; }
 
 /* --- SERVICE CARDS --- */
 .cards-grid {
@@ -946,7 +950,7 @@ ul { list-style: none; }
   .hero { padding: 100px 0 40px; }
   .hero h1 { font-size: 2.2rem; }
   .hero p { font-size: 1.05rem; }
-  .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .stats-bar { gap: 1.5rem; }
   .cards-grid { grid-template-columns: 1fr; }
   .contact-grid, .locations-grid, .content-grid-2 { grid-template-columns: 1fr; gap: 2rem; }
   .section-title { font-size: 1.8rem; }
@@ -964,9 +968,9 @@ ul { list-style: none; }
 
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.8rem; }
-  .stats-bar { grid-template-columns: 1fr; }
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; }
+  .stats-bar { flex-direction: column; gap: 0.75rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .hero-actions .btn { width: 100%; max-width: 320px; }
   .equipment-tags { flex-direction: column; }
   .shop-filter { flex-direction: column; }
   .equipment-showcase { grid-template-columns: 1fr; }
