@@ -124,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function () {
         name: name,
         email: email,
         message: fullMessage,
-        form_identifier: document.getElementById('ct_form_identifier')?.value || 'bta_contact'
+        form_identifier: document.getElementById('ct_form_identifier')?.value || 'academy',
+        to: 'akademija@bratus.lv'
       };
 
       try {
@@ -165,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const statusEl = form.querySelector('.form-status');
       const submitBtn = form.querySelector('.form-submit');
-      const formId = form.getAttribute('data-form-id') || 'service_form';
+      const formId = form.getAttribute('data-form-id') || 'academy';
 
       if (statusEl) {
         statusEl.style.display = 'block';
@@ -197,7 +198,8 @@ document.addEventListener('DOMContentLoaded', function () {
         name: formDataObj.name || formDataObj.vards || '',
         email: formDataObj.email || formDataObj.epasts || '',
         message: fullMsg,
-        form_identifier: formId
+        form_identifier: formId,
+        to: 'akademija@bratus.lv'
       };
 
       try {
