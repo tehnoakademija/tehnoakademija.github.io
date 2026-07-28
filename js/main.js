@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }, observerOptions);
 
-  document.querySelectorAll('.card, .stat-card, .team-card, .testimonial-card, .equipment-card, .shop-card, .about-feature')
+  document.querySelectorAll('.card, .stat-item, .team-card, .testimonial-card, .equipment-card, .shop-card, .about-feature')
     .forEach(function (el) {
       observer.observe(el);
     });
