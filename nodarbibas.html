@@ -8,8 +8,10 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://tehnoakademija.github.io/nodarbibas">
   <link rel="icon" type="image/png" href="BTA_Logo.png">
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/nodarbibas.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <meta property="og:title" content="Tehnoloģiju nodarbības skolās — Bratus Tehnoloģiju Akadēmija">
   <meta property="og:description" content="Sagatavojam jauniešus nākotnes industrijai. Praktiskas nodarbības ar modernākajām CNC ražošanas iekārtām.">
@@ -36,8 +38,8 @@
 </head>
 <body>
 
-  <!-- NAVIGĀCIJA -->
-  <nav class="nav scrolled" id="mainNav">
+  <!-- ============ NAVIGĀCIJA ============ -->
+  <nav class="nav" id="mainNav">
     <div class="nav-inner">
       <a href="/" class="nav-logo" aria-label="Bratus Tehnoloģiju Akadēmija — uz sākumu">
         <img src="BTA_Logo.png" alt="Bratus Tehnoloģiju Akadēmija logotips" width="160" height="44">
@@ -58,50 +60,50 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero" style="position:relative; overflow:hidden;">
-    <div style="position:absolute; inset:-10px; background-image:url('https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-73_900x.jpg?v=1785147714'); background-size:cover; background-position:center 40%; filter:blur(6px); opacity:0.35; z-index:0;"></div>
-    <div class="container" style="position:relative; z-index:1;">
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-73_900x.jpg?v=1785147714');"></div>
+    <div class="container">
       <span class="section-label">Interešu izglītība</span>
-      <h1>Tehnoloģiju nodarbības skolās</h1>
-      <p>Sagatavojam jauniešus nākotnes industrijai. Praktiskas nodarbības, kurās skolēni apgūst digitālo dizainu, rasēšanu un reālu darbu ar modernākajām CNC ražošanas iekārtām.</p>
+      <h1>Tehnoloģiju <strong>nodarbības</strong> skolās</h1>
+      <p class="page-hero-subtitle">Sagatavojam jauniešus nākotnes industrijai. Praktiskas nodarbības, kurās skolēni apgūst digitālo dizainu, rasēšanu un reālu darbu ar modernākajām CNC ražošanas iekārtām.</p>
       <div class="hero-actions">
         <a href="#pieteikt" class="btn btn-primary btn-lg">Pieteikt savu skolu</a>
-        <a href="#programma" class="btn btn-secondary btn-lg">Skatīt programmu ↓</a>
+        <a href="#programma" class="btn btn-secondary btn-lg">Skatīt programmu</a>
       </div>
     </div>
   </section>
 
-  <!-- PROGRAMMA -->
-  <section class="section section-light" id="programma">
+  <!-- ============ PROGRAMMA ============ -->
+  <section class="section section-surface" id="programma">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Nākotnes prasmes</span>
-        <h2 class="section-title">Radām inženierus jau šodien</h2>
+        <h2 class="section-title">Radām <strong>inženierus</strong> jau šodien</h2>
         <p class="section-subtitle">Mūsu nodarbībās bērni ne tikai vēro, bet paši rada. Mēs piedāvājam skolēniem apgūt pilnu ražošanas ciklu – no idejas skices un digitāla rasējuma līdz gatavam, fiziskam produktam.</p>
       </div>
 
-      <div class="content-grid-2">
-        <div>
+      <div class="about-grid">
+        <div class="about-text">
           <h3>Ko bērni iegūst mūsu nodarbībās?</h3>
-          <ul style="line-height:2.2;">
-            <li><strong>Digitālā dizaina prasmes:</strong> Darbs ar CAD programmatūrām un vektorgrafiku.</li>
-            <li><strong>Telpiskā domāšana:</strong> 3D modeļu izstrāde un izpratne par proporcijām.</li>
-            <li><strong>Problēmu risināšana:</strong> Inženiertehnisku izaicinājumu un kļūdu analīze ražošanas procesā.</li>
-            <li><strong>Tehniskā precizitāte:</strong> Darba drošība un precīza iekārtu parametru iestatīšana.</li>
-            <li><strong>Radošums un inovācija:</strong> No idejas līdz fiziskam produktam — pilns cikls.</li>
-          </ul>
+          <div class="features-list">
+            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Digitālā dizaina prasmes:</strong> Darbs ar CAD programmatūrām un vektorgrafiku.</span></div>
+            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Telpiskā domāšana:</strong> 3D modeļu izstrāde un izpratne par proporcijām.</span></div>
+            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Problēmu risināšana:</strong> Inženiertehnisku izaicinājumu un kļūdu analīze.</span></div>
+            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Tehniskā precizitāte:</strong> Darba drošība un precīza iekārtu parametru iestatīšana.</span></div>
+            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Radošums un inovācija:</strong> No idejas līdz fiziskam produktam — pilns cikls.</span></div>
+          </div>
         </div>
-        <div class="content-image">
+        <div class="about-image">
           <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL05886_900x.jpg?v=1785147884" alt="Bērni darbojas ar tehnoloģijām nodarbībā" loading="lazy">
         </div>
       </div>
 
       <!-- Iekārtas -->
-      <div style="text-align:center; margin-top:3rem;">
+      <div class="section-header centered" style="margin-top:3rem;">
         <span class="section-label">Mūsu rīki</span>
-        <h2 class="section-title">Iekārtas, ar kurām strādājam</h2>
-        <p class="section-subtitle">Piecas profesionālas ražošanas tehnoloģijas, ko bērni apgūst praksē</p>
+        <h2 class="section-title">Iekārtas, ar kurām <strong>strādājam</strong></h2>
+        <p class="section-subtitle" style="margin:0 auto;">Piecas profesionālas ražošanas tehnoloģijas, ko bērni apgūst praksē</p>
       </div>
       <div class="equipment-showcase">
         <div class="equipment-card">
@@ -128,48 +130,47 @@
     </div>
   </section>
 
-  <!-- SKOLU SARAKSTS -->
-  <section class="section section-white">
+  <!-- ============ SKOLU SARAKSTS ============ -->
+  <section class="section section-bg">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Mūsu partneri</span>
-        <h2 class="section-title">Kurās skolās mēs atrodamies?</h2>
+        <h2 class="section-title">Kurās skolās mēs <strong>atrodamies?</strong></h2>
         <p class="section-subtitle">Bratus Tehnoloģiju akadēmijas nodarbības jau veiksmīgi norisinās šajās izglītības iestādēs.</p>
       </div>
 
-      <div class="content-grid-2">
-        <div class="content-image">
+      <div class="about-grid">
+        <div class="about-image">
           <img src="https://kekava.lv/wp-content/uploads/2023/05/Majaslapas-raksta-titulslaids6.png" alt="Skolēni tehnoloģiju nodarbībā" loading="lazy">
         </div>
-        <div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem;">
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Ķekavas vidusskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Ķekavas vidusskolas sākumskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Pļavniekkalna sākumskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Ropažu vidusskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Ulbrokas vidusskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Olaines 1. vidusskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Olaines 2. vidusskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Berģu Mūzikas un Mākslas pamatskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Vangažu vidusskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Mārupes pamatskola</div>
-            <div style="background:#fff; border:1px solid #e4d9cc; padding:0.7rem 1rem; font-size:0.9rem; font-weight:600; color:#153C4A;">Jaunmārupes pamatskola</div>
-          </div>
+        <div class="school-grid">
+          <div class="school-card">Ķekavas vidusskola</div>
+          <div class="school-card">Ķekavas vidusskolas sākumskola</div>
+          <div class="school-card">Pļavniekkalna sākumskola</div>
+          <div class="school-card">Ropažu vidusskola</div>
+          <div class="school-card">Ulbrokas vidusskola</div>
+          <div class="school-card">Olaines 1. vidusskola</div>
+          <div class="school-card">Olaines 2. vidusskola</div>
+          <div class="school-card">Berģu Mūzikas un Mākslas pamatskola</div>
+          <div class="school-card">Vangažu vidusskola</div>
+          <div class="school-card">Mārupes pamatskola</div>
+          <div class="school-card">Jaunmārupes pamatskola</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PIETEIKŠANĀS -->
+  <!-- ============ PIETEIKŠANĀS ============ -->
   <section class="section section-surface" id="pieteikt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header centered">
         <span class="section-label">Pieteikšanās</span>
-        <h2 class="section-title">Pieteikt tehnoloģiju nodarbības manā skolā</h2>
-        <p class="section-subtitle">Vai vēlaties, lai jūsu skolas skolēniem būtu pieejamas modernākās CNC tehnoloģijas un aizraujošas interešu izglītības nodarbības? Aizpildiet anketu, un mēs ar jums sazināsimies.</p>
+        <h2 class="section-title">Pieteikt <strong>tehnoloģiju nodarbības</strong> manā skolā</h2>
+        <p class="section-subtitle" style="margin:0 auto;">Vai vēlaties, lai jūsu skolas skolēniem būtu pieejamas modernākās CNC tehnoloģijas un aizraujošas interešu izglītības nodarbības? Aizpildiet anketu, un mēs ar jums sazināsimies.</p>
       </div>
 
       <div class="contact-form-box" style="max-width:700px; margin:0 auto;">
+        <h3>Sūti pieteikumu</h3>
         <form class="service-form" data-form-id="academy">
           <div class="form-status"></div>
           <div class="form-group">
@@ -202,37 +203,31 @@
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="BTA_Logo.png" alt="Bratus Tehnoloģiju Akadēmija logotips" style="height:44px; width:auto;">
+        <div class="footer-logo-desc">
+          <img src="BTA_Logo.png" alt="Bratus Tehnoloģiju Akadēmija logotips">
           <p>Praktiska nākotnes inženierijas apguve industriālā vidē. Tehnoloģiju nodarbības skolās, vasaras nometnes, meistarklases un korporatīvie pasākumi visā Latvijā.</p>
         </div>
-        <div>
-          <h4>Pakalpojumi</h4>
-          <ul>
-            <li><a href="/nodarbibas">Tehnoloģiju nodarbības</a></li>
-            <li><a href="/nometnes">Vasaras nometnes 2026</a></li>
-            <li><a href="/meistarklases">Meistarklases</a></li>
-            <li><a href="/pasakumi">Korporatīvie pasākumi</a></li>
-            <li><a href="/veikals">Veikals</a></li>
-          </ul>
+        <div class="footer-col">
+          <h5>Pakalpojumi</h5>
+          <a href="/nodarbibas">Tehnoloģiju nodarbības</a>
+          <a href="/nometnes">Vasaras nometnes 2026</a>
+          <a href="/meistarklases">Meistarklases</a>
+          <a href="/pasakumi">Korporatīvie pasākumi</a>
+          <a href="/veikals">Veikals</a>
         </div>
-        <div>
-          <h4>Kontakti</h4>
-          <ul>
-            <li><a href="tel:+37128271220">+371 28271220</a></li>
-            <li><a href="tel:+37126325307">+371 26325307</a></li>
-            <li><a href="mailto:sales@bratus.lv">sales@bratus.lv</a></li>
-            <li><a href="/kontakti">Visi kontakti →</a></li>
-          </ul>
+        <div class="footer-col">
+          <h5>Kontakti</h5>
+          <a href="tel:+37128271220">+371 28271220</a>
+          <a href="tel:+37126325307">+371 26325307</a>
+          <a href="mailto:sales@bratus.lv">sales@bratus.lv</a>
+          <a href="/kontakti">Visi kontakti →</a>
         </div>
-        <div>
-          <h4>Juridiskā info</h4>
-          <ul>
-            <li>SIA Bratus</li>
-            <li>Reģ. nr. 40203628316</li>
-            <li>Dārznieku iela 42, Ķekava</li>
-            <li>Ķekavas nov., LV-2123</li>
-          </ul>
+        <div class="footer-col">
+          <h5>Juridiskā info</h5>
+          <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;">SIA Bratus</p>
+          <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;">Reģ. nr. 40203628316</p>
+          <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;">Dārznieku iela 42, Ķekava</p>
+          <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;">Ķekavas nov., LV-2123</p>
         </div>
       </div>
       <div class="footer-bottom">
