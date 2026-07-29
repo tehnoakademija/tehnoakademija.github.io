@@ -457,6 +457,12 @@ ul { list-style: none; }
 .about-image { border-radius: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
 .about-image img { width: 100%; height: 100%; object-fit: cover; min-height: 400px; }
 
+/* ===== CONTENT GRID (apakšlapām) ===== */
+.content-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+
+.content-image { border-radius: 0; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+.content-image img { width: 100%; height: 100%; object-fit: cover; min-height: 340px; }
+
 .about-text h2 { font-size: clamp(1.8rem, 3.5vw, 2.2rem); font-weight: 300; margin-bottom: 1.25rem; }
 .about-text h2 strong { font-weight: 600; }
 .about-text p { color: var(--ink2); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
@@ -700,7 +706,7 @@ ul { list-style: none; }
 
 /* ===== RESPONSĪVS ===== */
 @media (max-width: 900px) {
-  .about-grid, .locations-grid, .contact-grid { grid-template-columns: 1fr; }
+  .about-grid, .locations-grid, .contact-grid, .content-grid-2 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 
   .nav-links {
