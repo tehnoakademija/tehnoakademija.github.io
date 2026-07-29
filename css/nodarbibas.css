@@ -201,7 +201,7 @@ ul { list-style: none; }
 /* ===== EQUIPMENT CARDS ===== */
 .equipment-showcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 1.25rem; margin-top: 2rem;
 }
 
@@ -298,6 +298,7 @@ ul { list-style: none; }
 
 @media (max-width: 640px) {
   .school-grid { grid-template-columns: 1fr; }
+  .equipment-showcase { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; text-align: center; justify-content: center; }
