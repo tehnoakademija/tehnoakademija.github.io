@@ -201,9 +201,10 @@ ul { list-style: none; }
 /* ===== EQUIPMENT CARDS ===== */
 .equipment-showcase {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 1.25rem; margin-top: 2rem;
 }
+.equipment-showcase > * { min-width: 0; }
 
 .equipment-card {
   background: #fff; border: 1px solid var(--border); border-radius: 0;
