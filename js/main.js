@@ -73,25 +73,27 @@ document.addEventListener('DOMContentLoaded', function () {
       observer.observe(el);
     });
 
-  /* --- SHOP FILTER (veikals.html) --- */
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const shopCards = document.querySelectorAll('.shop-card');
+  /* --- SHOP TABS (veikals.html) --- */
+  const shopTabs = document.querySelectorAll('.shop-tab');
+  const shopPanels = document.querySelectorAll('.shop-panel');
 
-  if (filterBtns.length && shopCards.length) {
-    filterBtns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        filterBtns.forEach(function (b) { b.classList.remove('active'); });
-        this.classList.add('active');
+  if (shopTabs.length && shopPanels.length) {
+    shopTabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        const target = this.getAttribute('data-tab');
 
-        const category = this.getAttribute('data-filter');
-
-        shopCards.forEach(function (card) {
-          if (category === 'all' || card.getAttribute('data-category') === category) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
+        // Deactivate all
+        shopTabs.forEach(function (t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
         });
+        shopPanels.forEach(function (p) { p.classList.remove('active'); });
+
+        // Activate target
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        const panel = document.querySelector('.shop-panel[data-panel="' + target + '"]');
+        if (panel) panel.classList.add('active');
       });
     });
   }

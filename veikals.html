@@ -56,235 +56,255 @@
 
   <!-- PAGE HERO -->
   <section class="page-hero">
+    <div class="hero-bg" style="background-image:url('https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-124_900x.jpg?v=1785148145'); background-position:center 60%;"></div>
     <div class="container">
       <span class="section-label">Akadēmijas veikals</span>
       <h1>Veikals</h1>
-      <p>Bratus Tehnoloģiju Akadēmijas oficiālais merch, mikroelektronikas detaļas un komponentes taviem projektiem. Viss nepieciešamais vienuviet.</p>
+      <p class="page-hero-subtitle">Bratus Tehnoloģiju Akadēmijas oficiālais merch, mikroelektronikas detaļas un komponentes taviem projektiem. Viss nepieciešamais vienuviet.</p>
     </div>
   </section>
 
-  <!-- VEIKALS SATURS -->
-  <section class="section section-surface">
+  <!-- ============ VEIKALS ============ -->
+  <section class="section section-surface" id="shop">
     <div class="container">
-      <!-- Filtri -->
-      <div class="shop-filter">
-        <button class="filter-btn active" data-filter="all">Visi produkti</button>
-        <button class="filter-btn" data-filter="merch">👕 Merch</button>
-        <button class="filter-btn" data-filter="elektronika">🔌 Mikroelektronika</button>
-        <button class="filter-btn" data-filter="arduino">🤖 Arduino</button>
-        <button class="filter-btn" data-filter="sensori">📡 Sensori</button>
-        <button class="filter-btn" data-filter="komponentes">⚡ Komponentes</button>
+
+      <!-- Category Tabs -->
+      <nav class="shop-tabs" role="tablist" aria-label="Produktu kategorijas">
+        <button class="shop-tab active" role="tab" aria-selected="true" data-tab="merch">
+          <span class="shop-tab-icon">👕</span> Merch
+        </button>
+        <button class="shop-tab" role="tab" aria-selected="false" data-tab="elektronika">
+          <span class="shop-tab-icon">🔌</span> Mikroelektronika
+        </button>
+        <button class="shop-tab" role="tab" aria-selected="false" data-tab="speles">
+          <span class="shop-tab-icon">🎯</span> Spēles/Aktivitātes
+        </button>
+      </nav>
+
+      <!-- === MERCH === -->
+      <div class="shop-panel active" data-panel="merch" role="tabpanel">
+        <div class="shop-grid">
+
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#1a2d3d 0%,#2C7C8D 100%);">
+                <span>👕</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <span class="shop-badge shop-badge--hot">Bestseleris</span>
+              <h4>BTA T-krekls "Nākotnes Inženieris"</h4>
+              <p>Ērts kokvilnas T-krekls ar BTA logo. Pieejams S–XXL izmēros.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€19.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#2c3e50 0%,#1a2d3d 100%);">
+                <span>🧢</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <h4>BTA Cepure "Tehnoloģiju Ģēnijs"</h4>
+              <p>Stilīga snapback cepure ar izšūtu BTA logo. Regulējams izmērs.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€14.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#1a2d3d 0%,#3a5a6d 100%);">
+                <span>🎒</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <span class="shop-badge shop-badge--new">Jaunums</span>
+              <h4>BTA Mugursoma "Maker"</h4>
+              <p>Ietilpīga mugursoma ar pastiprinātu laptopa nodalījumu un BTA uzšuvi.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€34.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#2c3e50 0%,#1e3a4a 100%);">
+                <span>🫗</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <h4>BTA Termokrūze "Inovācija"</h4>
+              <p>Dubultsienu termokrūze 500ml ar lāzergravētu BTA logo. Saglabā dzērienu karstu 6 stundas.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€12.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
       </div>
 
-      <div class="shop-grid">
+      <!-- === MIKROELEKTRONIKA === -->
+      <div class="shop-panel" data-panel="elektronika" role="tabpanel">
+        <div class="shop-grid">
 
-        <!-- MERCH -->
-        <article class="shop-card" data-category="merch">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">👕</span>
-          </div>
-          <div class="shop-card-body">
-            <span class="card-badge popular" style="display:inline-block;margin-bottom:0.5rem;">⭐ Bestseleris</span>
-            <h4>BTA T-krekls "Nākotnes Inženieris"</h4>
-            <p>Ērts kokvilnas T-krekls ar Bratus Tehnoloģiju Akadēmijas logo. Pieejams dažādos izmēros.</p>
-            <div class="price">€19.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#0d3b4c 0%,#00979D 100%);">
+                <span>🤖</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <span class="shop-badge shop-badge--hot">Populārs</span>
+              <h4>Arduino Uno R4 WiFi</h4>
+              <p>Jaunākās paaudzes Arduino ar iebūvētu WiFi un Bluetooth. Ideāls iesācējiem un profesionāļiem.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€29.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="shop-card" data-category="merch">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🧢</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>BTA Cepure "Tehnoloģiju Ģēnijs"</h4>
-            <p>Stilīga snapback cepure ar izšūtu BTA logo. Regulējams izmērs.</p>
-            <div class="price">€14.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#6b1d2f 0%,#c51d4a 100%);">
+                <span>🍓</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <h4>Raspberry Pi 5 (8GB)</h4>
+              <p>Jaunākais Raspberry Pi ar 8GB RAM. Perfekts IoT, robotikas un mācību projektiem.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€79.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="shop-card" data-category="merch">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🎒</span>
-          </div>
-          <div class="shop-card-body">
-            <span class="card-badge new" style="display:inline-block;margin-bottom:0.5rem;">🆕 Jaunums</span>
-            <h4>BTA Mugursoma "Maker"</h4>
-            <p>Ietilpīga mugursoma ar pastiprinātu laptopa nodalījumu un BTA uzšuvi.</p>
-            <div class="price">€34.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#1a3a2a 0%,#2d7d4f 100%);">
+                <span>🔌</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <h4>Arduino Starter Kit</h4>
+              <p>Pilns iesācēja komplekts ar breadboard, vadiem, sensoriem un gaismas diodēm.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€49.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="shop-card" data-category="merch">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">📓</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>BTA Piezīmju bloks "Inovācija"</h4>
-            <p>A5 formāta piezīmju bloks ar cietajiem vākiem un inženierijas motīviem.</p>
-            <div class="price">€8.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#2a1a3d 0%,#5d3d8a 100%);">
+                <span>🌡️</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <h4>DHT22 Temperatūras sensors</h4>
+              <p>Augstas precizitātes temperatūras un mitruma sensors. Savietojams ar Arduino un Raspberry Pi.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€6.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
 
-        <!-- ARDUINO -->
-        <article class="shop-card" data-category="arduino elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🤖</span>
-          </div>
-          <div class="shop-card-body">
-            <span class="card-badge hot" style="display:inline-block;margin-bottom:0.5rem;">🔥 Populāri</span>
-            <h4>Arduino Uno R4 WiFi</h4>
-            <p>Jaunākās paaudzes Arduino ar iebūvētu WiFi un Bluetooth. Ideāli piemērots iesācējiem un pro lietotājiem.</p>
-            <div class="price">€29.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+        </div>
+      </div>
 
-        <article class="shop-card" data-category="arduino elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">💻</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>Arduino Nano Every</h4>
-            <p>Kompakts mikrokontrolleris ar lielisku veiktspēju. Lieliski piemērots mazākiem projektiem.</p>
-            <div class="price">€14.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+      <!-- === SPĒLES/AKTIVITĀTES === -->
+      <div class="shop-panel" data-panel="speles" role="tabpanel">
+        <div class="shop-grid">
 
-        <article class="shop-card" data-category="arduino elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🍓</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>Raspberry Pi 5 (8GB)</h4>
-            <p>Jaunākais Raspberry Pi ar 8GB RAM. Perfekts IoT projektiem, robotikai un mācībām.</p>
-            <div class="price">€79.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#3d2b1a 0%,#c77826 100%);">
+                <span>🧩</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <span class="shop-badge shop-badge--new">Jaunums</span>
+              <h4>3D puzle "Rīgas panorāma"</h4>
+              <p>Ar lāzeru griezta 3D koka puzle. Attīsta telpisko domāšanu — piemērota visai ģimenei.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€24.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="shop-card" data-category="arduino elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🔌</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>Arduino Starter Kit</h4>
-            <p>Pilns iesācēja komplekts ar breadboard, vadiem, rezistoriem, gaismas diodēm un sensoriem.</p>
-            <div class="price">€49.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#1a2d3d 0%,#2C7C8D 100%);">
+                <span>🦾</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <h4>DIY Robotikas komplekts</h4>
+              <p>Uzbūvē savu robotu! Ietver motorus, sensorus un montāžas instrukcijas iesācējiem.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€39.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
 
-        <!-- SENSORI -->
-        <article class="shop-card" data-category="sensori elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🌡️</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>DHT22 Temperatūras un mitruma sensors</h4>
-            <p>Augstas precizitātes temperatūras un mitruma sensors. Savietojams ar Arduino un Raspberry Pi.</p>
-            <div class="price">€6.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#2c1a3d 0%,#6b3d8a 100%);">
+                <span>🎲</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <h4>Lāzergriezta galda spēle</h4>
+              <p>Unikāla stratēģijas galda spēle no lāzergriezta koka. 2–4 spēlētājiem, roku darbs Latvijā.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€18.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="shop-card" data-category="sensori elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">📏</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>HC-SR04 Ultraskaņas attāluma sensors</h4>
-            <p>Populārs attāluma mērīšanas sensors robotikā un automatizācijas projektos. Mērījumi no 2cm līdz 4m.</p>
-            <div class="price">€4.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#1a3d2c 0%,#2d8a5c 100%);">
+                <span>⚡</span>
+              </div>
+            </div>
+            <div class="shop-card-body">
+              <h4>Elektronikas eksperimentu kaste</h4>
+              <p>20+ eksperimenti bērniem un jauniešiem. Apgūsti shēmu veidošanu drošā un interesantā veidā.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€34.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
 
-        <article class="shop-card" data-category="sensori elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">💡</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>LDR Gaismas sensors (5gb)</h4>
-            <p>Gaismas jutības sensors — ideāls iesācēju projektiem. 5 gabali iepakojumā.</p>
-            <div class="price">€3.49</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
-
-        <article class="shop-card" data-category="sensori elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🏃</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>PIR Kustības sensors HC-SR501</h4>
-            <p>Infrasarkanais kustības sensors — lieliski piemērots drošības un automatizācijas projektiem.</p>
-            <div class="price">€5.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
-
-        <!-- KOMPONENTES -->
-        <article class="shop-card" data-category="komponentes elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🔋</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>Breadboard 830 punkti + Jumper vadi</h4>
-            <p>Kvalitatīvs breadboard komplektā ar 65 jumper vadiem (vīriešu-vīriešu).</p>
-            <div class="price">€9.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
-
-        <article class="shop-card" data-category="komponentes elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">💡</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>LED komplekts (100gb, 5 krāsas)</h4>
-            <p>100 gaismas diodes 5 dažādās krāsās ar rezistoriem. Ideāli projektiem un eksperimentiem.</p>
-            <div class="price">€7.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
-
-        <article class="shop-card" data-category="komponentes elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🔩</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>Servo motors SG90 (2gb)</h4>
-            <p>Mikro servo motors robotikai un mehāniskajiem projektiem. 2 gabali komplektā.</p>
-            <div class="price">€8.99</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
-
-        <article class="shop-card" data-category="komponentes elektronika">
-          <div class="shop-card-image" style="background:#1a2d3d;">
-            <span style="font-size:4rem;">🔊</span>
-          </div>
-          <div class="shop-card-body">
-            <h4>Pjezo skaļrunis / Buzzer</h4>
-            <p>Aktīvais pjezo elements skaņas signālu radīšanai. Viegli lietojams ar jebkuru mikrokontrolleri.</p>
-            <div class="price">€2.49</div>
-            <a href="/#pieteikums" class="btn btn-primary">Pasūtīt</a>
-          </div>
-        </article>
-
+        </div>
       </div>
 
       <!-- CTA -->
-      <div class="cta-banner" style="margin-top:3rem;">
+      <div class="shop-cta">
         <h2>Vai neatrodi, ko meklēji?</h2>
         <p>Sazinies ar mums, un mēs palīdzēsim atrast nepieciešamās detaļas vai komponentes tavam projektam.</p>
         <a href="/#pieteikums" class="btn btn-primary btn-lg">Sazināties</a>
       </div>
+
     </div>
   </section>
 
