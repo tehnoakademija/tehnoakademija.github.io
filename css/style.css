@@ -538,7 +538,7 @@ ul { list-style: none; }
 .shop-tab:hover { color: var(--ink); }
 .shop-tab.active { color: var(--accent); font-weight: 600; }
 .shop-tab.active::after { transform: scaleX(1); }
-.shop-tab-icon { font-size: 1.15rem; }
+.shop-tab-icon { width: 20px; height: 20px; flex-shrink: 0; }
 
 /* --- Panels --- */
 .shop-panel { display: none; }
@@ -574,7 +574,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
 }
-.shop-card-placeholder span { font-size: 3.5rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
+.shop-card-placeholder svg { filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3)); }
 .shop-card-body {
   padding: 1.25rem;
   display: flex;
