@@ -451,6 +451,56 @@ ul { list-style: none; }
 .card-badge.hot     { background: rgba(231,76,60,0.1);     color: #e74c3c; }
 .card-badge.new     { background: rgba(129,168,80,0.12);   color: #81A850; }
 
+/* ===== TEAM ===== */
+.section-light { background: var(--bg); }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+.team-card img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+  border: 3px solid var(--border);
+  transition: border-color 0.3s;
+}
+.team-card:hover img { border-color: var(--accent); }
+.team-card h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+  line-height: 1.2;
+}
+.team-card .role {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ink3);
+  background: var(--surface);
+  padding: 0.15rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: 0.4rem;
+}
+.team-card .phone {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+.team-card .phone:hover { color: var(--accent-hover); }
+
 /* ===== ABOUT ===== */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 
@@ -707,6 +757,7 @@ ul { list-style: none; }
 /* ===== RESPONSĪVS ===== */
 @media (max-width: 900px) {
   .about-grid, .locations-grid, .contact-grid, .content-grid-2 { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 
   .nav-links {
@@ -728,6 +779,7 @@ ul { list-style: none; }
 }
 
 @media (max-width: 640px) {
+  .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cards-grid, .testimonial-grid { grid-template-columns: 1fr; }
   .about-features, .school-list, .footer-grid { grid-template-columns: 1fr; }
   .equipment-tags { justify-content: flex-start; }
