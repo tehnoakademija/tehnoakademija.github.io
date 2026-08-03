@@ -2,50 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://tehnologijuakademija.lv/</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tehnologijuakademija.lv/nodarbibas</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tehnologijuakademija.lv/nometnes</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tehnologijuakademija.lv/meistarklases</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tehnologijuakademija.lv/pasakumi</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tehnologijuakademija.lv/veikals</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tehnologijuakademija.lv/kontakti</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tehnologijuakademija.lv/3dpage</loc>
-    <lastmod>2026-07-31</lastmod>
+    <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/atminas-kartes-vairuma</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/mazais-oled-ekrans-taviem-projektiem</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/mini-servo-motorins-robotiem-un-projektiem</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/kustibas-sensors-pamana-visu</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/led-spuldzisu-komplekts-diy-projektiem</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/mehaniskas-klaviaturas-sledzi-cherry-mx-stils</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/augstsprieguma-generators-radi-elektriskas-dzirksteles</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/savienotajvadinu-komplekts-elektronikas-projektiem</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/augsnes-mitruma-sensors-zini-kad-laistit-pukes</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/mini-wifi-dators-taviem-projektiem</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/sirdspukstu-sensors-taviem-projektiem</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tehnologijuakademija.lv/products/bezvadu-lodamurs</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
