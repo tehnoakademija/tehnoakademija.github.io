@@ -44,7 +44,26 @@
     .shop-cta h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:600;margin-bottom:0.75rem;color:#fff}
     .shop-cta p{color:rgba(255,255,255,0.6);margin-bottom:1.5rem;max-width:500px;margin-left:auto;margin-right:auto}
     .shop-cta .btn-primary{background:var(--accent)}
-    @media (max-width:640px){.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:640px){
+      .shop-tabs{gap:0.35rem;margin-bottom:1.5rem}
+      .shop-tab{padding:0.6rem 0.75rem;font-size:0.78rem;gap:0.3rem}
+      .shop-tab-icon{width:16px;height:16px}
+      .shop-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0.75rem}
+      .shop-card-body{padding:0.75rem}
+      .shop-card-body h4{font-size:0.8rem;margin-bottom:0.25rem;word-break:break-word}
+      .shop-card-body p{font-size:0.7rem;line-height:1.4;margin-bottom:0.6rem}
+      .shop-badge{font-size:0.6rem;padding:0.12rem 0.45rem;margin-bottom:0.35rem}
+      .shop-card-footer{flex-direction:column;align-items:stretch;gap:0.4rem;padding-top:0.5rem}
+      .shop-price{font-size:0.95rem;text-align:center}
+      .shop-btn{width:100%;text-align:center;font-size:0.72rem;padding:0.45rem 0.75rem}
+      .shop-cta{padding:1.5rem 1rem;margin-top:2rem}
+      .shop-cta h2{font-size:1.2rem}
+      .shop-cta p{font-size:0.85rem}
+    }
+    @media (max-width:380px){
+      .shop-tab{padding:0.5rem 0.5rem;font-size:0.72rem}
+      .shop-tab-icon{width:14px;height:14px}
+    }
   </style>
 
   <meta property="og:title" content="Veikals — Bratus Tehnoloģiju Akadēmija">
