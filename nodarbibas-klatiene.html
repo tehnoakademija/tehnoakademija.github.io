@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tehnoloģiju nodarbības klātienē Ķekavā — Bratus Tehnoloģiju Akadēmija</title>
+  <title>Bratus Tehnoloģiju akadēmijas nodarbības Pliederu ielā 22, Ķekavā</title>
   <meta name="description" content="Piesakies tehnoloģiju nodarbībām klātienē Pliederu ielā 22, Ķekavā. Bērni apgūst CO₂ lāzerus, 3D printerus, CNC frēzes un citas modernās iekārtas.">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="9O29GNmdvYyMDivYpfNPDDjipuXe4CiRBHf75wxCg_4" />
@@ -12,30 +12,262 @@
   <link rel="stylesheet" href="css/nodarbibas.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <meta property="og:title" content="Tehnoloģiju nodarbības klātienē Ķekavā — Bratus Tehnoloģiju Akadēmija">
-  <meta property="og:description" content="Piesakies tehnoloģiju nodarbībām klātienē Pliederu ielā 22, Ķekavā. CO₂ lāzeri, 3D printeri, CNC frēzes un citas modernās iekārtas.">
+  <meta property="og:title" content="Bratus Tehnoloģiju akadēmijas nodarbības Pliederu ielā 22, Ķekavā">
+  <meta property="og:description" content="Piesakies tehnoloģiju nodarbībām klātienē. CO₂ lāzeri, 3D printeri, CNC frēzes un citas modernās iekārtas.">
   <meta property="og:image" content="BTA_Logo.png">
   <meta property="og:url" content="https://tehnoakademija.github.io/nodarbibas-klatiene">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="product">
   <meta property="og:locale" content="lv_LV">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Tehnoloģiju nodarbības klātienē Ķekavā",
+    "@type": "Product",
+    "name": "Bratus Tehnoloģiju akadēmijas nodarbības Pliederu ielā 22, Ķekavā",
     "description": "Tehnoloģiju nodarbības bērniem klātienē Pliederu ielā 22, Ķekavā. Apgūsti CO₂ lāzerus, 3D printerus, CNC frēzes un citas modernās ražošanas iekārtas.",
-    "provider": {
-      "@type": "EducationalOrganization",
-      "name": "Bratus Tehnoloģiju Akadēmija",
-      "url": "https://tehnoakademija.github.io/"
-    },
-    "educationalLevel": "beginner",
-    "teaches": "Digitālais dizains, CAD, 3D modelēšana, CNC iekārtu vadība, Mikroelektronika"
+    "brand": { "@type": "Brand", "name": "Tehnoloģiju Skola" },
+    "offers": {
+      "@type": "Offer",
+      "price": "15.00",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    }
   }
   </script>
+
+  <style>
+    /* ===== PRODUCT PAGE SPECIFIC STYLES ===== */
+    :root {
+      --product-bg: #ffffff;
+      --product-border: #e5e5e5;
+      --product-ink: #1a1a1a;
+      --product-muted: #6b6b6b;
+    }
+
+    /* ===== BREADCRUMB ===== */
+    .breadcrumb {
+      padding: calc(var(--nav-height) + 1rem) 0 0.5rem;
+      font-size: 0.8rem; color: var(--ink3);
+    }
+    .breadcrumb a { color: var(--ink2); }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb span { margin: 0 0.4rem; }
+
+    /* ===== PRODUCT MAIN LAYOUT (two columns like Shopify) ===== */
+    .product-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+      padding-bottom: clamp(3rem, 5vw, 4rem);
+    }
+
+    /* ===== PRODUCT GALLERY ===== */
+    .product-gallery {
+      position: sticky; top: calc(var(--nav-height) + 1.5rem);
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .gallery-main {
+      position: relative; width: 100%;
+      aspect-ratio: 4/3; overflow: hidden;
+      border: 1px solid var(--product-border);
+      background: #fafafa;
+    }
+    .gallery-main img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: opacity 0.3s;
+    }
+    .gallery-thumbs {
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .gallery-thumb {
+      width: calc(20% - 0.4rem); aspect-ratio: 1;
+      border: 2px solid transparent; cursor: pointer;
+      overflow: hidden; background: #fafafa;
+      transition: border-color 0.2s;
+    }
+    .gallery-thumb.active { border-color: var(--accent); }
+    .gallery-thumb img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    /* ===== PRODUCT INFO ===== */
+    .product-info {
+      display: flex; flex-direction: column; gap: 1.25rem;
+    }
+    .product-vendor {
+      font-size: 0.72rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+    .product-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.03em; color: var(--product-ink);
+      margin: 0;
+    }
+    .product-price {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700; color: var(--product-ink);
+      line-height: 1;
+    }
+
+    /* ===== VARIANT PILLS (display only) ===== */
+    .variant-label {
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--product-ink); margin-bottom: 0.4rem;
+    }
+    .variant-pills {
+      display: flex; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .variant-pill {
+      padding: 0.55rem 1.25rem;
+      border: 1.5px solid var(--product-border);
+      font-size: 0.85rem; font-weight: 500;
+      color: var(--product-ink); cursor: default;
+      background: #fff; transition: all 0.2s;
+    }
+    .variant-pill.active {
+      border-color: var(--accent);
+      background: rgba(44,124,141,0.05);
+      color: var(--accent);
+    }
+
+    /* ===== CTA BUTTON ===== */
+    .product-cta {
+      display: block; width: 100%;
+      padding: 1rem 1.5rem;
+      background: var(--accent); color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem; font-weight: 600;
+      text-align: center; border: none;
+      cursor: pointer; transition: all 0.25s var(--ease);
+    }
+    .product-cta:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 6px 24px rgba(44,124,141,0.25);
+    }
+
+    /* ===== PRODUCT META ===== */
+    .product-meta {
+      display: flex; flex-direction: column; gap: 0.3rem;
+      font-size: 0.82rem; color: var(--product-muted);
+      padding-top: 0.5rem; border-top: 1px solid var(--product-border);
+    }
+    .product-meta span { display: flex; align-items: center; gap: 0.4rem; }
+    .product-meta svg { flex-shrink: 0; opacity: 0.5; }
+
+    /* ===== PRODUCT DESCRIPTION (tabbed) ===== */
+    .product-description {
+      background: #fff;
+      border-top: 1px solid var(--product-border);
+    }
+    .desc-tabs {
+      display: flex; gap: 0; border-bottom: 1px solid var(--product-border);
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+    }
+    .desc-tab {
+      padding: 1rem 1.5rem;
+      font-size: 0.85rem; font-weight: 600;
+      color: var(--product-muted); cursor: pointer;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap; transition: all 0.2s;
+      background: none; border-top: none; border-left: none; border-right: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .desc-tab.active {
+      color: var(--product-ink);
+      border-bottom-color: var(--accent);
+    }
+    .desc-tab:hover { color: var(--product-ink); }
+
+    .desc-panel {
+      display: none; padding: 2.5rem 0;
+    }
+    .desc-panel.active { display: block; }
+
+    .desc-panel h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.25rem; font-weight: 600;
+      margin-bottom: 0.75rem; color: var(--product-ink);
+    }
+    .desc-panel p {
+      color: var(--product-muted); line-height: 1.7;
+      margin-bottom: 1rem; font-size: 0.95rem;
+    }
+
+    /* Tech list */
+    .tech-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem; list-style: none; padding: 0;
+    }
+    .tech-list li {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.9rem; color: var(--product-ink);
+      padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0;
+    }
+    .tech-list li strong { font-weight: 600; }
+    .tech-arrow { color: var(--accent); flex-shrink: 0; font-weight: 700; }
+
+    /* Directions */
+    .directions-list {
+      list-style: none; padding: 0;
+      counter-reset: step;
+    }
+    .directions-list li {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      padding: 0.8rem 0; counter-increment: step;
+      font-size: 0.9rem; color: var(--product-ink);
+    }
+    .step-num {
+      width: 28px; height: 28px; flex-shrink: 0;
+      background: var(--accent); color: #fff;
+      border-radius: 50%; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
+    }
+
+    .directions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    .directions-grid img {
+      width: 100%; aspect-ratio: 4/3;
+      object-fit: cover; border: 1px solid var(--product-border);
+    }
+
+    .map-wrapper {
+      width: 100%; border: 1px solid var(--product-border);
+      overflow: hidden; margin-top: 0.5rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .product-main {
+        grid-template-columns: 1fr;
+      }
+      .product-gallery {
+        position: static;
+      }
+      .tech-list {
+        grid-template-columns: 1fr;
+      }
+      .desc-tab {
+        padding: 0.75rem 1rem;
+        font-size: 0.78rem;
+      }
+      .directions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -61,113 +293,170 @@
     </div>
   </nav>
 
-  <!-- ============ PAGE HERO ============ -->
-  <section class="page-hero">
-    <div class="hero-bg" style="background-image:url('https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL05886_900x.jpg?v=1785147884');"></div>
+  <!-- ============ BREADCRUMB ============ -->
+  <div class="breadcrumb">
     <div class="container">
-      <span class="section-label">Tehnoloģiju Skola</span>
-      <h1>Bratus Tehnoloģiju akadēmijas <strong>nodarbības</strong> Pliederu ielā 22, Ķekavā</h1>
-      <p class="page-hero-subtitle">Praktiskas tehnoloģiju nodarbības bērniem mūsu pašu telpās Ķekavā. Strādā ar CO₂ lāzeriem, 3D printeriem, CNC frēzēm un citām modernām iekārtām profesionāla instruktora vadībā.</p>
-      <div class="hero-actions">
-        <a href="#pieteikties" class="btn btn-primary btn-lg">Pieteikties nodarbībai</a>
-        <a href="#par-nodarbibam" class="btn btn-secondary btn-lg">Uzzināt vairāk ↓</a>
-      </div>
+      <a href="/">Sākums</a><span>/</span><a href="/nodarbibas">Nodarbības</a><span>/</span><span style="color:var(--ink);">Bratus Tehnoloģiju akadēmijas nodarbības Pliederu ielā 22, Ķekavā</span>
     </div>
-  </section>
+  </div>
 
-  <!-- ============ PAR NODARBĪBĀM ============ -->
-  <section class="section section-surface" id="par-nodarbibam">
+  <!-- ============ PRODUCT SECTION ============ -->
+  <section class="section" style="padding-top:1rem; padding-bottom:0;">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">Par Tehnoloģiju nodarbībām</span>
-        <h2 class="section-title">Ko bērni <strong>apgūs?</strong></h2>
-      </div>
+      <div class="product-main">
 
-      <div class="about-grid">
-        <div class="about-text">
-          <h3>Norises vieta</h3>
-          <p style="color:var(--ink2); margin-bottom:1.5rem; line-height:1.7;">
-            Nodarbības notiek mūsu pašu telpās — <strong style="color:var(--ink);">Ķekavā, Pliederu ielā 22, otrajā stāvā, "Tehnoloģiju akadēmijas" kabinetā</strong>. Tās ir pilnībā aprīkotas ar visām blakus minētajām modernajām iekārtām veiksmīgai ideju realizēšanai.
-          </p>
-
-          <h3>Ko bērni apgūs?</h3>
-          <p style="color:var(--ink2); margin-bottom:1.5rem; line-height:1.7;">
-            Katrā darbnīcā bērni paši izstrādās savus projektus, iemācīsies strādāt ar profesionālām iekārtām un attīstīs praktiskas, nākotnei noderīgas gan digitālās, gan tehniskās prasmes. Viņi iemācīsies no idejas izstrādāt digitālu dizainu un pārvērst to reālā, funkcionālā objektā.
-          </p>
-
-          <h3>Tehnoloģijas, ar kurām strādāsim:</h3>
-          <div class="features-list">
-            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>CO₂ lāzergriezējs:</strong> Griež un gravē (finieri, akrilu u.c.). No dizaina līdz izgatavošanai.</span></div>
-            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>3D printeris:</strong> Trīsdimensiju objektu modelēšana un izstrāde. No idejas līdz izdrukai.</span></div>
-            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Plotergriezējs:</strong> Uzlīmes, trafareti un dizaini uz dažādiem materiāliem. Ātrs un vizuāls rezultāts.</span></div>
-            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Šķiedru lāzers:</strong> Precīza gravēšana un personalizācija uz metāla virsmām.</span></div>
-            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>CNC frēze:</strong> Precīzu detaļu apstrāde un izgatavošana ar skaidriem soļiem.</span></div>
-            <div class="feature-item"><span class="feature-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span><strong>Mikroelektronika:</strong> Mācīsimies lodēt komponentes, kā arī programmēt Arduino plati, izmantojot mākslīgo intelektu.</span></div>
+        <!-- LEFT: GALLERY -->
+        <div class="product-gallery">
+          <div class="gallery-main" id="galleryMain">
+            <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-73_900x.jpg?v=1785147714" alt="Bratus Tehnoloģiju akadēmijas nodarbības Pliederu ielā 22, Ķekavā" id="galleryMainImg">
+          </div>
+          <div class="gallery-thumbs" id="galleryThumbs">
+            <div class="gallery-thumb active" data-img="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-73_900x.jpg?v=1785147714">
+              <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-73_200x.jpg?v=1785147714" alt="Attēls 1" loading="lazy">
+            </div>
+            <div class="gallery-thumb" data-img="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL05886_900x.jpg?v=1785147884">
+              <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL05886_200x.jpg?v=1785147884" alt="Attēls 2" loading="lazy">
+            </div>
+            <div class="gallery-thumb" data-img="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL07728_900x.jpg?v=1785148014">
+              <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL07728_200x.jpg?v=1785148014" alt="Attēls 3" loading="lazy">
+            </div>
+            <div class="gallery-thumb" data-img="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-124_900x.jpg?v=1785148145">
+              <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-124_200x.jpg?v=1785148145" alt="Attēls 4" loading="lazy">
+            </div>
+            <div class="gallery-thumb" data-img="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-163_900x.jpg?v=1785148344">
+              <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-163_200x.jpg?v=1785148344" alt="Attēls 5" loading="lazy">
+            </div>
           </div>
         </div>
-        <div class="about-image">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-73_900x.jpg?v=1785147714" alt="Bērni darbojas ar tehnoloģijām" loading="lazy">
+
+        <!-- RIGHT: PRODUCT INFO -->
+        <div class="product-info">
+          <div class="product-vendor">Tehnoloģiju Skola</div>
+          <h1 class="product-title">Bratus Tehnoloģiju akadēmijas nodarbības Pliederu ielā 22, Ķekavā</h1>
+          <div class="product-price">15,00 €</div>
+
+          <!-- Nodarbības veids (display only) -->
+          <div>
+            <div class="variant-label">1. Izvēlieties nodarbības veidu:</div>
+            <div class="variant-pills">
+              <div class="variant-pill active">Standarta</div>
+              <div class="variant-pill">Privātā</div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <a href="https://bratus.lv/products/vienreizeja-nodarbibu-samaksa-tehnologiju-nodarbibas-bratus" target="_blank" rel="noopener" class="product-cta">Apskatīt pieejamos laikus</a>
+
+          <!-- Meta -->
+          <div class="product-meta">
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Pliederu iela 22, Ķekava, 2. stāvs
+            </span>
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Izvēlies pieejamo datumu un laiku bratus.lv
+            </span>
+            <span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Nodarbības ilgums ~1 h 15 min
+            </span>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ============ NORĀDES LĪDZ KABINETAM ============ -->
-  <section class="section section-bg" id="norades">
+  <!-- ============ PRODUCT DESCRIPTION (TABS) ============ -->
+  <div class="product-description">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">Kā mūs atrast</span>
-        <h2 class="section-title">Norādes līdz <strong>kabinetam</strong></h2>
+      <div class="desc-tabs" id="descTabs">
+        <button class="desc-tab active" data-panel="panel-apraksts">Apraksts</button>
+        <button class="desc-tab" data-panel="panel-tehnologijas">Tehnoloģijas</button>
+        <button class="desc-tab" data-panel="panel-norades">Norādes līdz kabinetam</button>
+        <button class="desc-tab" data-panel="panel-karte">Kā mūs atrast?</button>
       </div>
+    </div>
 
-      <div class="about-grid">
-        <div class="about-image">
-          <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL07728_900x.jpg?v=1785148014" alt="Galvenās ieejas norāde" loading="lazy">
-        </div>
-        <div class="about-text">
-          <div class="features-list">
-            <div class="feature-item"><span class="feature-check" style="color:var(--accent);"><strong>1.</strong></span><span>Dodies pie galvenās ieejas un <strong>zvani skolotājam uz +371 28271220</strong>, jo durvis ir visu laiku aizslēgtas, un skolotājs tās atvērs.</span></div>
-            <div class="feature-item"><span class="feature-check" style="color:var(--accent);"><strong>2.</strong></span><span>Ej līdz gaiteņa galam. Kreisajā pusē atradīsi trepes – <strong>dodies augšā uz 2. stāvu</strong>.</span></div>
-            <div class="feature-item"><span class="feature-check" style="color:var(--accent);"><strong>3.</strong></span><span>Otrajā stāvā izej pa durvīm un <strong>dodies taisni</strong>, ejot garām stiklotajiem kabinetiem.</span></div>
-            <div class="feature-item"><span class="feature-check" style="color:var(--accent);"><strong>4.</strong></span><span>Gaiteņa galā <strong>nogriezies pa kreisi</strong>.</span></div>
-            <div class="feature-item"><span class="feature-check" style="color:var(--accent);"><strong>5.</strong></span><span>Turpini iet, līdz ieraudzīsi <strong>koka durvis ar uzrakstu "Tehnoloģiju akadēmija"</strong> – esi klāt!</span></div>
+    <!-- Apraksts -->
+    <div class="desc-panel active" id="panel-apraksts">
+      <div class="container">
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem);">
+          <div>
+            <h3>Norises vieta</h3>
+            <p>Nodarbības notiek mūsu pašu telpās — <strong style="color:var(--product-ink);">Ķekavā, Pliederu ielā 22, otrajā stāvā, "Tehnoloģiju akadēmijas" kabinetā</strong>. Tās ir pilnībā aprīkotas ar visām blakus minētajām modernajām iekārtām veiksmīgai ideju realizēšanai.</p>
+          </div>
+          <div>
+            <h3>Ko bērni apgūs?</h3>
+            <p>Katrā darbnīcā bērni paši izstrādās savus projektus, iemācīsies strādāt ar profesionālām iekārtām un attīstīs praktiskas, nākotnei noderīgas gan digitālās, gan tehniskās prasmes. Viņi iemācīsies no idejas izstrādāt digitālu dizainu un pārvērst to reālā, funkcionālā objektā.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ============ KARTE ============ -->
-  <section class="section section-surface">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Atrašanās vieta</span>
-        <h2 class="section-title">Kā mūs <strong>atrast?</strong></h2>
-      </div>
-      <div style="width:100%; border-radius:0; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.08);">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2327.399046123456!2d24.2282521!3d56.831869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eed35c7b5e0041%3A0x7f8ba3e35ef5551e!2sPliederu%20iela%2022%2C%20%C4%B6ekava!5e0!3m2!1slv!2slv!4v1690000000000" width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Atrašanās vieta Pliederu ielā 22, Ķekavā"></iframe>
+    <!-- Tehnoloģijas -->
+    <div class="desc-panel" id="panel-tehnologijas">
+      <div class="container">
+        <h3>Tehnoloģijas, ar kurām strādāsim:</h3>
+        <ul class="tech-list">
+          <li><span class="tech-arrow">→</span><span><strong>CO₂ lāzergriezējs:</strong> Griež un gravē (finieri, akrilu u.c.). No dizaina līdz izgatavošanai.</span></li>
+          <li><span class="tech-arrow">→</span><span><strong>3D printeris:</strong> Trīsdimensiju objektu modelēšana un izstrāde. No idejas līdz izdrukai.</span></li>
+          <li><span class="tech-arrow">→</span><span><strong>Plotergriezējs:</strong> Uzlīmes, trafareti un dizaini uz dažādiem materiāliem. Ātrs un vizuāls rezultāts.</span></li>
+          <li><span class="tech-arrow">→</span><span><strong>Šķiedru lāzers:</strong> Precīza gravēšana un personalizācija uz metāla virsmām.</span></li>
+          <li><span class="tech-arrow">→</span><span><strong>CNC frēze:</strong> Precīzu detaļu apstrāde un izgatavošana ar skaidriem soļiem.</span></li>
+          <li><span class="tech-arrow">→</span><span><strong>Mikroelektronika:</strong> Mācīsimies lodēt komponentes, kā arī programmēt Arduino plati, izmantojot mākslīgo intelektu.</span></li>
+        </ul>
       </div>
     </div>
-  </section>
 
-  <!-- ============ PIETEIKŠANĀS — CENA UN CTA ============ -->
-  <section class="section section-bg" id="pieteikties">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Pieteikšanās</span>
-        <h2 class="section-title">Piesakies <strong>nodarbībai</strong> klātienē</h2>
-        <p class="section-subtitle" style="margin:0 auto;">Izvēlies sev ērtāko laiku un piesaki savu bērnu aizraujošai tehnoloģiju nodarbībai Ķekavā.</p>
-      </div>
-
-      <div style="max-width:500px; margin:0 auto; background:#fff; border:1px solid var(--border); padding:2.5rem; text-align:center; box-shadow:0 8px 40px rgba(0,0,0,0.04);">
-        <div style="font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.15em; color:var(--accent); margin-bottom:0.5rem;">Cena par vienu nodarbību</div>
-        <div style="font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(2.5rem,5vw,3.5rem); font-weight:700; color:var(--ink); line-height:1; margin-bottom:0.5rem;">15,00 €</div>
-        <p style="color:var(--ink2); font-size:0.9rem; margin-bottom:2rem;">Cenā iekļauti visi materiāli un iekārtu izmantošana</p>
-        <a href="https://bratus.lv/products/vienreizeja-nodarbibu-samaksa-tehnologiju-nodarbibas-bratus" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="width:100%; font-size:1rem; padding:1rem 2rem;">Apskatīt pieejamos laikus</a>
-        <p style="color:var(--ink3); font-size:0.78rem; margin-top:1rem;">Jūs tiksiet novirzīti uz bratus.lv, lai izvēlētos laiku un pabeigtu pieteikšanos</p>
+    <!-- Norādes -->
+    <div class="desc-panel" id="panel-norades">
+      <div class="container">
+        <h3>Norādes līdz kabinetam</h3>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items:start;">
+          <div>
+            <ol class="directions-list">
+              <li>
+                <span class="step-num">1</span>
+                <span>Dodies pie galvenās ieejas un <strong>zvani skolotājam uz +371 28271220</strong>, jo durvis ir visu laiku aizslēgtas, un skolotājs tās atvērs.</span>
+              </li>
+              <li>
+                <span class="step-num">2</span>
+                <span>Ej līdz gaiteņa galam. Kreisajā pusē atradīsi trepes – <strong>dodies augšā uz 2. stāvu</strong>.</span>
+              </li>
+              <li>
+                <span class="step-num">3</span>
+                <span>Otrajā stāvā izej pa durvīm un <strong>dodies taisni</strong>, ejot garām stiklotajiem kabinetiem.</span>
+              </li>
+              <li>
+                <span class="step-num">4</span>
+                <span>Gaiteņa galā <strong>nogriezies pa kreisi</strong>.</span>
+              </li>
+              <li>
+                <span class="step-num">5</span>
+                <span>Turpini iet, līdz ieraudzīsi <strong>koka durvis ar uzrakstu "Tehnoloģiju akadēmija"</strong> – esi klāt!</span>
+              </li>
+            </ol>
+          </div>
+          <div class="directions-grid">
+            <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL07728_900x.jpg?v=1785148014" alt="Ieeja ēkā" loading="lazy">
+            <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/1477128674180906_900x.jpg?v=1773759997" alt="CNC iekārta kabinetā" loading="lazy">
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- Karte -->
+    <div class="desc-panel" id="panel-karte">
+      <div class="container">
+        <h3>Kā mūs atrast?</h3>
+        <div class="map-wrapper">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2327.399046123456!2d24.2282521!3d56.831869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eed35c7b5e0041%3A0x7f8ba3e35ef5551e!2sPliederu%20iela%2022%2C%20%C4%B6ekava!5e0!3m2!1slv!2slv!4v1690000000000" width="100%" height="450" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Atrašanās vieta Pliederu ielā 22, Ķekavā"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer" role="contentinfo">
@@ -206,6 +495,36 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===== GALLERY & TABS JS ===== -->
+  <script>
+    // Image gallery
+    (function(){
+      var thumbs = document.querySelectorAll('.gallery-thumb');
+      var mainImg = document.getElementById('galleryMainImg');
+      thumbs.forEach(function(thumb){
+        thumb.addEventListener('click', function(){
+          thumbs.forEach(function(t){ t.classList.remove('active'); });
+          this.classList.add('active');
+          mainImg.src = this.dataset.img;
+        });
+      });
+    })();
+
+    // Description tabs
+    (function(){
+      var tabs = document.querySelectorAll('.desc-tab');
+      var panels = document.querySelectorAll('.desc-panel');
+      tabs.forEach(function(tab){
+        tab.addEventListener('click', function(){
+          tabs.forEach(function(t){ t.classList.remove('active'); });
+          panels.forEach(function(p){ p.classList.remove('active'); });
+          this.classList.add('active');
+          document.getElementById(this.dataset.panel).classList.add('active');
+        });
+      });
+    })();
+  </script>
 
   <script src="js/main.js"></script>
 </body>
