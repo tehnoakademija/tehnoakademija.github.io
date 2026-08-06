@@ -267,8 +267,9 @@
       .desc-two-col {
         grid-template-columns: 1fr;
       }
-      .directions-grid {
-        grid-template-columns: 1fr;
+      .directions-grid,
+      .directions-list[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
       }
     }
   </style>
@@ -416,35 +417,31 @@
       <!-- Section: Norādes līdz kabinetam -->
       <section class="desc-section">
         <h2>Norādes līdz kabinetam</h2>
-        <div class="desc-two-col">
-          <div>
-            <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL07728_900x.jpg?v=1785148014" alt="Galvenās ieejas norāde" loading="lazy" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--product-border); margin-bottom:1rem;">
-          </div>
-          <div>
-            <ol class="directions-list">
-              <li>
-                <span class="step-num">1</span>
-                <span>Dodies pie galvenās ieejas (norādīta attēlā) un <strong>zvani skolotājam uz +371 28271220</strong>, jo durvis ir visu laiku aizslēgtas, un skolotājs tās atvērs.</span>
-              </li>
-              <li>
-                <span class="step-num">2</span>
-                <span>Ej līdz gaiteņa galam. Kreisajā pusē atradīsi trepes – <strong>dodies augšā uz 2. stāvu</strong>.</span>
-              </li>
-              <li>
-                <span class="step-num">3</span>
-                <span>Otrajā stāvā izej pa durvīm un <strong>dodies taisni</strong>, ejot garām stiklotajiem kabinetiem.</span>
-              </li>
-              <li>
-                <span class="step-num">4</span>
-                <span>Gaiteņa galā <strong>nogriezies pa kreisi</strong>.</span>
-              </li>
-              <li>
-                <span class="step-num">5</span>
-                <span>Turpini iet, līdz ieraudzīsi <strong>koka durvis ar uzrakstu "Tehnoloģiju akadēmija"</strong> – esi klāt!</span>
-              </li>
-            </ol>
-          </div>
-        </div>
+        <!-- Image above -->
+        <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/Galvena_ieeja.webp?v=1785763997" alt="Galvenās ieejas norāde" loading="lazy" style="width:100%; max-height:450px; object-fit:cover; border:1px solid var(--product-border); margin-bottom:2rem;">
+        <!-- Steps below, in a clean 2-column grid -->
+        <ol class="directions-list" style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem 2rem;">
+          <li>
+            <span class="step-num">1</span>
+            <span>Dodies pie galvenās ieejas (norādīta attēlā) un <strong>zvani skolotājam uz +371 28271220</strong>, jo durvis ir visu laiku aizslēgtas, un skolotājs tās atvērs.</span>
+          </li>
+          <li>
+            <span class="step-num">2</span>
+            <span>Ej līdz gaiteņa galam. Kreisajā pusē atradīsi trepes – <strong>dodies augšā uz 2. stāvu</strong>.</span>
+          </li>
+          <li>
+            <span class="step-num">3</span>
+            <span>Otrajā stāvā izej pa durvīm un <strong>dodies taisni</strong>, ejot garām stiklotajiem kabinetiem.</span>
+          </li>
+          <li>
+            <span class="step-num">4</span>
+            <span>Gaiteņa galā <strong>nogriezies pa kreisi</strong>.</span>
+          </li>
+          <li>
+            <span class="step-num">5</span>
+            <span>Turpini iet, līdz ieraudzīsi <strong>koka durvis ar uzrakstu "Tehnoloģiju akadēmija"</strong> – esi klāt!</span>
+          </li>
+        </ol>
       </section>
 
       <!-- Section: Kā mūs atrast? -->
