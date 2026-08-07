@@ -570,8 +570,8 @@ this.popupScriptUrl='https://cdn.shopify.com/extensions/019f4b44-3696-7ee0-aa77-
 this.routes={domain:'https://bratus.lv',root_url:'/',collections_url:'/collections',all_products_collection_url:'/collections/all',cart_url:'/cart',cart_add_url:'/cart/add',cart_change_url:'/cart/change',cart_clear_url:'/cart/clear',cart_update_url:'/cart/update',product_recommendations_url:'/recommendations/products'};
 this.queryParams={};
 if(window.location.search.length){new URLSearchParams(window.location.search).forEach((value,key)=>{this.queryParams[key]=value})}
-this.money_format="€{{amount_with_comma_separator}}";
-this.money_with_currency_format="€{{amount_with_comma_separator}} EUR";
+this.money_format="ï¿½{{amount_with_comma_separator}}";
+this.money_with_currency_format="ï¿½{{amount_with_comma_separator}} EUR";
 this.currencyCodeEnabled=true;this.abTestingData = [];this.formatMoney=function(t,e){const r=this.currencyCodeEnabled?this.money_with_currency_format:this.money_format;function a(t,e){return void 0===t?e:t}function o(t,e,r,o){if(e=a(e,2),r=a(r,","),o=a(o,"."),isNaN(t)||null==t)return 0;var n=(t=(t/100).toFixed(e)).split(".");return n[0].replace(/(\d)(?=(\d\d\d)+(?!\d))/g,"$1"+r)+(n[1]?o+n[1]:"")}"string"==typeof t&&(t=t.replace(".",""));var n="",i=/\{\{\s*(\w+)\s*\}\}/,s=e||r;switch(s.match(i)[1]){case"amount":n=o(t,2);break;case"amount_no_decimals":n=o(t,0);break;case"amount_with_comma_separator":n=o(t,2,".",",");break;case"amount_with_space_separator":n=o(t,2," ",",");break;case"amount_with_period_and_space_separator":n=o(t,2," ",".");break;case"amount_no_decimals_with_comma_separator":n=o(t,0,".",",");break;case"amount_no_decimals_with_space_separator":n=o(t,0," ");break;case"amount_with_apostrophe_separator":n=o(t,2,"'",".")}return s.replace(i,n)};
 this.resizeImage=function(t,e){try{if(!e||"original"==e||"full"==e||"master"==e)return t;if(-1!==t.indexOf("cdn.shopify.com")||-1!==t.indexOf("/cdn/shop/")){var r=t.match(/\.(jpg|jpeg|gif|png|bmp|bitmap|tiff|tif|webp)((\#[0-9a-z\-]+)?(\?v=.*)?)?$/gim);if(null==r)return null;var a=t.split(r[0]),o=r[0];return a[0]+"_"+e+o}}catch(r){return t}return t};
 this.getProduct=function(t){if(!t)return!1;let e=("/"===this.routes.root_url?"":this.routes.root_url)+"/products/"+t+".js?shop="+Shopify.shop;return window.ECOM_LIVE&&(e="/shop/builder/ajax/ecom-proxy/products/"+t+"?shop="+Shopify.shop),window.fetch(e,{headers:{"Content-Type":"application/json"}}).then(t=>t.ok?t.json():false)};
@@ -623,14 +623,14 @@ if(window.Shopify&&window.Shopify.designMode&&window.top&&window.top.opener){win
 			collectionPageId: "",
 			noImageAvailableImgUrl: "https://cdn.shopify.com/extensions/019f82fd-3780-714d-82f8-2380512ff058/version_803f9ea4-2026-07-21_11h44m/assets/no-image-available.png",
 			currentLocale: {
-				name: "latviešu (Latvija)",
+				name: "latvieï¿½u (Latvija)",
 				primary: true,
 				iso_code: "lv-LV",
 			},
 			country: {
 				name: "Latvija",
 				iso_code: "LV",
-				currencySymbol: "€",
+				currencySymbol: "ï¿½",
 				market_id: "47814148371",
 			},
 			is_locked: false,
@@ -1022,7 +1022,7 @@ first.parentNode.insertBefore(script, first);
     z-index: 999999 !important;
   }
 
-  /* Pilniba nonemts tumšais parklajums parejai lapai */
+  /* Pilniba nonemts tumï¿½ais parklajums parejai lapai */
   details[open] > .header__icon--summary::before {
     display: none !important;
   }
@@ -1035,7 +1035,7 @@ first.parentNode.insertBefore(script, first);
     z-index: 999999 !important;
   }
   
-  /* Iekšejais panelis (Tikai #171717 ar caurspidigumu, bez blur efektiem) */
+  /* Iekï¿½ejais panelis (Tikai #171717 ar caurspidigumu, bez blur efektiem) */
   .menu-drawer__inner-container {
     background: rgba(23, 23, 23, 0.95) !important; 
     backdrop-filter: none !important;
@@ -1044,7 +1044,7 @@ first.parentNode.insertBefore(script, first);
     box-shadow: 20px 0 50px rgba(0,0,0,0.8);
     height: 100vh !important;
     height: 100dvh !important;
-    width: 66.66vw !important; /* Tieši 2/3 no ekrana */
+    width: 66.66vw !important; /* Tieï¿½i 2/3 no ekrana */
     max-width: 66.66vw !important;
     display: flex;
     flex-direction: column;
@@ -1052,7 +1052,7 @@ first.parentNode.insertBefore(script, first);
     overflow-x: hidden;
   }
 
-  /* Apakšizvelne (Submenu) - aiznem visus vecaka (66.66vw) izmerus */
+  /* Apakï¿½izvelne (Submenu) - aiznem visus vecaka (66.66vw) izmerus */
   .menu-drawer__submenu {
     background: rgba(23, 23, 23, 0.98) !important;
     backdrop-filter: none !important;
@@ -1121,7 +1121,7 @@ first.parentNode.insertBefore(script, first);
 
   /* --- ATPAKAL POGA PABIDITA UZ LEJU --- */
   .menu-drawer__close-button {
-    margin-top: 6.5rem !important; /* Parbidits zem PVN sledža */
+    margin-top: 6.5rem !important; /* Parbidits zem PVN sledï¿½a */
     display: flex !important;
     align-items: center !important;
     gap: 15px !important;
@@ -1135,7 +1135,7 @@ first.parentNode.insertBefore(script, first);
   }
 
   .menu-drawer__close-button .icon-arrow {
-    transform: scaleX(-1) !important; /* Apgriež bultinu uz otru pusi */
+    transform: scaleX(-1) !important; /* Apgrieï¿½ bultinu uz otru pusi */
     width: 20px;
     height: 20px;
     color: var(--bratus-accent);
@@ -1163,7 +1163,7 @@ first.parentNode.insertBefore(script, first);
     font-weight: 700;
   }
 
-  /* Apakšeja sadala (Konts, Socialie tikli) */
+  /* Apakï¿½eja sadala (Konts, Socialie tikli) */
   .menu-drawer__utility-links {
     background: transparent !important;
     border-top: 1px solid var(--bratus-border);
@@ -1637,13 +1637,13 @@ first.parentNode.insertBefore(script, first);
                                         </a></li><li><a href="/collections/cnc-freze" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                           CNC Frezes
                                         </a></li><li><a href="/pages/markesanas-iekartas" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
-                                          Markešanas iekartas
+                                          Markeï¿½anas iekartas
                                         </a></li><li><a href="/products/plotergriezejs" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                           Plotergriezejs
                                         </a></li><li><a href="/pages/lietotas-iekartas" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                           Lietotas iekartas
                                         </a></li><li><a href="/pages/filtresanas-sistemas" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
-                                          Filtrešanas Sistemas
+                                          Filtreï¿½anas Sistemas
                                         </a></li><li><a href="/pages/aksesuari" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                           CO2 lazergravetaja aksesuari
                                         </a></li><li><a href="/pages/bratus-katalogs" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
@@ -1690,7 +1690,7 @@ first.parentNode.insertBefore(script, first);
                                   </div>
                                 </button>
                                 <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1"><li><a href="/pages/lazergravesanas-pakalpojumi-bratus" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
-                                          LAZERGRAVEŠANAS PAKALPOJUMI
+                                          LAZERGRAVEï¿½ANAS PAKALPOJUMI
                                         </a></li><li><a href="/pages/cnc-apkope-remonts" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                           APKOPE UN SERVISS
                                         </a></li><li><a href="/blogs/piegade" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
@@ -1704,7 +1704,7 @@ first.parentNode.insertBefore(script, first);
                             </div>
                           </details></li><li><details id="Details-menu-drawer-menu-item-4">
                             <summary class="menu-drawer__menu-item list-menu__item link link--text focus-inset">
-                              3D FILAMENTI, PRINTEŠANA UN MODELEŠANA
+                              3D FILAMENTI, PRINTEï¿½ANA UN MODELEï¿½ANA
                               <svg
   viewBox="0 0 14 10"
   fill="none"
@@ -1737,11 +1737,11 @@ first.parentNode.insertBefore(script, first);
 
                                   <div class="bratus-back-content">
                                     <span class="bratus-back-label">Atpakal</span>
-                                    <span class="bratus-back-title">3D FILAMENTI, PRINTEŠANA UN MODELEŠANA</span>
+                                    <span class="bratus-back-title">3D FILAMENTI, PRINTEï¿½ANA UN MODELEï¿½ANA</span>
                                   </div>
                                 </button>
                                 <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1"><li><a href="/pages/3d-pakalpojumi" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
-                                          3D Printešana un Modelešana
+                                          3D Printeï¿½ana un Modeleï¿½ana
                                         </a></li><li><a href="/collections/3d-filamenti" class="menu-drawer__menu-item link link--text list-menu__item focus-inset">
                                           3D Filamenti
                                         </a></li></ul>
@@ -1810,13 +1810,13 @@ Pieslegties</a><ul class="list list-social list-unstyled" role="list"><li class=
                                 </a></li><li><a href="/collections/cnc-freze" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
                                   CNC Frezes
                                 </a></li><li><a href="/pages/markesanas-iekartas" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
-                                  Markešanas iekartas
+                                  Markeï¿½anas iekartas
                                 </a></li><li><a href="/products/plotergriezejs" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
                                   Plotergriezejs
                                 </a></li><li><a href="/pages/lietotas-iekartas" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
                                   Lietotas iekartas
                                 </a></li><li><a href="/pages/filtresanas-sistemas" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
-                                  Filtrešanas Sistemas
+                                  Filtreï¿½anas Sistemas
                                 </a></li><li><a href="/pages/aksesuari" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
                                   CO2 lazergravetaja aksesuari
                                 </a></li><li><a href="/pages/bratus-katalogs" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
@@ -1831,7 +1831,7 @@ Pieslegties</a><ul class="list list-social list-unstyled" role="list"><li class=
 </svg>
 
                       </summary><ul id="HeaderMenu-MenuList-3" class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1"><li><a href="/pages/lazergravesanas-pakalpojumi-bratus" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
-                                  LAZERGRAVEŠANAS PAKALPOJUMI
+                                  LAZERGRAVEï¿½ANAS PAKALPOJUMI
                                 </a></li><li><a href="/pages/cnc-apkope-remonts" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
                                   APKOPE UN SERVISS
                                 </a></li><li><a href="/blogs/piegade" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
@@ -1844,13 +1844,13 @@ Pieslegties</a><ul class="list list-social list-unstyled" role="list"><li class=
                   </header-menu></li><li><header-menu>
                     <details id="Details-HeaderMenu-4" class="">
                       <summary class="header__menu-item list-menu__item link focus-inset">
-                        <span>3D FILAMENTI, PRINTEŠANA UN MODELEŠANA</span>
+                        <span>3D FILAMENTI, PRINTEï¿½ANA UN MODELEï¿½ANA</span>
                         <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
 </svg>
 
                       </summary><ul id="HeaderMenu-MenuList-4" class="header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1"><li><a href="/pages/3d-pakalpojumi" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
-                                  3D Printešana un Modelešana
+                                  3D Printeï¿½ana un Modeleï¿½ana
                                 </a></li><li><a href="/collections/3d-filamenti" class="header__menu-item list-menu__item link link--text focus-inset caption-large">
                                   3D Filamenti
                                 </a></li></ul></details>
@@ -1894,7 +1894,7 @@ Pieslegties</a><ul class="list list-social list-unstyled" role="list"><li class=
           </div><div class="header__localization" style="margin-top: 0.2rem;">
     
     <!-- Desktop valodu forma --><form method="post" action="/localization" id="HeaderLanguageFormDesktop" accept-charset="UTF-8" class="shopify-localization-form" enctype="multipart/form-data"><input type="hidden" name="form_type" value="localization" /><input type="hidden" name="utf8" value="?" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="return_to" value="/pages/nometnes-2026" /><select class="lang-selector-desktop" name="locale_code" onchange="this.form.submit()"><option value="lv-LV" selected>
-            Latviešu (latvija)
+            Latvieï¿½u (latvija)
           </option><option value="en">
             English
           </option></select></form><!-- Mobila valodu forma --><form method="post" action="/localization" id="HeaderLanguageFormMobile" accept-charset="UTF-8" class="shopify-localization-form" enctype="multipart/form-data"><input type="hidden" name="form_type" value="localization" /><input type="hidden" name="utf8" value="?" /><input type="hidden" name="_method" value="put" /><input type="hidden" name="return_to" value="/pages/nometnes-2026" /><select class="lang-selector-mobile" name="locale_code" onchange="this.form.submit()">
@@ -2034,7 +2034,7 @@ Produkts pievienots grozam
   "@context": "https://schema.org",
   "@type": "ChildrensEvent",
   "name": "CREATE CAMP 2026: Tehnologiju nometne berniem",
-  "description": "Vasaras tehnologiju nometne 2026 Kekava. Apgusti programmešanu, robotiku, digitalo dizainu un mikroelektroniku programmvadamo iekartu nometnes. Vasaras nometnes berniem un jauniešiem vecuma no 8 lidz 17 gadiem.",
+  "description": "Vasaras tehnologiju nometne 2026 Kekava. Apgusti programmeï¿½anu, robotiku, digitalo dizainu un mikroelektroniku programmvadamo iekartu nometnes. Vasaras nometnes berniem un jaunieï¿½iem vecuma no 8 lidz 17 gadiem.",
   "image": "https://cdn.shopify.com/s/files/1/0720/6325/4803/files/Copy_of_Sihao_lazeri_1920_x_580_px.jpg",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
@@ -2306,12 +2306,12 @@ Produkts pievienots grozam
 }
 
 /* ------------------------------------------------ */
-/* TOPBAR (slepts — aizstats ar announce baru) */
+/* TOPBAR (slepts ï¿½ aizstats ar announce baru) */
 /* ------------------------------------------------ */
 .cc26-topbar { display: none !important; }
 
 /* ------------------------------------------------ */
-/* ATSAUKSMJU PARSLEGŠANAS */
+/* ATSAUKSMJU PARSLEGï¿½ANAS */
 /* ------------------------------------------------ */
 .cc26-reviews--micro { display: none !important; }
 .cc26--micro .cc26-reviews--equipment { display: none !important; }
@@ -2321,7 +2321,7 @@ Produkts pievienots grozam
 }
 
 /* ------------------------------------------------ */
-/* SWITCH POGAS (sleptas — aizstatas ar camp kartitem) */
+/* SWITCH POGAS (sleptas ï¿½ aizstatas ar camp kartitem) */
 /* ------------------------------------------------ */
 .cc26-switchBtns { display: none !important; }
 
@@ -2426,7 +2426,7 @@ Produkts pievienots grozam
 }
 
 /* ------------------------------------------------ */
-/* PELDOŠA POGA (MOBILA) */
+/* PELDOï¿½A POGA (MOBILA) */
 /* ------------------------------------------------ */
 .cc26-mobile-sticky-btn {
     display: none !important;
@@ -2454,7 +2454,7 @@ Produkts pievienots grozam
         /* Stikla mala */
         border: 1px solid rgba(255, 255, 255, 0.4) !important;
 
-        /* Iekšejais spidums + areja ena */
+        /* Iekï¿½ejais spidums + areja ena */
         box-shadow:
             inset 1px 1px 0 rgba(255, 255, 255, 0.45),
             inset 0 -1px 0 rgba(255, 255, 255, 0.1),
@@ -2684,7 +2684,7 @@ Produkts pievienots grozam
     display: block;
 }
 
-/* CTA — matte glass */
+/* CTA ï¿½ matte glass */
 .cc26-campCard__cta {
     display: block; width: 100%; padding: 15px 20px;
     border-radius: 14px; font-size: 15px; font-weight: 800;
@@ -2827,7 +2827,7 @@ Produkts pievienots grozam
 }
 
 /* ------------------------------------------------ */
-/* SPOT POPUP — atbrivojusies vieta */
+/* SPOT POPUP ï¿½ atbrivojusies vieta */
 /* ------------------------------------------------ */
 .cc26-spotPopup {
     position: fixed; inset: 0;
@@ -2859,14 +2859,14 @@ Produkts pievienots grozam
     content: ''; position: absolute; inset: 0; border-radius: 26px; pointer-events: none;
     opacity: 0.7;
 }
-/* Purple — mikro */
+/* Purple ï¿½ mikro */
 .cc26-spotPopup--micro .cc26-spotPopup__card {
     border-color: rgba(176,105,219,0.4);
 }
 .cc26-spotPopup--micro .cc26-spotPopup__card::before {
     background: radial-gradient(ellipse at 50% 0%, rgba(176,105,219,0.18), transparent 65%);
 }
-/* Orange — equipment */
+/* Orange ï¿½ equipment */
 .cc26-spotPopup--eq .cc26-spotPopup__card {
     border-color: rgba(245,158,11,0.4);
 }
@@ -2949,7 +2949,7 @@ Produkts pievienots grozam
 }
 .cc26-spotPopup__later:hover { color: rgba(255,255,255,0.55); }
 
-/* Spot popup — izpardots stavoklis */
+/* Spot popup ï¿½ izpardots stavoklis */
 .cc26-spotPopup--soldOut .cc26-spotPopup__card {
     opacity: 0.82;
     filter: grayscale(0.3);
@@ -3041,7 +3041,7 @@ Produkts pievienots grozam
   transition: opacity 0.25s;
 }
 
-/* Equipment (oranžs) */
+/* Equipment (oranï¿½s) */
 .cc26-priceCard--eq,
 .cc26-noteCard--eq {
   border-color: rgba(245,158,11,0.35);
@@ -3109,7 +3109,7 @@ Produkts pievienots grozam
   color: rgba(255,255,255,0.5);
 }
 
-/* Atlaižu rindas */
+/* Atlaiï¿½u rindas */
 .cc26-disc {
   display: flex;
   align-items: center;
@@ -3171,7 +3171,7 @@ Produkts pievienots grozam
 .cc26-line { height: 1px; background: rgba(255,255,255,0.08); margin: 16px 0; }
 
 /* ------------------------------------------------ */
-/* PELDOŠAIS VIDEO WIDGETS */
+/* PELDOï¿½AIS VIDEO WIDGETS */
 /* ------------------------------------------------ */
 .cc26-floating-video {
     position: fixed;
@@ -3242,7 +3242,7 @@ Produkts pievienots grozam
     align-items: center;
     justify-content: center;
     font-size: 30px;
-    padding-left: 6px; /* optiskai trisstura centrešanai */
+    padding-left: 6px; /* optiskai trisstura centreï¿½anai */
     box-shadow: 0 10px 30px rgba(245,158,11,0.6);
     transition: transform 0.2s ease;
 }
@@ -3263,13 +3263,13 @@ Produkts pievienots grozam
     font-size: 28px;
     font-weight: 300;
     cursor: pointer;
-    z-index: 2147483647 !important; /* Ari pari pašam video iframe'am */
+    z-index: 2147483647 !important; /* Ari pari paï¿½am video iframe'am */
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(245,158,11,0.5);
     transition: all 0.3s ease;
-    padding-bottom: 4px; /* Teksta vizuala centrešana X burtam */
+    padding-bottom: 4px; /* Teksta vizuala centreï¿½ana X burtam */
 }
 .cc26-floating-video__close:hover {
     transform: scale(1.15) rotate(90deg);
@@ -3284,7 +3284,7 @@ Produkts pievienots grozam
     top: 50%;
     left: 0;
     transform: translateY(-50%); /* Centre vertikali vidu */
-    writing-mode: vertical-lr; /* Parveido tekstu uz vertikalu lasišanu */
+    writing-mode: vertical-lr; /* Parveido tekstu uz vertikalu lasiï¿½anu */
     text-orientation: mixed;
     background: linear-gradient(135deg, #f59e0b, #d97706);
     color: #000;
@@ -3305,10 +3305,10 @@ Produkts pievienots grozam
     filter: brightness(1.1);
 }
 .cc26-floating-video__reopen.is-visible {
-    display: block; /* writing-mode un flex dažreiz konflikte, 'block' šeit ideals */
+    display: block; /* writing-mode un flex daï¿½reiz konflikte, 'block' ï¿½eit ideals */
 }
 
-/* Peldošais Video Widget Mobile (Popup style) */
+/* Peldoï¿½ais Video Widget Mobile (Popup style) */
 @media (max-width: 768px) {
     .cc26-floating-video {
         bottom: auto;
@@ -3349,7 +3349,7 @@ Produkts pievienots grozam
         border: 1px solid rgba(255, 255, 255, 0.35);
         border-right: none; /* Piestiprinats pie malas */
 
-        /* Iekšejais spidums */
+        /* Iekï¿½ejais spidums */
         box-shadow:
             inset 1px 1px 0 rgba(255, 255, 255, 0.4),
             inset 0 -1px 0 rgba(255, 255, 255, 0.1),
@@ -3396,7 +3396,7 @@ Produkts pievienots grozam
   <div class="cc26-announce" role="banner" aria-label="Vietu informacija">
     <p class="cc26-announce__text">
       
-        Šovasar atlikušas <strong>9 no 100 vietam</strong>
+        ï¿½ovasar atlikuï¿½as <strong>9 no 100 vietam</strong>
       
     </p>
     <a class="cc26-announce__btn"
@@ -3478,23 +3478,23 @@ Produkts pievienots grozam
         image: window.CC26_CONFIG.IMAGE_URLS.micro_components
       },
       'schematics': {
-        title: '2. Inženieru kludu labošana',
+        title: '2. Inï¿½enieru kludu laboï¿½ana',
         description: 'Macamies lasit un veidot elektroniskas shemas. Praktiski saliekam savus pirmos savienojumus uz macibu platem (breadboards). Ieskats PCB dizaina.',
         image: window.CC26_CONFIG.IMAGE_URLS.micro_schematics
       },
       'testing': {
-        title: '3. Lodešana un montaža',
-        description: 'Izmantojam merinstrumentus (multimetrus un osciloskopus), lai parbauditu shemas. Apgustam lodešanas pamatus un sagatavojam komponentes gala projekta platei.',
+        title: '3. Lodeï¿½ana un montaï¿½a',
+        description: 'Izmantojam merinstrumentus (multimetrus un osciloskopus), lai parbauditu shemas. Apgustam lodeï¿½anas pamatus un sagatavojam komponentes gala projekta platei.',
         image: window.CC26_CONFIG.IMAGE_URLS.micro_testing
       },
       'miniprojects': {
         title: '4. Kods un AI asistents',
-        description: 'Praktiski veidojam mazus, bet funkcionalus projektus — LED mirgošanas kedi, vienkaršu sensoru vai skanas generatoru. Šie projekti nostiprina teoretiskas zinašanas.',
+        description: 'Praktiski veidojam mazus, bet funkcionalus projektus ï¿½ LED mirgoï¿½anas kedi, vienkarï¿½u sensoru vai skanas generatoru. ï¿½ie projekti nostiprina teoretiskas zinaï¿½anas.',
         image: window.CC26_CONFIG.IMAGE_URLS.micro_miniprojects
       },
       'final': {
         title: '5. Gatavs produkts',
-        description: 'Visi materiali tiek apvienoti, lai izveidotu funkcionejošu viedo ierici. Darbojamies ar mikrokontrolieriem (Arduino vai ESP32).',
+        description: 'Visi materiali tiek apvienoti, lai izveidotu funkcionejoï¿½u viedo ierici. Darbojamies ar mikrokontrolieriem (Arduino vai ESP32).',
         image: window.CC26_CONFIG.IMAGE_URLS.micro_final
       }
     };
@@ -3502,7 +3502,7 @@ Produkts pievienots grozam
     const equipmentModuleData = {
       'co2': {
         title: 'CO2 Lazergriezejs',
-        description: '<h3 class="cc26-laser-title">Kas tas ir?</h3><p>CO2 lazergriezejs griešanai un gravešanai izmanto loti karstu gaismas staru.</p><h3 class="cc26-laser-title">Ka tas strada?</h3><ul class="cc26-laser-steps"><li><strong>Starts:</strong> Gazes caurule tiek radits lazera stars.</li><li><strong>Celš:</strong> Ar spoguliem novadits lidz kustigajai galvai.</li><li><strong>Fokuss:</strong> Leca sakopo staru viena punkta.</li><li><strong>Griešana:</strong> Karstums momenta izkause materialu.</li></ul>',
+        description: '<h3 class="cc26-laser-title">Kas tas ir?</h3><p>CO2 lazergriezejs grieï¿½anai un graveï¿½anai izmanto loti karstu gaismas staru.</p><h3 class="cc26-laser-title">Ka tas strada?</h3><ul class="cc26-laser-steps"><li><strong>Starts:</strong> Gazes caurule tiek radits lazera stars.</li><li><strong>Celï¿½:</strong> Ar spoguliem novadits lidz kustigajai galvai.</li><li><strong>Fokuss:</strong> Leca sakopo staru viena punkta.</li><li><strong>Grieï¿½ana:</strong> Karstums momenta izkause materialu.</li></ul>',
         images: [window.CC26_CONFIG.IMAGE_URLS.eq_co2_1, window.CC26_CONFIG.IMAGE_URLS.eq_co2_2, window.CC26_CONFIG.IMAGE_URLS.eq_co2_3]
       },
       'fiber': {
@@ -3512,17 +3512,17 @@ Produkts pievienots grozam
       },
       'plotter': {
         title: 'Vinila Ploteris',
-        description: '<span style="color:black;">Ploteris lauj precizi izgriezt sarežgitas formas no vinila plevem. Ideals uzlimju un dekorativu elementu veidošanai.</span>',
+        description: '<span style="color:black;">Ploteris lauj precizi izgriezt sareï¿½gitas formas no vinila plevem. Ideals uzlimju un dekorativu elementu veidoï¿½anai.</span>',
         images: [window.CC26_CONFIG.IMAGE_URLS.eq_plotter_1, window.CC26_CONFIG.IMAGE_URLS.eq_plotter_2, window.CC26_CONFIG.IMAGE_URLS.eq_plotter_3]
       },
       '3d': {
         title: '3D Printeris',
-        description: '<span style="color:black;">Iepazistam FDM 3D drukašanas tehnologiju, macamies sagatavot modelus drukašanai un risinat biežakas problemas.</span>',
+        description: '<span style="color:black;">Iepazistam FDM 3D drukaï¿½anas tehnologiju, macamies sagatavot modelus drukaï¿½anai un risinat bieï¿½akas problemas.</span>',
         images: [window.CC26_CONFIG.IMAGE_URLS.eq_3d_1, window.CC26_CONFIG.IMAGE_URLS.eq_3d_2, window.CC26_CONFIG.IMAGE_URLS.eq_3d_3]
       },
       'cnc': {
-        title: 'CNC Frezešanas Iekarta',
-        description: '<span style="color:black;">Datorvadama frezešanas iekarta koka, plastmasas un mikstu metalu apstradei. Macamies 3D modelešanu un G-koda generešanu.</span>',
+        title: 'CNC Frezeï¿½anas Iekarta',
+        description: '<span style="color:black;">Datorvadama frezeï¿½anas iekarta koka, plastmasas un mikstu metalu apstradei. Macamies 3D modeleï¿½anu un G-koda genereï¿½anu.</span>',
         images: [window.CC26_CONFIG.IMAGE_URLS.eq_cnc_1, window.CC26_CONFIG.IMAGE_URLS.eq_cnc_2, window.CC26_CONFIG.IMAGE_URLS.eq_cnc_3]
       }
     };
@@ -3578,7 +3578,7 @@ Produkts pievienots grozam
       modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape' && modalOverlay.classList.contains('is-active')) closeModal(); });
 
-      // Scroll uz hero kad spiež mode pogu
+      // Scroll uz hero kad spieï¿½ mode pogu
       document.querySelectorAll('[data-cc26-mode-btn]').forEach(btn => {
         btn.addEventListener('click', function () {
           const hero = document.getElementById('cc26-top');
@@ -3607,7 +3607,7 @@ Produkts pievienots grozam
     </div>
 
     <div class="cc26-decisionHero__content">
-      <div class="cc26-decisionHero__eyebrow">BRATUS TEHNOLOGIJU AKADEMIJA · KEKAVA</div>
+      <div class="cc26-decisionHero__eyebrow">BRATUS TEHNOLOGIJU AKADEMIJA ï¿½ KEKAVA</div>
       <h1 class="cc26-decisionHero__title" id="vasaras-nometne-2026">Vasaras Tehnologiju Nometne 2026</h1>
 <p> </p>
       <div class="cc26-campCards">
@@ -3615,26 +3615,26 @@ Produkts pievienots grozam
         <!-- IEKARTU NOMETNE -->
         <div class="cc26-campCard cc26-campCard--eq">
           <div class="cc26-campCard__badge">?? STEM Iekartu nometnes</div>
-          <div class="cc26-campCard__scarcity">Atlikušas <strong>9 vietas</strong></div>
+          <div class="cc26-campCard__scarcity">Atlikuï¿½as <strong>9 vietas</strong></div>
           <h2 class="cc26-campCard__name">STEM iekartas: 3D un lazertehnologijas</h2>
           <ul class="cc26-campCard__meta">
-           <li>?? <span><strong>15–19 junijs</strong> vai <strong>10–14 augusts</strong></span></li>
-            <li>?? Vecums: <strong>8–14 gadi</strong></li>
+           <li>?? <span><strong>15ï¿½19 junijs</strong> vai <strong>10ï¿½14 augusts</strong></span></li>
+            <li>?? Vecums: <strong>8ï¿½14 gadi</strong></li>
             <li>?? Kekavas vsk. sakumskola, Nakotnes iela 1A</li>
           </ul>
           <div class="cc26-campCard__priceRow">
-            <span class="cc26-campCard__priceBig">350€</span>
+            <span class="cc26-campCard__priceBig">350ï¿½</span>
           </div>
           <div class="cc26-campCard__discountNote">
-            Ipašas cenas:<br>
+            Ipaï¿½as cenas:<br>
             ? Musu nodarbibu skoleniem<br>
             ? Draugu atlaides<br>
-            ? Atlaižu kods - pieteikuma anketa
+            ? Atlaiï¿½u kods - pieteikuma anketa
             <br><span style="color:rgba(255,255,255,0.35);font-size:8px;">* Atlaides nesummejas</span>
           </div>
           <a href="https://bratus.lv/products/vasaras-nometne-2026?variant=52354627764565"
              target="_blank" rel="noopener" class="cc26-campCard__cta">
-            Rezervet vietu — 50€ avanss
+            Rezervet vietu ï¿½ 50ï¿½ avanss
           </a>
           <div class="cc26-campCard__deposit">Pec avansa apmaksas visu informaciju sanemsi uz noradito e-pastu</div>
           <button class="cc26-campCard__moreBtn" type="button" data-cc26-mode-btn="equipment">
@@ -3649,18 +3649,18 @@ Produkts pievienots grozam
           <div class="cc26-campCard__scarcity">Izpardots</div>
           <h2 class="cc26-campCard__name">Viedas sistemas un mikroelektronika</h2>
           <ul class="cc26-campCard__meta">
-            <li>?? <strong>20–24 julijs, 2026</strong></li>
-            <li><span>??</span><span>Vecums: <strong style="white-space:nowrap;">10–13 g.</strong> un <strong style="white-space:nowrap;">14–17 g.</strong> grupas</span></li>
+            <li>?? <strong>20ï¿½24 julijs, 2026</strong></li>
+            <li><span>??</span><span>Vecums: <strong style="white-space:nowrap;">10ï¿½13 g.</strong> un <strong style="white-space:nowrap;">14ï¿½17 g.</strong> grupas</span></li>
             <li>?? Kekavas vsk. sakumskola, Nakotnes iela 1A</li>
           </ul>
           <div class="cc26-campCard__priceRow">
-            <span class="cc26-campCard__priceBig">370€</span>
+            <span class="cc26-campCard__priceBig">370ï¿½</span>
           </div>
           <div class="cc26-campCard__discountNote">
-            Ipašas cenas:
+            Ipaï¿½as cenas:
             <br>? Musu nodarbibu skoleniem
 <br>? Draugu atlaides
-<br>? Atlaižu kods - pieteikuma anketa
+<br>? Atlaiï¿½u kods - pieteikuma anketa
 <br><span style="color:rgba(255,255,255,0.35);font-size:8px;">* Atlaides nesummejas</span>
           </div>
           <a class="cc26-campCard__cta cc26-campCard__cta--disabled">
@@ -3687,7 +3687,7 @@ Produkts pievienots grozam
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowfullscreen loading="lazy"></iframe>
         </div>
-        <div class="cc26-proofStrip__videoCaption">Video no iepriekšejas nometnes CREATE CAMP 2025</div>
+        <div class="cc26-proofStrip__videoCaption">Video no iepriekï¿½ejas nometnes CREATE CAMP 2025</div>
       </div>
       <div>
         <div class="cc26-proofStrip__label">?? Ko saka vecaki</div>
@@ -3695,12 +3695,12 @@ Produkts pievienots grozam
           <div class="cc26-testimonialCard">
             <div class="cc26-testimonialCard__stars">?????</div>
             <p class="cc26-testimonialCard__quote">"Berns teica, ka tik daudz tehnologijas vel nebija redzejis nekur!"</p>
-            <div class="cc26-testimonialCard__author">— Gustava mamma Ilze</div>
+            <div class="cc26-testimonialCard__author">ï¿½ Gustava mamma Ilze</div>
           </div>
           <div class="cc26-testimonialCard">
             <div class="cc26-testimonialCard__stars">?????</div>
             <p class="cc26-testimonialCard__quote">"Katru vakaru dels brauca majas ar jaunu projektu un milzigu lepnumu par paveikto! Paldies, tiekamies nakamgad!"</p>
-            <div class="cc26-testimonialCard__author">— Martina tetis Andris</div>
+            <div class="cc26-testimonialCard__author">ï¿½ Martina tetis Andris</div>
           </div>
         </div>
       </div>
@@ -3709,10 +3709,10 @@ Produkts pievienots grozam
 
   <!-- SEO: sleptie atslegvardi -->
   <div style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0;" aria-hidden="true">
-    <p>BRATUS Vasaras Tehnologiju nometnes 2026 Kekava. Apgusti programmešanu, robotiku, digitalo dizainu un mikroelektroniku. Vasaras nometnes berniem un jauniešiem Rigas tuvuma.</p>
+    <p>BRATUS Vasaras Tehnologiju nometnes 2026 Kekava. Apgusti programmeï¿½anu, robotiku, digitalo dizainu un mikroelektroniku. Vasaras nometnes berniem un jaunieï¿½iem Rigas tuvuma.</p>
     <h2 id="seo-robotikas-nometnes">Robotikas Nometnes 2026</h2>
-    <h2 id="seo-programmesanas-nometnes">Programmešanas Nometnes 2026</h2>
-    <h2 id="seo-radosas-nometnes">Radošas Nometnes 2026</h2>
+    <h2 id="seo-programmesanas-nometnes">Programmeï¿½anas Nometnes 2026</h2>
+    <h2 id="seo-radosas-nometnes">Radoï¿½as Nometnes 2026</h2>
   </div>
 
   <!-- -- HERO -- -->
@@ -3735,8 +3735,8 @@ Produkts pievienots grozam
               <div class="cc26-fact__v">No 20. julija lidz 24. julijam</div>
             </div>
             <div class="cc26-fact">
-              <div class="cc26-fact__k">Pieteikšanas</div>
-              <div class="cc26-fact__v">Sakas <strong>01.02.2026</strong><br><span class="cc26-muted">Avanss: 50€</span></div>
+              <div class="cc26-fact__k">Pieteikï¿½anas</div>
+              <div class="cc26-fact__v">Sakas <strong>01.02.2026</strong><br><span class="cc26-muted">Avanss: 50ï¿½</span></div>
             </div>
           </div>
           <div class="cc26-heroFill" id="cc26-heroFill" aria-label="Nometnes svarigakais"></div>
@@ -3749,11 +3749,11 @@ Produkts pievienots grozam
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowfullscreen loading="lazy"></iframe>
             </div>
-            <div class="cc26-muted cc26-small">Video no iepriekšejas nometnes.</div>
+            <div class="cc26-muted cc26-small">Video no iepriekï¿½ejas nometnes.</div>
           </div>
 
           <div class="cc26-reviews cc26-reviews--equipment" aria-label="Atsauksmes">
-            <button class="cc26-review-arrow cc26-review-arrow--left" aria-label="Iepriekšeja">‹</button>
+            <button class="cc26-review-arrow cc26-review-arrow--left" aria-label="Iepriekï¿½eja">ï¿½</button>
             <div class="cc26-reviews__track">
               <div class="cc26-reviewCard"><img src="//bratus.lv/cdn/shop/files/WhatsApp_Image_2026-01-27_at_16.36.27_900x.jpg?v=13921117663330858170" alt="Atsauksme" loading="lazy"></div>
               <div class="cc26-reviewCard"><img src="//bratus.lv/cdn/shop/files/WhatsApp_Image_2026-01-27_at_16.35.58_900x.jpg?v=1071706990300440247" alt="Atsauksme" loading="lazy"></div>
@@ -3762,29 +3762,29 @@ Produkts pievienots grozam
               <div class="cc26-reviewCard"><img src="//bratus.lv/cdn/shop/files/WhatsApp_Image_2026-01-27_at_16.36.27_1_900x.jpg?v=14291334782182079522" alt="Atsauksme" loading="lazy"></div>
               <div class="cc26-reviewCard"><img src="//bratus.lv/cdn/shop/files/WhatsApp_Image_2026-01-27_at_16.36.27_3_900x.jpg?v=435010176538542912" alt="Atsauksme" loading="lazy"></div>
             </div>
-            <button class="cc26-review-arrow cc26-review-arrow--right" aria-label="Nakama">›</button>
-            <div class="cc26-reviews__note">‹ Pavelc, lai redzetu vairak ›</div>
+            <button class="cc26-review-arrow cc26-review-arrow--right" aria-label="Nakama">ï¿½</button>
+            <div class="cc26-reviews__note">ï¿½ Pavelc, lai redzetu vairak ï¿½</div>
           </div>
 
           <div class="cc26-reviews cc26-reviews--micro" aria-label="Atsauksmes">
-            <button class="cc26-review-arrow cc26-review-arrow--left" aria-label="Iepriekšeja">‹</button>
+            <button class="cc26-review-arrow cc26-review-arrow--left" aria-label="Iepriekï¿½eja">ï¿½</button>
             <div class="cc26-reviews__track">
               <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/test_pic9_1_900x.webp?v=1775633999" alt="Mikro" loading="lazy"></div>
               <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/test_pic8_1_900x.webp?v=1775633999" alt="Mikro" loading="lazy"></div>
               <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/test_pic6_1_900x.webp?v=1775633999" alt="Mikro" loading="lazy"></div>
               <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/test_pic7_1_900x.webp?v=1775633999" alt="Mikro" loading="lazy"></div>
-              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/7.gif?v=1776176289" alt="USB-C lodešana" loading="lazy"></div>
+              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/7.gif?v=1776176289" alt="USB-C lodeï¿½ana" loading="lazy"></div>
               <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/1.gif?v=1776176292" alt="SD modula integracija" loading="lazy"></div>
               <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/4.gif?v=1776176292" alt="LED gaisminas" loading="lazy"></div>
-              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/9.gif?v=1776176292" alt="Dekodera montaža" loading="lazy"></div>
+              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/9.gif?v=1776176292" alt="Dekodera montaï¿½a" loading="lazy"></div>
               <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/3.gif?v=1776176294" alt="Mehaniska poga" loading="lazy"></div>
-              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/6.gif?v=1776176297" alt="Skalruna pievienošana" loading="lazy"></div>
-              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/5.gif?v=1776176297" alt="Baterijas pievienošana" loading="lazy"></div>
-              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/copy_85B13569-7EE2-49D8-8D62-D2CE2943116F_1_1.gif?v=1776176297" alt="Korpusa salikšana" loading="lazy"></div>
-              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/8.gif?v=1776176297" alt="Ekrana pievienošana" loading="lazy"></div>
+              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/6.gif?v=1776176297" alt="Skalruna pievienoï¿½ana" loading="lazy"></div>
+              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/5.gif?v=1776176297" alt="Baterijas pievienoï¿½ana" loading="lazy"></div>
+              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/copy_85B13569-7EE2-49D8-8D62-D2CE2943116F_1_1.gif?v=1776176297" alt="Korpusa salikï¿½ana" loading="lazy"></div>
+              <div class="cc26-reviewCard"><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/8.gif?v=1776176297" alt="Ekrana pievienoï¿½ana" loading="lazy"></div>
             </div>
-            <button class="cc26-review-arrow cc26-review-arrow--right" aria-label="Nakama">›</button>
-            <div class="cc26-reviews__note">‹ Pavelc, lai redzetu vairak ›</div>
+            <button class="cc26-review-arrow cc26-review-arrow--right" aria-label="Nakama">ï¿½</button>
+            <div class="cc26-reviews__note">ï¿½ Pavelc, lai redzetu vairak ï¿½</div>
           </div>
         </div>
       </div>
@@ -3799,7 +3799,7 @@ Produkts pievienots grozam
       <div class="cc26-wrap">
         <div class="cc26-head cc26-head--center">
           <h2 class="cc26-h2 cc26-secTitle" id="nometnu-mainas-2026"><strong>Nometnu mainas 2026</strong></h2>
-          <p class="cc26-subLead">Pieteikšanas sakas <strong>01.02.2026</strong>.</p>
+          <p class="cc26-subLead">Pieteikï¿½anas sakas <strong>01.02.2026</strong>.</p>
         </div>
         <div class="cc26-summaryBar" id="cc26-summaryBar" aria-live="polite"></div>
         <div class="cc26-campsTop">
@@ -3814,7 +3814,7 @@ Produkts pievienots grozam
       <div class="cc26-wrap">
         <div class="cc26-head cc26-head--center">
           <h2 class="cc26-h2 cc26-secTitle" id="cc26-techTitle">Tehnologijas</h2>
-          <p class="cc26-subLead" id="cc26-techLead">—</p>
+          <p class="cc26-subLead" id="cc26-techLead">ï¿½</p>
         </div>
         <div class="cc26-techchips" id="cc26-techChips"></div>
         <div class="cc26-eqgrid" id="cc26-eqGrid"></div>
@@ -3847,7 +3847,7 @@ Produkts pievienots grozam
       <div class="cc26-wrap">
         <div class="cc26-head cc26-head--center">
           <h2 class="cc26-h2 cc26-secTitle" id="cc26-benefitsTitle">Ko berni iegus?</h2>
-          <p class="cc26-subLead" id="cc26-benefitsLead">—</p>
+          <p class="cc26-subLead" id="cc26-benefitsLead">ï¿½</p>
         </div>
         <div class="cc26-grid4" id="cc26-benefitGrid"></div>
       </div>
@@ -3857,7 +3857,7 @@ Produkts pievienots grozam
       <div class="cc26-wrap">
         <div class="cc26-head cc26-head--center">
           <h2 class="cc26-h2 cc26-secTitle" id="cc26-dayTitle">Dienas plans</h2>
-          <p class="cc26-subLead" id="cc26-dayLead">—</p>
+          <p class="cc26-subLead" id="cc26-dayLead">ï¿½</p>
         </div>
         <div class="cc26-day" id="cc26-dayGrid"></div>
       </div>
@@ -3894,12 +3894,12 @@ Produkts pievienots grozam
           <p class="cc26-subLead" id="cc26-galleryLead">Foto no procesa, darbiem un atmosferas.</p>
         </div>
         <div class="cc26-gallery">
-          <button class="cc26-gbtn" type="button" aria-label="Iepriekšeja bilde" id="cc26-prev">‹</button>
+          <button class="cc26-gbtn" type="button" aria-label="Iepriekï¿½eja bilde" id="cc26-prev">ï¿½</button>
           <div class="cc26-gstage">
             <img id="cc26-gimg" alt="CREATE CAMP galerija" loading="lazy">
             <div class="cc26-gcap" id="cc26-gcap"></div>
           </div>
-          <button class="cc26-gbtn" type="button" aria-label="Nakama bilde" id="cc26-next">›</button>
+          <button class="cc26-gbtn" type="button" aria-label="Nakama bilde" id="cc26-next">ï¿½</button>
         </div>
         <div class="cc26-thumbs" id="cc26-thumbs" aria-label="Galerijas sikteli"></div>
       </div>
@@ -3915,11 +3915,11 @@ Produkts pievienots grozam
           <div class="cc26-priceCard">
             <div class="cc26-priceTop">
               <div>
-                <div class="cc26-priceTitle" id="cc26-priceTitle">—</div>
-                <div class="cc26-muted cc26-small" id="cc26-priceMeta">—</div>
+                <div class="cc26-priceTitle" id="cc26-priceTitle">ï¿½</div>
+                <div class="cc26-muted cc26-small" id="cc26-priceMeta">ï¿½</div>
               </div>
               <div class="cc26-priceRight">
-                <div class="cc26-priceBig" id="cc26-priceBig">—</div>
+                <div class="cc26-priceBig" id="cc26-priceBig">ï¿½</div>
                 <div class="cc26-muted cc26-small">Pilna cena</div>
               </div>
             </div>
@@ -3928,7 +3928,7 @@ Produkts pievienots grozam
             <div class="cc26-line"></div>
             <div class="cc26-deposit">
               <span class="cc26-deposit__tag">Avanss</span>
-              <span class="cc26-muted">50€ avansa maksajums, visa talaka informacija - Jusu e-pasta</span>
+              <span class="cc26-muted">50ï¿½ avansa maksajums, visa talaka informacija - Jusu e-pasta</span>
             </div>
             <div class="cc26-priceBtns">
               <a class="cc26-btn cc26-btn--primary"
@@ -3940,12 +3940,12 @@ Produkts pievienots grozam
           <aside class="cc26-noteCard">
             <h3 class="cc26-h3" id="informacija-par-nometni">Informacija par nometni</h3>
             <div class="cc26-noteGrid">
-              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Datums ??</strong></div><div class="cc26-noteV" id="note-dates">—</div></div></div>
-              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Vecums ????</strong></div><div class="cc26-noteV" id="note-age">—</div></div></div>
+              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Datums ??</strong></div><div class="cc26-noteV" id="note-dates">ï¿½</div></div></div>
+              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Vecums ????</strong></div><div class="cc26-noteV" id="note-age">ï¿½</div></div></div>
               <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Lokacija ??</strong></div><div class="cc26-noteV">Kekavas vidusskolas sakumskola, Nakotnes iela 1A</div></div></div>
-              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Cena ??</strong></div><div class="cc26-noteV" id="note-price">—</div></div></div>
-              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Avanss ??</strong></div><div class="cc26-noteV"><strong>50€ avansa maksajums,</strong> visa talaka informacija - Jusu e-pasta</div></div></div>
-              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Pieteikšanas sakums ?</strong></div><div class="cc26-noteV"><strong>01.02.2026</strong> (vietu skaits ierobežots)</div></div></div>
+              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Cena ??</strong></div><div class="cc26-noteV" id="note-price">ï¿½</div></div></div>
+              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Avanss ??</strong></div><div class="cc26-noteV"><strong>50ï¿½ avansa maksajums,</strong> visa talaka informacija - Jusu e-pasta</div></div></div>
+              <div class="cc26-noteItem"><div><div class="cc26-noteK"><strong>Pieteikï¿½anas sakums ?</strong></div><div class="cc26-noteV"><strong>01.02.2026</strong> (vietu skaits ierobeï¿½ots)</div></div></div>
             </div>
           </aside>
         </div>
@@ -3956,8 +3956,8 @@ Produkts pievienots grozam
       <div class="cc26-wrap">
         <div class="cc26-applyBox">
           <div class="cc26-applyLeft">
-            <h2 class="cc26-h2 cc26-secTitle" id="pieteiksanas-lapa"><b><i>Pieteikšanas lapa</i></b></h2>
-            <p class="cc26-muted">Pieteikšanas sakas <strong>01.02.2026</strong>. Izvelies nometni un veic avansa apmaksu.</p>
+            <h2 class="cc26-h2 cc26-secTitle" id="pieteiksanas-lapa"><b><i>Pieteikï¿½anas lapa</i></b></h2>
+            <p class="cc26-muted">Pieteikï¿½anas sakas <strong>01.02.2026</strong>. Izvelies nometni un veic avansa apmaksu.</p>
             <div class="cc26-applyBtns">
               <a class="cc26-btn cc26-btn--primary" id="cc26-formLink"
                  href="https://bratus.lv/products/vasaras-nometne-2026?variant=52354627764565"
@@ -3998,7 +3998,7 @@ Produkts pievienots grozam
   <!-- MODAL (statiskais) -->
   <div id="cc26-modal-overlay" class="cc26-modal-overlay" aria-hidden="true">
     <div class="cc26-modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="cc26-modal-close" id="cc26-modal-close" aria-label="Aizvert">×</button>
+      <button class="cc26-modal-close" id="cc26-modal-close" aria-label="Aizvert">ï¿½</button>
       <div class="cc26-modal-body">
         <h3 class="cc26-h3" id="modal-title" style="margin-top:0;">Sikaka informacija</h3>
         <div id="modal-image"></div>
@@ -4007,9 +4007,9 @@ Produkts pievienots grozam
     </div>
   </div>
 
-  <!-- PELDOŠAIS VIDEO WIDGETS -->
+  <!-- PELDOï¿½AIS VIDEO WIDGETS -->
   <div id="cc26-floating-video-container" class="cc26-floating-video">
-    <button id="cc26-floating-video-close" class="cc26-floating-video__close" aria-label="Aizvert video">×</button>
+    <button id="cc26-floating-video-close" class="cc26-floating-video__close" aria-label="Aizvert video">ï¿½</button>
     <div class="cc26-floating-video__inner">
       <div id="cc26-floating-video-cover" class="cc26-floating-video__cover">
         <img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/WhatsApp_Image_2026-05-13_at_14.54.51_900x.jpg?v=1778673346" alt="Video cover">
@@ -4022,7 +4022,7 @@ Produkts pievienots grozam
     ? Skaties video!
   </button>
 
-  <!-- PELDOŠA POGA (MOBILA) -->
+  <!-- PELDOï¿½A POGA (MOBILA) -->
   <a class="cc26-btn cc26-btn--primary cc26-mobile-sticky-btn"
      href="https://bratus.lv/products/vasaras-nometne-2026?variant=52354627764565"
      target="_blank">PIETEIKTIES</a>
@@ -4030,13 +4030,13 @@ Produkts pievienots grozam
   <!-- -- SPOT POPUP: Mikroelektronika -- -->
   <div id="cc26-spotPopup-micro" class="cc26-spotPopup cc26-spotPopup--micro cc26-spotPopup--soldOut" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cc26-spotPopup-micro-title">
     <div class="cc26-spotPopup__card">
-      <button class="cc26-spotPopup__close" aria-label="Aizvert" data-cc26-spot-close>×</button>
+      <button class="cc26-spotPopup__close" aria-label="Aizvert" data-cc26-spot-close>ï¿½</button>
       <span class="cc26-spotPopup__icon">?</span>
       <h3 class="cc26-spotPopup__title" id="cc26-spotPopup-micro-title">
-        <strong>Viedas sistemas un mikroelektronika</strong> – <span style="color:#f87171;">Izpardots</span>
+        <strong>Viedas sistemas un mikroelektronika</strong> ï¿½ <span style="color:#f87171;">Izpardots</span>
       </h3>
       <p class="cc26-spotPopup__sub">
-        Diemžel ši nometne ir pilniba izpardota. Apskaties musu otru nometni!
+        Diemï¿½el ï¿½i nometne ir pilniba izpardota. Apskaties musu otru nometni!
       </p>
       <a class="cc26-spotPopup__cta cc26-spotPopup__cta--disabled">
         Izpardots
@@ -4048,17 +4048,17 @@ Produkts pievienots grozam
   <!-- -- SPOT POPUP: Iekartu nometne -- -->
   <div id="cc26-spotPopup-eq" class="cc26-spotPopup cc26-spotPopup--eq" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cc26-spotPopup-eq-title">
     <div class="cc26-spotPopup__card">
-      <button class="cc26-spotPopup__close" aria-label="Aizvert" data-cc26-spot-close>×</button>
+      <button class="cc26-spotPopup__close" aria-label="Aizvert" data-cc26-spot-close>ï¿½</button>
       <span class="cc26-spotPopup__icon">??</span>
       <h3 class="cc26-spotPopup__title" id="cc26-spotPopup-eq-title">
-        <strong>STEM iekartas: 3D un lazertehnologijas</strong> – <span class="cc26-spotPopup__pulse">atbrivojusies 1 vieta!</span>
+        <strong>STEM iekartas: 3D un lazertehnologijas</strong> ï¿½ <span class="cc26-spotPopup__pulse">atbrivojusies 1 vieta!</span>
       </h3>
       <p class="cc26-spotPopup__sub">
-        Ši ir pedeja iespeja pieteikties — vieta var tikt aiznemta jebkura bridi.
+        ï¿½i ir pedeja iespeja pieteikties ï¿½ vieta var tikt aiznemta jebkura bridi.
       </p>
       <a href="https://bratus.lv/products/vasaras-nometne-2026?variant=52354627764565"
          target="_blank" rel="noopener" class="cc26-spotPopup__cta">
-        Rezervet vietu — 50€ avanss
+        Rezervet vietu ï¿½ 50ï¿½ avanss
       </a>
       <button class="cc26-spotPopup__later" data-cc26-spot-later>Varbut velak</button>
     </div>
@@ -4066,7 +4066,7 @@ Produkts pievienots grozam
 
 </section>
 
-<!-- PELDOŠA VIDEO JS LOGIKA -->
+<!-- PELDOï¿½A VIDEO JS LOGIKA -->
 <!-- CONSOLIDATED SCRIPTS: floating video + spot popup + moreBtn handlers -->
 <script>
 document.addEventListener('DOMContentLoaded',function(){
@@ -4121,7 +4121,7 @@ if(ls!==td){setTimeout(function(){O(pe);localStorage.setItem(lk,td);},2000);}
       "@type": "Course",
       "@id": "https://bratus.lv/pages/tehnologiju-nodarbibas",
       "name": "Tehnologiju nodarbibas skolas",
-      "description": "Praktiskas tehnologiju nodarbibas jauniešiem – 3D printešana, CNC tehnologijas un lazergriešana. Apgustiet nakotnes inženierzinatnes darbnicas.",
+      "description": "Praktiskas tehnologiju nodarbibas jaunieï¿½iem ï¿½ 3D printeï¿½ana, CNC tehnologijas un lazergrieï¿½ana. Apgustiet nakotnes inï¿½enierzinatnes darbnicas.",
       "provider": {
         "@type": "Organization",
         "name": "BRATUS",
@@ -4182,7 +4182,7 @@ if(ls!==td){setTimeout(function(){O(pe);localStorage.setItem(lk,td);},2000);}
       </div>
       <p class="bratus-footer-description">
         
-          Pardodam CNC iekartas, nodrošinam apkopi un remontu, sniedzam 3D pakalpojumus.
+          Pardodam CNC iekartas, nodroï¿½inam apkopi un remontu, sniedzam 3D pakalpojumus.
         
       </p>
     </div>
@@ -4211,7 +4211,7 @@ if(ls!==td){setTimeout(function(){O(pe);localStorage.setItem(lk,td);},2000);}
       <p class="bratus-footer-legal">
         SIA Bratus<br>
         Reg. nr. 40203628316<br>
-        Kekavas nov., Kekava,<br>Darznieku iela 42
+        Kekavas nov., Kekava,<br>Pliederu iela 22
       </p>
     </div>
 
@@ -4238,8 +4238,8 @@ if(ls!==td){setTimeout(function(){O(pe);localStorage.setItem(lk,td);},2000);}
       <nav class="bratus-footer-services-nav" aria-label="Darbibas veidi">
         <a href="/collections/lazeru-lapa">CO2 lazeri</a>
         <a href="/collections/cnc-freze">CNC freze</a>
-        <a href="/pages/markesanas-iekartas">Markešana</a>
-        <a href="/pages/filtresanas-sistemas">Filtrešana</a>
+        <a href="/pages/markesanas-iekartas">Markeï¿½ana</a>
+        <a href="/pages/filtresanas-sistemas">Filtreï¿½ana</a>
         <a href="/pages/3d-pakalpojumi">3D pakalpojumi</a>
         <a href="/pages/apkope-remonts">Apkope / remonts</a>
       </nav>
@@ -4247,7 +4247,7 @@ if(ls!==td){setTimeout(function(){O(pe);localStorage.setItem(lk,td);},2000);}
   </div>
 
   <div class="bratus-footer-bottom">
-    <p>© <span id="bratus-year"></span> 
+    <p>ï¿½ <span id="bratus-year"></span> 
       <a href="/pages/brtsp-v-dz1m3s" class="invisible-link">SIA Bratus.</a> 
       Visas tiesibas aizsargatas.
       SEO optimizaciju veica <a href="https://latseo.com/" target="_blank" rel="noopener">LatSEO</a>
@@ -4422,12 +4422,12 @@ if(ls!==td){setTimeout(function(){O(pe);localStorage.setItem(lk,td);},2000);}
   }
   .invisible-link {
   color: inherit;          /* Panem krasu no apkarteja teksta */
-  text-decoration: none;   /* Nonem apakšsvitru */
+  text-decoration: none;   /* Nonem apakï¿½svitru */
   cursor: text;            /* Nomaina peles kursoru atpakal uz teksta kursoru, lai nekas nenodotu saiti */
 }
 
 .invisible-link:hover {
-  color: inherit;          /* Nodrošina, ka krasa nemainas ari uzbraucot ar peli */
+  color: inherit;          /* Nodroï¿½ina, ka krasa nemainas ari uzbraucot ar peli */
   text-decoration: none;
 }
 </style>
@@ -4442,7 +4442,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <!-- END sections: footer-group -->
 
     <ul hidden>
-      <li id="a11y-refresh-page-message">Izveloties atlasi, tiks veikta pilna lapas atsvaidzinašana.</li>
+      <li id="a11y-refresh-page-message">Izveloties atlasi, tiks veikta pilna lapas atsvaidzinaï¿½ana.</li>
       <li id="a11y-new-window-message">Atveras jauna loga</li>
     </ul>
     
@@ -4497,7 +4497,7 @@ display:none !important
     try {
       savedState = localStorage.getItem(STORAGE_KEY);
     } catch (e) {
-      // ja kaut kas nelauj lietot localStorage, vienkarši ignorejam
+      // ja kaut kas nelauj lietot localStorage, vienkarï¿½i ignorejam
     }
 
     if (savedState === '1') {
@@ -4531,7 +4531,7 @@ display:none !important
       let normalizedNumber = rawNumber;
 
       if (rawNumber.includes('.') && rawNumber.includes(',')) {
-        // Eiropas formats: tukstoši ar punktu, decimaldalas ar komatu
+        // Eiropas formats: tukstoï¿½i ar punktu, decimaldalas ar komatu
         // "21.973,00" -> "21973.00"
         normalizedNumber = rawNumber.replace(/\./g, '').replace(',', '.');
       } else if (rawNumber.includes(',')) {
@@ -4544,7 +4544,7 @@ display:none !important
 
       el.dataset.vatBase = baseValue;
 
-      // Saglabajam prefiksu/sufiksu (€, EUR utt.) tieši pec rawNumber, ka tas ir teksta
+      // Saglabajam prefiksu/sufiksu (ï¿½, EUR utt.) tieï¿½i pec rawNumber, ka tas ir teksta
       const indexInOriginal = originalText.lastIndexOf(rawNumber);
       const prefix = indexInOriginal > -1 ? originalText.slice(0, indexInOriginal).trim() : '';
       const suffix = indexInOriginal > -1 ? originalText.slice(indexInOriginal + rawNumber.length).trim() : '';
@@ -4577,7 +4577,7 @@ display:none !important
         el.textContent = formatPrice(displayValue, prefix, suffix);
       });
 
-      // Mainam tekstu pie sledža
+      // Mainam tekstu pie sledï¿½a
       if (useVAT) {
         if (labelOff) labelOff.style.display = 'none';
         if (labelOn) labelOn.style.display = 'inline';
@@ -4592,14 +4592,14 @@ display:none !important
       } catch (e) {}
     }
 
-    // Kad sledzis parsledzas – parrekinam cenas un saglabajam stavokli
+    // Kad sledzis parsledzas ï¿½ parrekinam cenas un saglabajam stavokli
     switchEl.addEventListener('change', updatePrices);
 
     // Sakuma stavoklis (nemot vera savedState)
     updatePrices();
   });
 </script><style>
-  /* Accordion galvenie stili - Tumšais dizains */
+  /* Accordion galvenie stili - Tumï¿½ais dizains */
   .bratus-accordion-container {
     margin-bottom: 30px;
   }
@@ -4734,11 +4734,11 @@ display:none !important
               <option value="" disabled selected>Izvelieties temu...</option>
               <option value="CO2 lazergravetaji">CO2 lazergravetaji</option>
               <option value="CNC Frezes">CNC Frezes</option>
-              <option value="Markešanas iekartas">Markešanas iekartas</option>
+              <option value="Markeï¿½anas iekartas">Markeï¿½anas iekartas</option>
               <option value="Plotergriezejs">Plotergriezejs</option>
-              <option value="Filtrešanas sistemas">Filtrešanas sistemas</option>
-              <option value="3D printešanas pakalpojumi / Filamenti">3D printešanas pakalpojumi / Filamenti</option>
-              <option value="Lazergravešanas pakalpojumi">Lazergravešanas pakalpojumi</option>
+              <option value="Filtreï¿½anas sistemas">Filtreï¿½anas sistemas</option>
+              <option value="3D printeï¿½anas pakalpojumi / Filamenti">3D printeï¿½anas pakalpojumi / Filamenti</option>
+              <option value="Lazergraveï¿½anas pakalpojumi">Lazergraveï¿½anas pakalpojumi</option>
               <option value="Vasaras nometnes">Vasaras nometnes</option>
               <option value="Tehnologiju akademija">Tehnologiju akademija</option>
             </select>
@@ -4775,7 +4775,7 @@ display:none !important
 </div>
 
 <script>
-  // Vienkaršots JavaScript vienam accordion
+  // Vienkarï¿½ots JavaScript vienam accordion
   document.addEventListener('DOMContentLoaded', function() {
     const trigger = document.querySelector('.bratus-accordion-trigger');
     const item = document.getElementById('contacts-accordion');
@@ -4881,7 +4881,7 @@ z-index: 2147483647; /* <--- MAKSIMALA VERTIBA */
   /* Modala loga responsivais izkartojums (Salabots mobilajam iericem) */
   @media (max-width: 768px) {
     .bratus-modal-box { 
-      /* Garanteta masiva atstarpe augšpuse, lai atstumtu visu saturu uz leju */
+      /* Garanteta masiva atstarpe augï¿½puse, lai atstumtu visu saturu uz leju */
       padding: 110px 20px 30px 20px !important; 
     }
     
@@ -5042,7 +5042,7 @@ z-index: 2147483647; /* <--- MAKSIMALA VERTIBA */
       openBtn.addEventListener('click', (e) => {
         e.preventDefault();
         modalOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Aptur fona skrollešanu
+        document.body.style.overflow = 'hidden'; // Aptur fona skrolleï¿½anu
       });
     }
 
@@ -5051,7 +5051,7 @@ z-index: 2147483647; /* <--- MAKSIMALA VERTIBA */
       modalOverlay.classList.remove('active');
       document.body.style.overflow = '';
       
-      // Notiram URL, ja bija atstats veiksmigas sutišanas parametrs
+      // Notiram URL, ja bija atstats veiksmigas sutiï¿½anas parametrs
       if (window.location.href.indexOf('contact_posted=true') !== -1) {
         const url = new URL(window.location);
         url.searchParams.delete('contact_posted');
@@ -5062,7 +5062,7 @@ z-index: 2147483647; /* <--- MAKSIMALA VERTIBA */
     // Aizvert ar pogu
     if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-    // Aizvert, spiežot uz fona (arpus modala loga)
+    // Aizvert, spieï¿½ot uz fona (arpus modala loga)
     if (modalOverlay) {
       modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) closeModal();
@@ -5100,33 +5100,33 @@ z-index: 2147483647; /* <--- MAKSIMALA VERTIBA */
     /* Caurspidigs pamatfons */
     background-color: transparent; 
     
-    /* Fona laušana un krasu paspilgtinašana (lecas efekts) */
+    /* Fona lauï¿½ana un krasu paspilgtinaï¿½ana (lecas efekts) */
     backdrop-filter: blur(3px) saturate(200%) contrast(110%);
     -webkit-backdrop-filter: blur(3px) saturate(200%) contrast(110%);
     
     /* Stikla biezums un enas */
     box-shadow: 
       inset 0 0 0 1px rgba(255, 255, 255, 0.2), /* Plana areja sienina */
-      inset 0 4px 8px rgba(255, 255, 255, 0.3),  /* Viegla gaisma no augšas */
-      inset 0 -4px 6px rgba(0, 0, 0, 0.1),       /* Viegla ena stikla apakša */
+      inset 0 4px 8px rgba(255, 255, 255, 0.3),  /* Viegla gaisma no augï¿½as */
+      inset 0 -4px 6px rgba(0, 0, 0, 0.1),       /* Viegla ena stikla apakï¿½a */
       0 6px 12px rgba(0, 0, 0, 0.15);            /* Ena uz majaslapas fona */
       
     transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
-  /* Ikonas kontrasts - lai baltais telefons neizplustu uz gaišiem foniem */
+  /* Ikonas kontrasts - lai baltais telefons neizplustu uz gaiï¿½iem foniem */
   .mobile-call-button svg {
     position: relative;
     z-index: 2;
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
   }
 
-  /* Noklikškinašanas animacija */
+  /* Noklikï¿½kinaï¿½anas animacija */
   .mobile-call-button:active {
     transform: scale(0.9);
   }
 
-  /* Paslepj uz datoriem un planšetem */
+  /* Paslepj uz datoriem un planï¿½etem */
   @media (min-width: 768px) {
     .mobile-call-button {
       display: none !important;
@@ -5156,11 +5156,11 @@ z-index: 2147483647; /* <--- MAKSIMALA VERTIBA */
               <option value="" disabled selected>Izvelieties temu...</option>
               <option value="CO2 lazergravetaji">CO2 lazergravetaji</option>
               <option value="CNC Frezes">CNC Frezes</option>
-              <option value="Markešanas iekartas">Markešanas iekartas</option>
+              <option value="Markeï¿½anas iekartas">Markeï¿½anas iekartas</option>
               <option value="Plotergriezejs">Plotergriezejs</option>
-              <option value="Filtrešanas sistemas">Filtrešanas sistemas</option>
-              <option value="3D printešanas pakalpojumi / Filamenti">3D printešanas pakalpojumi / Filamenti</option>
-              <option value="Lazergravešanas pakalpojumi">Lazergravešanas pakalpojumi</option>
+              <option value="Filtreï¿½anas sistemas">Filtreï¿½anas sistemas</option>
+              <option value="3D printeï¿½anas pakalpojumi / Filamenti">3D printeï¿½anas pakalpojumi / Filamenti</option>
+              <option value="Lazergraveï¿½anas pakalpojumi">Lazergraveï¿½anas pakalpojumi</option>
               <option value="Vasaras nometnes">Vasaras nometnes</option>
               <option value="Tehnologiju akademija">Tehnologiju akademija</option>
             </select>
@@ -5208,7 +5208,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailVal = emailInput.value.trim();
     const phoneVal = phoneInput.value.trim();
 
-    // 1. Ja abi ir pilnigi tukši, apstadinam sutišanu un paradam kludu
+    // 1. Ja abi ir pilnigi tukï¿½i, apstadinam sutiï¿½anu un paradam kludu
     if (emailVal === '' && phoneVal === '') {
       e.preventDefault();
       phoneInput.setCustomValidity('Ludzu ievadiet E-pastu VAI Telefona numuru!');
@@ -5236,7 +5236,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
 </html>
 <style>
-  /* Konteiners ar jauno tumši peleko fonu */
+  /* Konteiners ar jauno tumï¿½i peleko fonu */
   .vat-toggle-bar {
     background-color: #050505;
     color: #fff;
@@ -5255,7 +5255,7 @@ document.addEventListener('DOMContentLoaded', function() {
     gap: 15px;
   }
 
-  /* PVN Sledža konteiners un teksts */
+  /* PVN Sledï¿½a konteiners un teksts */
   .vat-toggle {
     display: flex;
     align-items: center;
@@ -5272,7 +5272,7 @@ document.addEventListener('DOMContentLoaded', function() {
     white-space: nowrap;
   }
 
-  /* Sledža (switch) pamata struktura */
+  /* Sledï¿½a (switch) pamata struktura */
   .vat-switch {
     position: relative;
     display: inline-block;
@@ -5287,7 +5287,7 @@ document.addEventListener('DOMContentLoaded', function() {
     height: 0;
   }
 
-  /* Sledža fons */
+  /* Sledï¿½a fons */
   .vat-slider {
     position: absolute;
     cursor: pointer;
@@ -5301,7 +5301,7 @@ document.addEventListener('DOMContentLoaded', function() {
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
   }
 
-  /* Sledža poga (bumbina) */
+  /* Sledï¿½a poga (bumbina) */
   .vat-slider:before {
     position: absolute;
     content: "";
@@ -5315,7 +5315,7 @@ document.addEventListener('DOMContentLoaded', function() {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
   }
 
-  /* Checked stavoklis (Bratus oranžais) */
+  /* Checked stavoklis (Bratus oranï¿½ais) */
   .vat-switch input:checked + .vat-slider {
     background-color: #e67e22;
     box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.3);
@@ -5408,18 +5408,18 @@ document.addEventListener('DOMContentLoaded', function() {
     if (isFormPosted) {
       welcomeOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      // Nelaujam atkal radities automatiski šodien
+      // Nelaujam atkal radities automatiski ï¿½odien
       localStorage.setItem('bratusWelcomeModalDate', today);
     } 
-    // Ja logs vel nav radits šodien UN mes NEESAM nometnes lapa, atveram to pec mazas pauzes
+    // Ja logs vel nav radits ï¿½odien UN mes NEESAM nometnes lapa, atveram to pec mazas pauzes
     else if (lastShownDate !== today && !isNometnesPage) {
       setTimeout(() => {
         welcomeOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
-      }, 2000); // 2 sekunžu aizture
+      }, 2000); // 2 sekunï¿½u aizture
     }
 
-    // Aizveršanas funkcija
+    // Aizverï¿½anas funkcija
     const closeWelcomeModal = () => {
       welcomeOverlay.classList.remove('active');
       document.body.style.overflow = '';
@@ -5433,7 +5433,7 @@ document.addEventListener('DOMContentLoaded', function() {
       welcomeCloseBtn.addEventListener('click', closeWelcomeModal);
     }
 
-    // Aizvert, spiežot uz fona
+    // Aizvert, spieï¿½ot uz fona
     welcomeOverlay.addEventListener('click', (e) => {
       if (e.target === welcomeOverlay) closeWelcomeModal();
     });
