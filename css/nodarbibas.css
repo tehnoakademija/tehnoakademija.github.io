@@ -460,6 +460,15 @@ ul { list-style: none; }
 #map { width: 100%; height: 420px; border: 1px solid var(--border); position: relative; z-index: 0; }
 .leaflet-popup-content { font-family: 'Inter', sans-serif; font-size: 0.9rem; }
 
+/* Attribution — paliek, bet neuzkrītoša (OSM licence pieprasa norādi) */
+.leaflet-control-attribution {
+  font-size: 9px;
+  background: rgba(255,255,255,0.5);
+  color: #999;
+  padding: 0 6px;
+}
+.leaflet-control-attribution a { color: #999; }
+
 @media (max-width: 640px) {
   #map { height: 340px; }
 }
