@@ -454,3 +454,12 @@ ul { list-style: none; }
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item img { height: 220px; }
 }
+
+/* ===== SKOLU KARTE (Leaflet) ===== */
+.school-map { margin-bottom: 2.5rem; }
+#map { width: 100%; height: 420px; border: 1px solid var(--border); position: relative; z-index: 0; }
+.leaflet-popup-content { font-family: 'Inter', sans-serif; font-size: 0.9rem; }
+
+@media (max-width: 640px) {
+  #map { height: 340px; }
+}

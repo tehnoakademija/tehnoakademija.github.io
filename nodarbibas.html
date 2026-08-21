@@ -10,6 +10,7 @@
   <link rel="canonical" href="https://tehnoakademija.github.io/nodarbibas">
   <link rel="icon" type="image/png" href="BTA_Logo.png">
   <link rel="stylesheet" href="css/nodarbibas.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -179,6 +180,10 @@
         <p class="section-subtitle" style="margin:0 auto;">Ja jūsu bērna skola ir sarakstā, nodarbības jau notiek pavisam tuvu. Ja nav — aizpildiet pieteikumu lapas beigās, un mēs sazināsimies ar skolu.</p>
       </div>
 
+      <div class="school-map">
+        <div id="map" role="application" aria-label="Skolas kartē"></div>
+      </div>
+
       <div class="school-search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input type="text" id="schoolSearch" placeholder="Meklēt savu skolu..." aria-label="Meklēt savu skolu">
@@ -310,23 +315,25 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
     /* ===== SKOLU SARAKSTS (viegli paplašināms) =====
        Lai pievienotu jaunu skolu, pievieno rindu šim masīvam:
-       { name: 'Skolas nosaukums', group: 'Novads vai pilsēta' }
+       { name: 'Skolas nosaukums', group: 'Novads vai pilsēta', lat: 56.0, lng: 24.0 }
+       (lat/lng nepieciešamas, lai skola parādītos kartē)
     ======================================================== */
     const SCHOOLS = [
-      { name: 'Ķekavas vidusskola', group: 'Ķekavas novads' },
-      { name: 'Ķekavas vidusskolas sākumskola', group: 'Ķekavas novads' },
-      { name: 'Pļavniekkalna sākumskola', group: 'Ķekavas novads' },
-      { name: 'Mārupes pamatskola', group: 'Mārupes novads' },
-      { name: 'Jaunmārupes pamatskola', group: 'Mārupes novads' },
-      { name: 'Ropažu vidusskola', group: 'Ropažu novads' },
-      { name: 'Ulbrokas vidusskola', group: 'Ropažu novads' },
-      { name: 'Vangažu vidusskola', group: 'Ropažu novads' },
-      { name: 'Olaines 1. vidusskola', group: 'Olaines novads' },
-      { name: 'Olaines 2. vidusskola', group: 'Olaines novads' },
-      { name: 'Berģu Mūzikas un Mākslas pamatskola', group: 'Rīga' }
+      { name: 'Ķekavas vidusskola', group: 'Ķekavas novads', lat: 56.8262540, lng: 24.2304851 },
+      { name: 'Ķekavas vidusskolas sākumskola', group: 'Ķekavas novads', lat: 56.8263493, lng: 24.2376641 },
+      { name: 'Pļavniekkalna sākumskola', group: 'Ķekavas novads', lat: 56.8702724, lng: 24.1855471 },
+      { name: 'Mārupes pamatskola', group: 'Mārupes novads', lat: 56.8843439, lng: 24.0648151 },
+      { name: 'Jaunmārupes pamatskola', group: 'Mārupes novads', lat: 56.8790287, lng: 23.9466698 },
+      { name: 'Ropažu vidusskola', group: 'Ropažu novads', lat: 56.9748342, lng: 24.6359512 },
+      { name: 'Ulbrokas vidusskola', group: 'Ropažu novads', lat: 56.9283862, lng: 24.3215917 },
+      { name: 'Vangažu vidusskola', group: 'Ropažu novads', lat: 57.0932948, lng: 24.5396992 },
+      { name: 'Olaines 1. vidusskola', group: 'Olaines novads', lat: 56.7887528, lng: 23.9433200 },
+      { name: 'Olaines 2. vidusskola', group: 'Olaines novads', lat: 56.7819801, lng: 23.9342407 },
+      { name: 'Berģu Mūzikas un Mākslas pamatskola', group: 'Rīga', lat: 56.9821929, lng: 24.3357556 }
     ];
 
     const schoolList = document.getElementById('schoolList');
@@ -404,6 +411,30 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeLightbox();
     });
+
+    /* ===== KARTE (Leaflet + OpenStreetMap) ===== */
+    const mapEl = document.getElementById('map');
+    if (mapEl && window.L) {
+      const map = L.map('map', { scrollWheelZoom: false }).setView([56.85, 24.2], 9);
+
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      const bounds = [];
+      SCHOOLS.forEach(function (s) {
+        if (typeof s.lat === 'number' && typeof s.lng === 'number') {
+          const marker = L.marker([s.lat, s.lng]).addTo(map);
+          marker.bindPopup('<strong>' + s.name + '</strong>');
+          bounds.push([s.lat, s.lng]);
+        }
+      });
+
+      if (bounds.length) {
+        map.fitBounds(bounds, { padding: [30, 30] });
+      }
+    }
   </script>
 </body>
 </html>
