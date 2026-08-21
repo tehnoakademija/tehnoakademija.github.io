@@ -96,6 +96,25 @@ ul { list-style: none; }
 .btn-lg { padding: 0.9rem 2.2rem; font-size: 0.95rem; }
 .btn-xl { padding: 1.15rem 2.8rem; font-size: 1.1rem; }
 
+/* ===== CTA BLOĶĒTA / COUNTDOWN ===== */
+.cta-locked {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.25);
+}
+.cta-countdown {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1rem;
+}
+.cta-countdown [data-countdown-timer] {
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
 /* ===== NAVIGĀCIJA ===== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
