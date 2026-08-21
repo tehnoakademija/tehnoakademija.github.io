@@ -305,3 +305,152 @@ ul { list-style: none; }
   .hero-actions .btn { width: 100%; text-align: center; justify-content: center; }
   .about-image img { min-height: 250px; }
 }
+
+/* ===== KAS NOTIEK NODARBĪBĀ (4 soļi) ===== */
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 0.5rem; }
+
+.step-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 0;
+  padding: 1.5rem 1.25rem; position: relative;
+  transition: all 0.3s var(--ease);
+}
+.step-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: var(--accent); }
+
+.step-num {
+  position: absolute; top: 1rem; right: 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600;
+  font-size: 2rem; line-height: 1; color: rgba(31,21,1,0.08);
+}
+.step-icon {
+  width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+  background: rgba(44,124,141,0.1); color: var(--accent); margin-bottom: 1rem;
+}
+.step-icon svg { width: 24px; height: 24px; }
+.step-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+.step-card p { color: var(--ink2); font-size: 0.9rem; line-height: 1.6; }
+
+.safety-note {
+  display: flex; align-items: flex-start; gap: 0.9rem;
+  margin-top: 1.5rem; padding: 1.1rem 1.4rem;
+  background: rgba(129,168,80,0.12); border: 1px solid rgba(129,168,80,0.3);
+}
+.safety-note svg { width: 22px; height: 22px; color: #6e9143; flex-shrink: 0; margin-top: 0.15rem; }
+.safety-note p { color: var(--ink); font-size: 0.95rem; line-height: 1.6; }
+
+/* ===== GALERIJA ===== */
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+
+.gallery-item {
+  position: relative; overflow: hidden; margin: 0; cursor: pointer;
+  border: 1px solid var(--border); background: #fff;
+}
+.gallery-item img {
+  width: 100%; height: 240px; object-fit: cover;
+  transition: transform 0.4s var(--ease);
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 1.75rem 1rem 0.75rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(31,21,1,0.75) 100%);
+  color: #fff; font-size: 0.85rem; font-weight: 500;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(15,10,5,0.92);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 1rem; padding: 2rem;
+  opacity: 0; visibility: hidden; transition: opacity 0.3s var(--ease), visibility 0.3s;
+}
+.lightbox.open { opacity: 1; visibility: visible; }
+.lightbox img { max-width: 90vw; max-height: 78vh; object-fit: contain; box-shadow: 0 20px 80px rgba(0,0,0,0.5); }
+.lightbox-caption { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+.lightbox-close {
+  position: absolute; top: 1.25rem; right: 1.5rem;
+  background: none; border: none; color: #fff; font-size: 2.5rem; line-height: 1;
+  cursor: pointer; padding: 0.25rem;
+}
+.lightbox-close:hover { color: var(--accent); }
+
+/* ===== SKOLU SARAKSTS ===== */
+.school-search { max-width: 520px; margin: 0 auto 2.5rem; position: relative; }
+.school-search svg {
+  position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--ink3);
+}
+.school-search input {
+  width: 100%; padding: 0.85rem 1rem 0.85rem 2.75rem;
+  font-family: 'Inter', sans-serif; font-size: 0.95rem;
+  border: 1px solid var(--border); border-radius: 0;
+  background: #fff; color: var(--ink); outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.school-search input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(44,124,141,0.1); }
+
+.school-list-container { display: flex; flex-direction: column; gap: 2rem; }
+.school-group-title {
+  font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--ink3); margin-bottom: 0.75rem;
+}
+.school-empty { text-align: center; color: var(--ink2); padding: 2rem 0; }
+
+/* ===== UZTICĪBAS BLOKS ===== */
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.trust-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 0;
+  padding: 1.75rem 1.5rem; transition: all 0.3s var(--ease);
+}
+.trust-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: var(--accent); }
+.trust-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
+.trust-card p { color: var(--ink2); font-size: 0.9rem; line-height: 1.6; }
+
+/* ===== FAQ ===== */
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+
+.faq-question {
+  width: 100%; background: none; border: none;
+  color: var(--ink); font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  font-size: 1.05rem; font-weight: 500; padding: 1.2rem 0;
+  text-align: left; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  transition: color 0.2s;
+}
+.faq-question:hover { color: var(--accent); }
+.faq-icon { font-size: 1.4rem; font-weight: 300; transition: transform 0.35s var(--ease); flex-shrink: 0; color: var(--ink3); }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease), padding 0.5s var(--ease); }
+.faq-item.open .faq-answer { max-height: 400px; padding-bottom: 1.25rem; }
+.faq-answer p { color: var(--ink2); line-height: 1.7; font-size: 0.95rem; }
+
+/* ===== CTA BANNER ===== */
+.cta-banner {
+  background: var(--accent); border-radius: 0;
+  padding: clamp(2rem, 4vw, 3.5rem); text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-banner::before {
+  content: ''; position: absolute; top: -40%; right: -15%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-banner h2 { font-size: clamp(1.5rem, 3vw, 2rem); color: #fff; margin-bottom: 0.75rem; font-weight: 300; }
+.cta-banner p { color: rgba(255,255,255,0.8); font-size: 1rem; max-width: 550px; margin: 0 auto 1.5rem; }
+.cta-banner .btn { background: #fff; color: var(--accent); font-weight: 700; }
+.cta-banner .btn:hover { background: rgba(255,255,255,0.9); transform: translateY(-2px); }
+
+/* ===== RESPONSĪVS (jaunās sekcijas) ===== */
+@media (max-width: 900px) {
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item img { height: 220px; }
+}
