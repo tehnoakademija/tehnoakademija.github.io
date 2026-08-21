@@ -104,9 +104,11 @@ ul { list-style: none; }
   filter: grayscale(0.25);
 }
 .cta-countdown {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
   margin-bottom: 1rem;
 }
 .cta-countdown [data-countdown-timer] {
@@ -437,6 +439,7 @@ ul { list-style: none; }
 .reviews-grid {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -480,6 +483,7 @@ ul { list-style: none; }
 .reviews-arrow:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 .reviews-prev { left: -14px; }
 .reviews-next { right: -14px; }
+.reviews-cta { text-align: center; margin-top: 1.5rem; }
 
 /* ===== FAQ ===== */
 .faq-list { max-width: 800px; margin: 0 auto; }
