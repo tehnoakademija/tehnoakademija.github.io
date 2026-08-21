@@ -538,12 +538,17 @@
 
     function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
+    let countdownInterval;
+
     function updateCountdown() {
       const diff = TARGET_TIME - Date.now();
-      const timerEls = document.querySelectorAll('[data-countdown-timer]');
 
       if (diff <= 0) {
-        document.querySelectorAll('.cta-countdown').forEach(function (el) { el.style.display = 'none'; });
+        clearInterval(countdownInterval);
+        document.querySelectorAll('.cta-countdown').forEach(function (el) {
+          el.innerHTML = 'Pieteikšanās ir atvērta!';
+          el.classList.add('is-open');
+        });
         document.querySelectorAll('.cta-locked').forEach(function (btn) {
           btn.classList.remove('cta-locked');
           btn.removeAttribute('aria-disabled');
@@ -551,6 +556,7 @@
         return;
       }
 
+      const timerEls = document.querySelectorAll('[data-countdown-timer]');
       const days = Math.floor(diff / 86400000);
       const hours = Math.floor((diff % 86400000) / 3600000);
       const minutes = Math.floor((diff % 3600000) / 60000);
@@ -561,7 +567,7 @@
     }
 
     updateCountdown();
-    setInterval(updateCountdown, 1000);
+    countdownInterval = setInterval(updateCountdown, 1000);
 
     /* ===== ATSAUKSMJU KARUSELIS ===== */
     const reviewsGrid = document.querySelector('.reviews-grid');

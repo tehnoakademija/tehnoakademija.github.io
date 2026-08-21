@@ -116,6 +116,14 @@ ul { list-style: none; }
   color: #fff;
   white-space: nowrap;
 }
+.cta-countdown.is-open {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(129,168,80,0.3);
+  border: 1px solid rgba(129,168,80,0.6);
+  padding: 0.4rem 1.1rem;
+}
 
 /* ===== NAVIGĀCIJA ===== */
 .nav {
