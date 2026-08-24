@@ -450,7 +450,6 @@ ul { list-style: none; }
   align-items: center;
   gap: 1rem;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding: 0.5rem 0 1.25rem;
   -webkit-overflow-scrolling: touch;
@@ -461,7 +460,6 @@ ul { list-style: none; }
 .review-card {
   flex: 0 0 340px;
   max-width: min(340px, 85vw);
-  scroll-snap-align: start;
   background: #fff; border: 1px solid var(--border); border-radius: 0;
   padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;
   transition: all 0.3s var(--ease);

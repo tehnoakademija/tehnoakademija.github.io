@@ -569,17 +569,48 @@
     updateCountdown();
     countdownInterval = setInterval(updateCountdown, 1000);
 
-    /* ===== ATSAUKSMJU KARUSELIS ===== */
+    /* ===== ATSAUKSMJU KARUSELIS (bezgalīgais) ===== */
     const reviewsGrid = document.querySelector('.reviews-grid');
     if (reviewsGrid) {
       const prevBtn = document.querySelector('.reviews-prev');
       const nextBtn = document.querySelector('.reviews-next');
-      function reviewsScrollAmount() {
+
+      const originalCards = Array.from(reviewsGrid.querySelectorAll('.review-card'));
+
+      // Klonējam kartiņas abos galos, lai veidotu bezgalīgu cilpu
+      originalCards.forEach(function (card) { reviewsGrid.appendChild(card.cloneNode(true)); });
+      originalCards.forEach(function (card) { reviewsGrid.insertBefore(card.cloneNode(true), reviewsGrid.firstChild); });
+
+      let isLooping = false;
+
+      function getStep() {
         const card = reviewsGrid.querySelector('.review-card');
-        return card ? card.offsetWidth + 16 : 340;
+        return card ? card.offsetWidth + 16 : 356;
       }
-      if (prevBtn) prevBtn.addEventListener('click', function () { reviewsGrid.scrollBy({ left: -reviewsScrollAmount(), behavior: 'smooth' }); });
-      if (nextBtn) nextBtn.addEventListener('click', function () { reviewsGrid.scrollBy({ left: reviewsScrollAmount(), behavior: 'smooth' }); });
+      function getSetWidth() {
+        return getStep() * originalCards.length;
+      }
+
+      function handleLoop() {
+        if (isLooping) return;
+        const setWidth = getSetWidth();
+
+        if (reviewsGrid.scrollLeft <= 2) {
+          isLooping = true;
+          reviewsGrid.scrollLeft += setWidth;
+          requestAnimationFrame(function () { isLooping = false; });
+        } else if (reviewsGrid.scrollLeft >= 2 * setWidth) {
+          isLooping = true;
+          reviewsGrid.scrollLeft -= setWidth;
+          requestAnimationFrame(function () { isLooping = false; });
+        }
+      }
+
+      reviewsGrid.scrollLeft = getSetWidth();
+      reviewsGrid.addEventListener('scroll', handleLoop, { passive: true });
+
+      if (prevBtn) prevBtn.addEventListener('click', function () { reviewsGrid.scrollBy({ left: -getStep(), behavior: 'smooth' }); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { reviewsGrid.scrollBy({ left: getStep(), behavior: 'smooth' }); });
     }
   </script>
 </body>
