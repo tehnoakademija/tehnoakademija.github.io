@@ -49,6 +49,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://tehnologijuakademija.lv/sikdatnes</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://tehnologijuakademija.lv/products/atminas-kartes-vairuma</loc>
     <lastmod>2026-08-03</lastmod>
     <changefreq>monthly</changefreq>
