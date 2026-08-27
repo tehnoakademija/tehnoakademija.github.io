@@ -133,6 +133,29 @@
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
 
+  <!-- ============ SKOLU SARAKSTS (interaktīvs) ============ -->
+  <section class="section section-surface" id="skolas">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Mūsu partneri</span>
+        <h2 class="section-title">Kurās skolās mēs <strong>atrodamies?</strong></h2>
+        <p class="section-subtitle" style="margin:0 auto;">Ja jūsu bērna skola ir sarakstā, nodarbības jau notiek pavisam tuvu. Ja nav — aizpildiet pieteikumu lapas beigās, un mēs sazināsimies ar skolu.</p>
+      </div>
+
+      <div class="school-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="schoolSearch" placeholder="Meklēt savu skolu..." aria-label="Meklēt savu skolu">
+      </div>
+
+      <div id="schoolList" class="school-list-container"></div>
+      <p class="school-empty" id="schoolEmpty" hidden>Neviena skola neatbilst jūsu meklēšanai. Aizpildiet pieteikumu, un mēs sazināsimies ar jūsu skolu!</p>
+
+      <div class="school-map">
+        <div id="map" role="application" aria-label="Skolas kartē"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ KAS NOTIEK NODARBĪBĀ ============ -->
   <section class="section section-surface" id="process">
     <div class="container">
@@ -181,29 +204,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
         <p><strong>Drošība ir mūsu prioritāte.</strong> Katru iekārtu bērns izmanto tikai pasniedzēja uzraudzībā, ar aizsargaprīkojumu un skaidriem noteikumiem. Mēs strādājam mazās grupās, lai katrs bērns saņemtu uzmanību.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ SKOLU SARAKSTS (interaktīvs) ============ -->
-  <section class="section section-surface" id="skolas">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Mūsu partneri</span>
-        <h2 class="section-title">Kurās skolās mēs <strong>atrodamies?</strong></h2>
-        <p class="section-subtitle" style="margin:0 auto;">Ja jūsu bērna skola ir sarakstā, nodarbības jau notiek pavisam tuvu. Ja nav — aizpildiet pieteikumu lapas beigās, un mēs sazināsimies ar skolu.</p>
-      </div>
-
-      <div class="school-map">
-        <div id="map" role="application" aria-label="Skolas kartē"></div>
-      </div>
-
-      <div class="school-search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="schoolSearch" placeholder="Meklēt savu skolu..." aria-label="Meklēt savu skolu">
-      </div>
-
-      <div id="schoolList" class="school-list-container"></div>
-      <p class="school-empty" id="schoolEmpty" hidden>Neviena skola neatbilst jūsu meklēšanai. Aizpildiet pieteikumu, un mēs sazināsimies ar jūsu skolu!</p>
     </div>
   </section>
 
@@ -421,30 +421,30 @@
        { name: 'Skolas nosaukums', group: 'Novads vai pilsēta', lat: 56.0, lng: 24.0 }
        (lat/lng nepieciešamas, lai skola parādītos kartē)
     ======================================================== */
-    const SCHOOLS = [
-      { name: 'Bratus Tehnoloģiju Akadēmijas klase', group: 'Ķekavas novads', lat: 56.8318407, lng: 24.2282879 },
-      { name: 'Ķekavas vidusskola', group: 'Ķekavas novads', lat: 56.8262540, lng: 24.2304851 },
-      { name: 'Ķekavas sākumskola', group: 'Ķekavas novads', lat: 56.8263493, lng: 24.2376641 },
-      { name: 'Pļavniekkalna sākumskola', group: 'Ķekavas novads', lat: 56.8702724, lng: 24.1855471 },
-      { name: 'Baložu vidusskola', group: 'Ķekavas novads', lat: 56.8780085, lng: 24.1173996 },
-      { name: 'Mārupes pamatskola', group: 'Mārupes novads', lat: 56.8843439, lng: 24.0648151 },
-      { name: 'Jaunmārupes pamatskola', group: 'Mārupes novads', lat: 56.8790287, lng: 23.9466698 },
-      { name: 'Olaines 1. vidusskola', group: 'Olaines novads', lat: 56.7887528, lng: 23.9433200 },
-      { name: 'Olaines pamatskola', group: 'Olaines novads', lat: 56.7819801, lng: 23.9342407 },
-      { name: 'Ropažu vidusskola', group: 'Ropažu novads', lat: 56.9748342, lng: 24.6359512 },
-      { name: 'Ulbrokas vidusskola', group: 'Ropažu novads', lat: 56.9283862, lng: 24.3215917 },
-      { name: 'Vangažu vidusskola', group: 'Ropažu novads', lat: 57.0932948, lng: 24.5396992 },
-      { name: 'Berģu Mūzikas un Mākslas pamatskola', group: 'Ropažu novads', lat: 56.9821929, lng: 24.3357556 },
-      { name: 'Garkalnes Mākslu un vispārizglītojošā pamatskola', group: 'Ropažu novads', lat: 57.0475736, lng: 24.4236922 },
-      { name: 'Ikšķiles vidusskola', group: 'Ogres novads', lat: 56.8358911, lng: 24.4939340 },
-      { name: 'Jaunogres pamatskola', group: 'Ogres novads', lat: 56.8247799, lng: 24.5936310 },
-      { name: 'Salaspils pamatskola', group: 'Salaspils novads', lat: 56.8563278, lng: 24.3349427 },
-      { name: 'Salaspils 1. vidusskola', group: 'Salaspils novads', lat: 56.8560169, lng: 24.3388176 },
-      { name: 'Ādažu vidusskola', group: 'Ādažu novads', lat: 57.0790919, lng: 24.3393461 },
-      { name: 'Iecavas vidusskola', group: 'Bauskas novads', lat: 56.5995094, lng: 24.2128724 },
-      { name: 'Jūrmalas Majoru vidusskola', group: 'Jūrmala', lat: 56.9699389, lng: 23.8047419 },
-      { name: 'Dārzciema vidusskola', group: 'Rīga', lat: 56.9459143, lng: 24.1906962 },
-      { name: 'Rīgas 75. pamatskola', group: 'Rīga', lat: 56.9271754, lng: 24.1629175 }
+        const SCHOOLS = [
+      { name: 'Bratus Tehnoloģiju Akadēmijas klase', group: 'Ķekavas novads', lat: 56.8318407, lng: 24.2282879, addr: 'Pliederu iela 22, Ķekava, Ķekavas novads, LV-2123', times: 'Vienu reizi nedēļā' },
+      { name: 'Ķekavas vidusskola', group: 'Ķekavas novads', lat: 56.8262540, lng: 24.2304851, addr: 'Gaismas iela 9, Ķekava, Ķekavas novads, LV-2123', times: 'Vienu reizi nedēļā' },
+      { name: 'Ķekavas sākumskola', group: 'Ķekavas novads', lat: 56.8263493, lng: 24.2376641, addr: 'Nākotnes iela 1a, Ķekava, Ķekavas novads, LV-2123', times: 'Vienu reizi nedēļā' },
+      { name: 'Pļavniekkalna sākumskola', group: 'Ķekavas novads', lat: 56.8702724, lng: 24.1855471, addr: 'Pļavniekkalna iela 20, Katlakalns, Ķekavas novads, LV-2111', times: 'Piektdienu no plkst. 14:10 līdz 15:30 pirmajai grupai un no plkst. 15:30 līdz 16:50 otrajai grupai (2026. gada 1. oktobris – 2027. gada 31. maijs)' },
+      { name: 'Baložu vidusskola', group: 'Ķekavas novads', lat: 56.8780085, lng: 24.1173996, addr: 'Skolas iela 6, Baloži, Ķekavas novads, LV-2112', times: 'Vienu reizi nedēļā' },
+      { name: 'Mārupes pamatskola', group: 'Mārupes novads', lat: 56.8843439, lng: 24.0648151, addr: 'Viskalnu iela 7, Tīraine, Mārupes novads, LV-2167', times: 'Vienu reizi nedēļā' },
+      { name: 'Jaunmārupes pamatskola', group: 'Mārupes novads', lat: 56.8790287, lng: 23.9466698, addr: 'Mazcenu aleja 4a, Jaunmārupe, Mārupes novads, LV-2167', times: 'Trešdienu no plkst. 15:00 līdz 16:20 pirmajai grupai un no plkst. 16:20 līdz 17:40 otrajai grupai (2026. gada 1. oktobris – 2027. gada 31. maijs)' },
+      { name: 'Olaines 1. vidusskola', group: 'Olaines novads', lat: 56.7887528, lng: 23.9433200, addr: 'Zeiferta iela 4, Olaine, Olaines novads, LV-2114', times: 'Vienu reizi nedēļā' },
+      { name: 'Olaines pamatskola', group: 'Olaines novads', lat: 56.7819801, lng: 23.9342407, addr: 'Skolas iela 1, Olaine, Olaines novads, LV-2114', times: 'Vienu reizi nedēļā' },
+      { name: 'Ropažu vidusskola', group: 'Ropažu novads', lat: 56.9748342, lng: 24.6359512, addr: 'Institūta iela 1a, Ulbroka, Ropažu novads, LV-2130', times: 'Piektdienu no plkst. 13:00 līdz 14:20 pirmajai grupai un no plkst. 14:30 līdz 15:50 otrajai grupai (2026. gada 1. septembris – 2027. gada 31. maijs)' },
+      { name: 'Ulbrokas vidusskola', group: 'Ropažu novads', lat: 56.9283862, lng: 24.3215917, addr: 'Institūta iela 83, Ulbroka, Ropažu novads, LV-2130', times: 'Vienu reizi nedēļā' },
+      { name: 'Vangažu vidusskola', group: 'Ropažu novads', lat: 57.0932948, lng: 24.5396992, addr: 'Gaujas iela 2, Vangaži, Ropažu novads, LV-2136', times: 'Vienu reizi nedēļā' },
+      { name: 'Berģu Mūzikas un Mākslas pamatskola', group: 'Ropažu novads', lat: 56.9821929, lng: 24.3357556, addr: 'Skolas iela 8, Upesciems, Garkalnes pagasts, Ropažu novads, LV-2137', times: 'Vienu reizi nedēļā' },
+      { name: 'Garkalnes Mākslu un vispārizglītojošā pamatskola', group: 'Ropažu novads', lat: 57.0475736, lng: 24.4236922, addr: 'Vidzemes šoseja 34, Garkalne, Ropažu novads, LV-2137', times: 'Vienu reizi nedēļā' },
+      { name: 'Ikšķiles vidusskola', group: 'Ogres novads', lat: 56.8358911, lng: 24.4939340, addr: 'Skolas iela 2, Ikšķile, Ogres novads, LV-5052', times: 'Vienu reizi nedēļā' },
+      { name: 'Jaunogres pamatskola', group: 'Ogres novads', lat: 56.8247799, lng: 24.5936310, addr: 'Mālkalnes prospekts 43, Ogre, LV-5001', times: 'Vienu reizi nedēļā' },
+      { name: 'Salaspils pamatskola', group: 'Salaspils novads', lat: 56.8563278, lng: 24.3349427, addr: 'Skolas iela 6, Salaspils, Salaspils novads, LV-2121', times: 'Vienu reizi nedēļā' },
+      { name: 'Salaspils 1. vidusskola', group: 'Salaspils novads', lat: 56.8560169, lng: 24.3388176, addr: 'Lauku iela 1, Salaspils, LV-2121', times: 'Vienu reizi nedēļā' },
+      { name: 'Ādažu vidusskola', group: 'Ādažu novads', lat: 57.0790919, lng: 24.3393461, addr: 'Gaujas iela 30, Ādaži, Ādažu novads, LV-2164', times: 'Ceturtdienu no plkst. 16:00 līdz 17:20 pirmajai grupai un no plkst. 17:20 līdz 18:40 otrajai grupai (2026. gada 1. oktobris – 2027. gada 31. maijs)' },
+      { name: 'Iecavas vidusskola', group: 'Bauskas novads', lat: 56.5995094, lng: 24.2128724, addr: 'Uzvaras iela 1, Bauska, LV-3901', times: 'Trešdienu no plkst. 16:00 līdz 17:20 pirmajai grupai un no plkst. 17:20 līdz 18:40 otrajai grupai (2026. gada 1. oktobris – 2027. gada 31. maijs)' },
+      { name: 'Jūrmalas Majoru vidusskola', group: 'Jūrmala', lat: 56.9699389, lng: 23.8047419, addr: 'Rīgas iela 3, Jūrmala, LV-2015', times: 'Otrdienu no plkst. 14:30 līdz 15:50 pirmajai grupai un no plkst. 16:00 līdz 17:20 otrajai grupai (2026. gada 1. oktobris – 2027. gada 31. maijs)' },
+      { name: 'Dārzciema vidusskola', group: 'Rīga', lat: 56.9459143, lng: 24.1906962, addr: 'Sesku iela 72, Rīga, LV-1082', times: 'Vienu reizi nedēļā' },
+      { name: 'Rīgas 75. pamatskola', group: 'Rīga', lat: 56.9271754, lng: 24.1629175, addr: 'Ogres iela 9, Rīga, LV-1019', times: 'Vienu reizi nedēļā' }
     ];
 
     const schoolList = document.getElementById('schoolList');
@@ -474,7 +474,16 @@
         html += '<div class="school-grid">';
         schools.forEach(function (s) {
           visibleCount++;
-          html += '<div class="school-card">' + s.name + '</div>';
+          html += '<div class="school-card">';
+          html += '<div class="school-card-top">';
+          html += '<span class="school-name">' + s.name + '</span>';
+          html += '<button type="button" class="school-info-btn">Skatīt informāciju</button>';
+          html += '</div>';
+          html += '<div class="school-info" hidden>';
+          html += '<p><strong>Adrese:</strong> ' + (s.addr || '—') + '</p>';
+          html += '<p><strong>Nodarbību laiki:</strong> ' + (s.times || '—') + '</p>';
+          html += '</div>';
+          html += '</div>';
         });
         html += '</div></div>';
       });
@@ -489,6 +498,15 @@
       });
     }
     renderSchools('');
+
+    // Skolas informācijas atvēršana / aizvēršana
+    schoolList.addEventListener('click', function (e) {
+      const btn = e.target.closest('.school-info-btn');
+      if (!btn) return;
+      const card = btn.closest('.school-card');
+      const info = card ? card.querySelector('.school-info') : null;
+      if (info) info.hidden = !info.hidden;
+    });
 
     /* ===== GALERIJA / LIGHTBOX ===== */
     const lightbox = document.getElementById('lightbox');
