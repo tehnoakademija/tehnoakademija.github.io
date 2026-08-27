@@ -541,7 +541,9 @@ ul { list-style: none; }
 }
 
 /* ===== SKOLU KARTE (Leaflet) ===== */
-.school-map { margin-top: 1.5rem; margin-bottom: 2.5rem; }
+.school-map { margin-top: 4rem; margin-bottom: 0; }
+#skolas { padding-bottom: 0; }
+#process { padding-top: 1.5rem; }
 #map { width: 100%; height: 420px; border: 1px solid var(--border); position: relative; z-index: 0; }
 .leaflet-popup-content { font-family: 'Inter', sans-serif; font-size: 0.9rem; }
 
