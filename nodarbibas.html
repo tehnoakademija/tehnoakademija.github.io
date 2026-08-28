@@ -477,9 +477,9 @@
           html += '<div class="school-card">';
           html += '<div class="school-card-top">';
           html += '<span class="school-name">' + s.name + '</span>';
-          html += '<button type="button" class="school-info-btn">Skatīt informāciju</button>';
+          html += '<button type="button" class="school-info-btn" aria-expanded="false">Skatīt informāciju</button>';
           html += '</div>';
-          html += '<div class="school-info" hidden>';
+          html += '<div class="school-info">';
           html += '<p><strong>Adrese:</strong> ' + (s.addr || '—') + '</p>';
           html += '<p><strong>Nodarbību laiki:</strong> ' + (s.times || '—') + '</p>';
           html += '</div>';
@@ -499,13 +499,20 @@
     }
     renderSchools('');
 
-    // Skolas informācijas atvēršana / aizvēršana
+    // Skolas informācijas atvēršana / aizvēršana (gluda slide + fade animācija)
     schoolList.addEventListener('click', function (e) {
       const btn = e.target.closest('.school-info-btn');
       if (!btn) return;
       const card = btn.closest('.school-card');
       const info = card ? card.querySelector('.school-info') : null;
-      if (info) info.hidden = !info.hidden;
+      if (!info) return;
+
+      const willOpen = !card.classList.contains('is-open');
+      card.classList.toggle('is-open', willOpen);
+      info.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      btn.setAttribute('aria-label', willOpen ? 'Aizvērt informāciju' : 'Skatīt informāciju');
+      btn.textContent = willOpen ? 'Aizvērt' : 'Skatīt informāciju';
     });
 
     /* ===== GALERIJA / LIGHTBOX ===== */
