@@ -133,6 +133,19 @@
     <div class="lightbox-caption" id="lightboxCaption"></div>
   </div>
 
+  <!-- Skolas info modālais logs -->
+  <div class="school-modal" id="schoolModal" role="dialog" aria-modal="true" aria-labelledby="schoolModalTitle" hidden>
+    <div class="school-modal-backdrop" aria-hidden="true"></div>
+    <div class="school-modal-dialog">
+      <button class="school-modal-close" id="schoolModalClose" aria-label="Aizvērt">&times;</button>
+      <h3 class="school-modal-title" id="schoolModalTitle"></h3>
+      <div class="school-modal-body">
+        <p class="school-modal-addr"></p>
+        <p class="school-modal-times"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ SKOLU SARAKSTS (interaktīvs) ============ -->
   <section class="section section-surface" id="skolas">
     <div class="container">
@@ -477,15 +490,7 @@
           html += '<div class="school-card">';
           html += '<div class="school-card-top">';
           html += '<span class="school-name">' + s.name + '</span>';
-          html += '<button type="button" class="school-info-btn" aria-expanded="false">Skatīt informāciju</button>';
-          html += '</div>';
-          html += '<div class="school-info">';
-          html += '<div class="school-info-inner">';
-          html += '<div class="school-info-content">';
-          html += '<p><strong>Adrese:</strong> ' + (s.addr || '—') + '</p>';
-          html += '<p><strong>Nodarbību laiki:</strong> ' + (s.times || '—') + '</p>';
-          html += '</div>';
-          html += '</div>';
+          html += '<button type="button" class="school-info-btn" data-index="' + SCHOOLS.indexOf(s) + '" aria-haspopup="dialog">Skatīt informāciju</button>';
           html += '</div>';
           html += '</div>';
         });
@@ -503,20 +508,50 @@
     }
     renderSchools('');
 
-    // Skolas informācijas atvēršana / aizvēršana (gluda slide + fade animācija)
+    // Skolas informācijas atvēršana popup logā
     schoolList.addEventListener('click', function (e) {
       const btn = e.target.closest('.school-info-btn');
       if (!btn) return;
-      const card = btn.closest('.school-card');
-      const info = card ? card.querySelector('.school-info') : null;
-      if (!info) return;
+      const index = parseInt(btn.getAttribute('data-index'), 10);
+      const s = SCHOOLS[index];
+      if (s) openSchoolModal(s);
+    });
 
-      const willOpen = !card.classList.contains('is-open');
-      card.classList.toggle('is-open', willOpen);
-      info.classList.toggle('open', willOpen);
-      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-      btn.setAttribute('aria-label', willOpen ? 'Aizvērt informāciju' : 'Skatīt informāciju');
-      btn.textContent = willOpen ? 'Aizvērt' : 'Skatīt informāciju';
+    /* ===== SKOLAS INFO POPUP (modālais logs) ===== */
+    const schoolModal = document.getElementById('schoolModal');
+    const schoolModalTitle = document.getElementById('schoolModalTitle');
+    const schoolModalClose = document.getElementById('schoolModalClose');
+    const schoolModalAddr = schoolModal ? schoolModal.querySelector('.school-modal-addr') : null;
+    const schoolModalTimes = schoolModal ? schoolModal.querySelector('.school-modal-times') : null;
+
+    function openSchoolModal(s) {
+      if (!schoolModal) return;
+      schoolModalTitle.textContent = s.name;
+      if (schoolModalAddr) schoolModalAddr.innerHTML = '<strong>Adrese:</strong> ' + (s.addr || '—');
+      if (schoolModalTimes) schoolModalTimes.innerHTML = '<strong>Nodarbību laiki:</strong> ' + (s.times || '—');
+      schoolModal.hidden = false;
+      void schoolModal.offsetWidth;
+      schoolModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSchoolModal() {
+      if (!schoolModal) return;
+      schoolModal.classList.remove('open');
+      document.body.style.overflow = '';
+      window.setTimeout(function () {
+        if (!schoolModal.classList.contains('open')) schoolModal.hidden = true;
+      }, 260);
+    }
+
+    if (schoolModalClose) schoolModalClose.addEventListener('click', closeSchoolModal);
+    if (schoolModal) {
+      schoolModal.addEventListener('click', function (e) {
+        if (e.target === schoolModal || e.target.closest('.school-modal-backdrop')) closeSchoolModal();
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && schoolModal && !schoolModal.hidden) closeSchoolModal();
     });
 
     /* ===== GALERIJA / LIGHTBOX ===== */

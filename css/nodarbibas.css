@@ -246,7 +246,7 @@ ul { list-style: none; }
 .equipment-card h4 { margin-top: 0.5rem; font-size: 0.82rem; font-weight: 500; color: var(--ink); }
 
 /* ===== SCHOOL CARDS ===== */
-.school-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; align-items: start; }
+.school-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
 
 .school-card {
   position: relative;
@@ -589,37 +589,61 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 .school-info-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-.school-info-btn::after {
-  content: '▾';
-  display: inline-block;
-  margin-left: 0.35rem;
-  transition: transform 0.25s var(--ease);
+
+/* ===== SKOLAS INFO MODĀLAIS LOGS ===== */
+.school-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
-.school-card.is-open .school-info-btn::after { transform: rotate(180deg); }
-.school-info {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s var(--ease);
-}
-.school-info.open { grid-template-rows: 1fr; }
-.school-info-inner {
-  min-height: 0;
-  overflow: hidden;
-}
-.school-info-content {
-  margin-top: 0.65rem;
-  padding-top: 0.65rem;
-  border-top: 1px dashed var(--border);
-  font-size: 0.85rem;
-  color: var(--ink2);
-  line-height: 1.55;
+.school-modal[hidden] { display: none; }
+.school-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 40, 0.55);
   opacity: 0;
-  transform: translateY(-6px);
-  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+  transition: opacity 0.25s var(--ease);
 }
-.school-info.open .school-info-content {
-  opacity: 1;
-  transform: translateY(0);
+.school-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: #fff;
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  padding: 1.75rem 1.5rem 1.5rem;
+  opacity: 0;
+  transform: translateY(16px) scale(0.97);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
 }
-.school-info-content p + p { margin-top: 0.35rem; }
-.school-info-content strong { color: var(--ink); }
+.school-modal.open .school-modal-backdrop { opacity: 1; }
+.school-modal.open .school-modal-dialog { opacity: 1; transform: translateY(0) scale(1); }
+.school-modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--ink2);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.school-modal-close:hover { color: var(--accent); }
+.school-modal-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 2rem 1rem 0;
+}
+.school-modal-body { font-size: 0.9rem; color: var(--ink2); line-height: 1.55; }
+.school-modal-body p { margin: 0; }
+.school-modal-body p + p { margin-top: 0.6rem; }
+.school-modal-body strong { color: var(--ink); }
