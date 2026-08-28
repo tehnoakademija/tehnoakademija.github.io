@@ -246,7 +246,7 @@ ul { list-style: none; }
 .equipment-card h4 { margin-top: 0.5rem; font-size: 0.82rem; font-weight: 500; color: var(--ink); }
 
 /* ===== SCHOOL CARDS ===== */
-.school-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.school-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; align-items: start; }
 
 .school-card {
   position: relative;
@@ -597,28 +597,29 @@ ul { list-style: none; }
 }
 .school-card.is-open .school-info-btn::after { transform: rotate(180deg); }
 .school-info {
-  position: absolute;
-  top: calc(100% + 0.4rem);
-  left: 0;
-  right: 0;
-  z-index: 30;
-  background: #fff;
-  border: 1px solid var(--border);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.14);
-  padding: 0.85rem 1rem;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease);
+}
+.school-info.open { grid-template-rows: 1fr; }
+.school-info-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+.school-info-content {
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--border);
   font-size: 0.85rem;
   color: var(--ink2);
   line-height: 1.55;
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(-8px);
-  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0s linear 0.25s;
+  transform: translateY(-6px);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
 }
-.school-info.open {
+.school-info.open .school-info-content {
   opacity: 1;
-  visibility: visible;
   transform: translateY(0);
-  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0s;
 }
-.school-info p + p { margin-top: 0.35rem; }
-.school-info strong { color: var(--ink); }
+.school-info-content p + p { margin-top: 0.35rem; }
+.school-info-content strong { color: var(--ink); }
