@@ -644,6 +644,29 @@ ul { list-style: none; }
   margin: 0 2rem 1rem 0;
 }
 .school-modal-body { font-size: 0.9rem; color: var(--ink2); line-height: 1.55; }
-.school-modal-body p { margin: 0; }
-.school-modal-body p + p { margin-top: 0.6rem; }
+.school-modal-body > div { margin: 0; }
+.school-modal-body > div + div { margin-top: 0.7rem; }
 .school-modal-body strong { color: var(--ink); }
+
+.school-modal-slots { margin-top: 0.5rem; }
+.school-modal-slot {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.school-modal-slot:last-child { border-bottom: 0; padding-bottom: 0; }
+.school-modal-day {
+  flex: 0 0 auto;
+  min-width: 6.5rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.school-modal-slot-times { flex: 1 1 auto; }
+.school-modal-period {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--ink2);
+  opacity: 0.85;
+}
