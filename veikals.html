@@ -28,6 +28,8 @@
     .shop-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.08);border-color:var(--accent)}
     .shop-card-img{position:relative;overflow:hidden;aspect-ratio:4/3}
     .shop-card-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .shop-card-img .shop-img-alt{position:absolute;inset:0;opacity:0;transition:opacity 0.35s ease}
+    .shop-card:hover .shop-img-alt{opacity:1}
     .shop-card-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
     .shop-card-placeholder svg{filter:drop-shadow(0 4px 12px rgba(0,0,0,0.3))}
     .shop-card-body{padding:1.25rem;display:flex;flex-direction:column;flex:1}
@@ -144,9 +146,8 @@
 
           <article class="shop-card">
             <div class="shop-card-img">
-              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#1a2d3d 0%,#2C7C8D 100%);">
-                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h12l-2 6h-8L6 2Z"/><path d="M10 8v12l2 2 2-2V8"/><path d="M6 8h12"/></svg>
-              </div>
+              <img src="images/TA-krekls.jpeg" alt="BTA T-krekls Nākotnes Inženieris" loading="lazy">
+              <img class="shop-img-alt" src="images/bta_krekls_2.jpeg" alt="BTA T-krekls Nākotnes Inženieris – otrs skats" loading="lazy">
             </div>
             <div class="shop-card-body">
               <span class="shop-badge shop-badge--hot">Bestseleris</span>
@@ -161,9 +162,7 @@
 
           <article class="shop-card">
             <div class="shop-card-img">
-              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#2c3e50 0%,#1a2d3d 100%);">
-                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M3 18h18"/><path d="M8 18v2a2 2 0 0 0 4 0v-2"/></svg>
-              </div>
+              <img src="images/BTA_Cepure.jpeg" alt="BTA Cepure Tehnoloģiju Ģēnijs" loading="lazy">
             </div>
             <div class="shop-card-body">
               <h4>BTA Cepure "Tehnoloģiju Ģēnijs"</h4>
@@ -177,9 +176,7 @@
 
           <article class="shop-card">
             <div class="shop-card-img">
-              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#1a2d3d 0%,#3a5a6d 100%);">
-                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="16" rx="3"/><path d="M5 10h14"/><path d="M12 4v-2"/><path d="M9 4v-1M15 4v-1"/></svg>
-              </div>
+              <img src="images/BTA_mugursoma.jpeg" alt="BTA Mugursoma Maker" loading="lazy">
             </div>
             <div class="shop-card-body">
               <span class="shop-badge shop-badge--new">Jaunums</span>
@@ -194,15 +191,29 @@
 
           <article class="shop-card">
             <div class="shop-card-img">
-              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#2c3e50 0%,#1e3a4a 100%);">
-                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="18" rx="4"/><path d="M7 8h10"/><path d="M12 20v2"/><path d="M10 2h4"/></svg>
-              </div>
+              <img src="images/BTA_Termokruze.jpeg" alt="BTA Termokrūze Inovācija" loading="lazy">
             </div>
             <div class="shop-card-body">
               <h4>BTA Termokrūze "Inovācija"</h4>
               <p>Dubultsienu termokrūze 500ml ar lāzergravētu BTA logo. Saglabā dzērienu karstu 6 stundas.</p>
               <div class="shop-card-footer">
                 <span class="shop-price">€12.99</span>
+                <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="shop-card">
+            <div class="shop-card-img">
+              <img src="images/balansa_delis.jpeg" alt="BTA balansa dēlis" loading="lazy">
+              <img class="shop-img-alt" src="images/balansa_delis_2.jpeg" alt="BTA balansa dēlis – otrs skats" loading="lazy">
+            </div>
+            <div class="shop-card-body">
+              <span class="shop-badge shop-badge--new">Jaunums</span>
+              <h4>BTA balansa dēlis</h4>
+              <p>Koka balansa dēlis līdzsvara treniņiem un aktīvai atpūtai — ar BTA logo.</p>
+              <div class="shop-card-footer">
+                <span class="shop-price">€29.99</span>
                 <a href="/#pieteikums" class="shop-btn">Skatīt produktu</a>
               </div>
             </div>
@@ -421,9 +432,7 @@
 
           <article class="shop-card">
             <div class="shop-card-img">
-              <div class="shop-card-placeholder" style="background:linear-gradient(135deg,#3d2b1a 0%,#c77826 100%);">
-                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><path d="M10 6h4"/><path d="M6 10v4"/><path d="M14 10v4"/><path d="M10 18h4"/></svg>
-              </div>
+              <img src="images/rigas-panorama.jpeg" alt="3D puzle Rīgas panorāma" loading="lazy">
             </div>
             <div class="shop-card-body">
               <span class="shop-badge shop-badge--new">Jaunums</span>
