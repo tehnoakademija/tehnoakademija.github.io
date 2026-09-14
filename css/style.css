@@ -304,6 +304,41 @@ ul { list-style: none; }
 
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.hero-social span {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-right: 0.25rem;
+}
+.hero-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.75);
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
+}
+.hero-social a:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.hero-social svg { width: 18px; height: 18px; fill: currentColor; }
+
 /* ===== STATS BAR ===== */
 .stats-bar {
   position: relative;
