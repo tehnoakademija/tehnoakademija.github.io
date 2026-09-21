@@ -698,11 +698,8 @@ ul { list-style: none; }
   color: var(--ink);
 }
 .school-modal-slot-times { flex: 1 1 auto; }
-.school-modal-period {
-  margin-top: 0.6rem;
-  font-size: 0.82rem;
-  color: var(--ink2);
-  opacity: 0.85;
+.school-modal-start {
+  color: var(--ink);
 }
 
 /* ===== VIDEO SEKCIJA ===== */
