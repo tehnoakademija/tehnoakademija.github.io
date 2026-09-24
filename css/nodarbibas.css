@@ -430,6 +430,23 @@ ul { list-style: none; }
 }
 .lightbox-close:hover { color: var(--accent); }
 
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 3rem; height: 3rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3);
+  color: #fff; font-size: 1.35rem; line-height: 1;
+  border-radius: 50%; cursor: pointer; padding: 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+.lightbox-nav:hover { background: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.55); }
+.lightbox-prev { left: 1.25rem; }
+.lightbox-next { right: 1.25rem; }
+.lightbox-counter {
+  position: absolute; top: 1.4rem; left: 1.5rem;
+  color: rgba(255,255,255,0.85); font-size: 0.95rem; font-weight: 600;
+}
+
 /* ===== SKOLU SARAKSTS ===== */
 .school-search { max-width: 520px; margin: 2.5rem auto; position: relative; }
 .school-search svg {
@@ -599,6 +616,10 @@ ul { list-style: none; }
   .steps-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item img { height: 220px; }
+  .lightbox-nav { width: 2.5rem; height: 2.5rem; font-size: 1.1rem; }
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+  .lightbox-counter { top: 1rem; left: 0.75rem; }
 }
 
 /* ===== SKOLU KARTE (Leaflet) ===== */
