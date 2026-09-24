@@ -126,6 +126,24 @@
     </div>
   </section>
 
+  <!-- ============ VIDEO ============ -->
+  <section class="section section-bg" id="video">
+    <div class="container">
+      <div class="section-header centered">
+        <span class="section-label">Video</span>
+        <h2 class="section-title">Video no <strong>nodarbībām</strong></h2>
+        <p class="section-subtitle" style="margin:0 auto;">Ieskaties mūsu nodarbībās video formātā.</p>
+      </div>
+
+      <div class="video-wrap">
+        <video class="video-player" controls preload="metadata" playsinline>
+          <source src="assets/ReklamasVideoBratus.mp4" type="video/mp4">
+          Jūsu pārlūkprogramma neatbalsta video atskaņošanu.
+        </video>
+      </div>
+    </div>
+  </section>
+
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Palielināts attēls">
     <button class="lightbox-close" id="lightboxClose" aria-label="Aizvērt">&times;</button>
@@ -157,16 +175,25 @@
         <p class="section-subtitle" style="margin:0 auto;">Ja jūsu bērna skola ir sarakstā, nodarbības jau notiek pavisam tuvu. Ja nav — aizpildiet pieteikumu lapas beigās, un mēs sazināsimies ar skolu.</p>
       </div>
 
-      <div class="school-search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="schoolSearch" placeholder="Meklēt savu skolu..." aria-label="Meklēt savu skolu">
-      </div>
+      <div class="school-accordion-wrap">
+        <button type="button" class="school-accordion-toggle" id="schoolAccordionToggle" aria-expanded="false" aria-controls="schoolAccordion">
+          <span>Skatīt skolas, kurās mēs atrodamies</span>
+          <span class="school-accordion-icon" aria-hidden="true">+</span>
+        </button>
 
-      <div id="schoolList" class="school-list-container"></div>
-      <p class="school-empty" id="schoolEmpty" hidden>Neviena skola neatbilst jūsu meklēšanai. Aizpildiet pieteikumu, un mēs sazināsimies ar jūsu skolu!</p>
+        <div class="school-accordion" id="schoolAccordion" hidden>
+          <div class="school-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="text" id="schoolSearch" placeholder="Meklēt savu skolu..." aria-label="Meklēt savu skolu">
+          </div>
 
-      <div class="school-map">
-        <div id="map" role="application" aria-label="Skolas kartē"></div>
+          <div id="schoolList" class="school-list-container"></div>
+          <p class="school-empty" id="schoolEmpty" hidden>Neviena skola neatbilst jūsu meklēšanai. Aizpildiet pieteikumu, un mēs sazināsimies ar jūsu skolu!</p>
+
+          <div class="school-map">
+            <div id="map" role="application" aria-label="Skolas kartē"></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -384,24 +411,6 @@
           </div>
           <button type="submit" class="form-submit">Nosūtīt ziņu</button>
         </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ VIDEO ============ -->
-  <section class="section section-bg" id="video">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-label">Video</span>
-        <h2 class="section-title">Video no <strong>nodarbībām</strong></h2>
-        <p class="section-subtitle" style="margin:0 auto;">Ieskaties mūsu nodarbībās video formātā.</p>
-      </div>
-
-      <div class="video-wrap">
-        <video class="video-player" controls preload="metadata" playsinline>
-          <source src="assets/ReklamasVideoBratus.mp4" type="video/mp4">
-          Jūsu pārlūkprogramma neatbalsta video atskaņošanu.
-        </video>
       </div>
     </div>
   </section>
@@ -648,26 +657,46 @@
 
     /* ===== KARTE (Leaflet + OpenStreetMap) ===== */
     const mapEl = document.getElementById('map');
+    let map = null;
+    let mapBounds = [];
     if (mapEl && window.L) {
-      const map = L.map('map', { scrollWheelZoom: false }).setView([56.85, 24.2], 9);
+      map = L.map('map', { scrollWheelZoom: false }).setView([56.85, 24.2], 9);
 
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       }).addTo(map);
 
-      const bounds = [];
       SCHOOLS.forEach(function (s) {
         if (typeof s.lat === 'number' && typeof s.lng === 'number') {
           const marker = L.marker([s.lat, s.lng]).addTo(map);
           marker.bindPopup('<strong>' + s.name + '</strong>');
-          bounds.push([s.lat, s.lng]);
+          mapBounds.push([s.lat, s.lng]);
         }
       });
 
-      if (bounds.length) {
-        map.fitBounds(bounds, { padding: [30, 30] });
+      if (mapBounds.length) {
+        map.fitBounds(mapBounds, { padding: [30, 30] });
       }
+    }
+
+    /* ===== SKOLU SARAKSTA ACCORDION ===== */
+    const schoolAccordionToggle = document.getElementById('schoolAccordionToggle');
+    const schoolAccordion = document.getElementById('schoolAccordion');
+    if (schoolAccordionToggle && schoolAccordion) {
+      schoolAccordionToggle.addEventListener('click', function () {
+        const willOpen = schoolAccordion.hidden;
+        schoolAccordion.hidden = !willOpen;
+        schoolAccordionToggle.setAttribute('aria-expanded', String(willOpen));
+        const icon = schoolAccordionToggle.querySelector('.school-accordion-icon');
+        if (icon) icon.textContent = willOpen ? '−' : '+';
+        if (willOpen && map) {
+          window.setTimeout(function () {
+            map.invalidateSize();
+            if (mapBounds.length) map.fitBounds(mapBounds, { padding: [30, 30] });
+          }, 60);
+        }
+      });
     }
 
     /* ===== PIETEIKŠANĀS COUNTDOWN ===== */
