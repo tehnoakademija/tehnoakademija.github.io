@@ -193,12 +193,12 @@
 
             <div id="schoolList" class="school-list-container"></div>
             <p class="school-empty" id="schoolEmpty" hidden>Neviena skola neatbilst jūsu meklēšanai. Aizpildiet pieteikumu, un mēs sazināsimies ar jūsu skolu!</p>
-
-            <div class="school-map">
-              <div id="map" role="application" aria-label="Skolas kartē"></div>
-            </div>
           </div>
         </div>
+      </div>
+
+      <div class="school-map">
+        <div id="map" role="application" aria-label="Skolas kartē"></div>
       </div>
     </div>
   </section>
@@ -788,12 +788,6 @@
         const willOpen = !schoolAccordion.classList.contains('open');
         schoolAccordion.classList.toggle('open', willOpen);
         schoolAccordionToggle.setAttribute('aria-expanded', String(willOpen));
-        if (willOpen && map) {
-          window.setTimeout(function () {
-            map.invalidateSize();
-            if (mapBounds.length) map.fitBounds(mapBounds, { padding: [30, 30] });
-          }, 450);
-        }
       });
     }
 
