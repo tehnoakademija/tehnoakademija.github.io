@@ -725,7 +725,8 @@
         const fig = item.querySelector('figcaption');
         const caption = fig ? fig.textContent.trim() : '';
         const img = item.querySelector('img');
-        const images = GALLERY_IMAGES[caption] || (img ? [img.getAttribute('data-full') || img.src] : []);
+        const cover = img ? (img.getAttribute('data-full') || img.src) : null;
+        const images = (cover ? [cover] : []).concat(GALLERY_IMAGES[caption] || []);
         openLightbox(caption, images);
       });
     });
