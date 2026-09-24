@@ -71,8 +71,7 @@
           Iespējamas atlaides mūsu nodarbību skolēniem, draugu atlaides un atlaižu kods pieteikuma anketā.<br>
           <span style="font-size:0.7rem;">* Atlaides nesummējas</span>
         </p>
-        <a href="https://bratus.lv/products/vasaras-nometne-2026?variant=52354627764565" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;">Rezervēt vietu — 50€ avanss</a>
-        <p style="text-align:center;color:#7a95a2;font-size:0.8rem;margin-top:0.75rem;">Pēc avansa apmaksas informāciju saņemsi e-pastā</p>
+        <p style="text-align:center;color:#7a95a2;font-size:0.85rem;margin-top:0.75rem;">Pieteikšanās tiks atvērta, kad sāksim plānot nometnes.</p>
       </article>
 
       <!-- Viedo sistēmu nometne -->
@@ -351,7 +350,7 @@
           <span style="background:rgba(44,124,141,0.1);color:#2C7C8D;padding:0.3rem 0.8rem;font-weight:700;font-size:0.8rem;">Avanss 50€</span>
           <span style="color:#7a95a2;font-size:0.85rem;margin-left:0.75rem;">Visa informācija e-pastā pēc avansa</span>
         </div>
-        <a href="https://bratus.lv/products/vasaras-nometne-2026?variant=52354627764565" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;">Pieteikties</a>
+        <p style="text-align:center;color:#7a95a2;font-size:0.85rem;">Pieteikšanās tiks atvērta, kad sāksim plānot nometnes.</p>
       </div>
 
       <div class="card">
@@ -435,13 +434,23 @@
 <section class="section section-surface">
   <div class="container">
     <div class="cta-banner">
-      <h2>Pieteikšanās lapa</h2>
-      <p>Pieteikšanās sākas 01.02.2026. Izvēlies nometni un veic avansa apmaksu. Vietu skaits ir ierobežots!</p>
-      <a href="https://bratus.lv/products/vasaras-nometne-2026?variant=52354627764565" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Pieteikties nometnei</a>
+      <h2>Nometnes informācija</h2>
+      <p>Pilna informācija par nometnēm — programma, norises laiki un vietas — būs pieejama, kad sāksim tās plānot.</p>
       <a href="https://bratus.lv/pages/nometnes-2026" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">Apskatīt pilno nometnes informāciju</a>
     </div>
   </div>
 </section>
+
+<!-- Tehnoloģiju detalizētais modālis -->
+<div class="tech-modal" id="techModal" role="dialog" aria-modal="true" aria-labelledby="techModalTitle">
+  <div class="tech-modal-backdrop" aria-hidden="true"></div>
+  <div class="tech-modal-dialog">
+    <button class="tech-modal-close" id="techModalClose" aria-label="Aizvērt">&times;</button>
+    <h3 class="tech-modal-title" id="techModalTitle"></h3>
+    <p class="tech-modal-desc" id="techModalDesc"></p>
+    <div class="tech-modal-gallery" id="techModalGallery"></div>
+  </div>
+</div>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer" role="contentinfo">
@@ -570,7 +579,6 @@
         gridEl.innerHTML = currentImages.map(function (img, idx) {
           return '<div class="camp-gallery-item" data-index="' + idx + '" role="button" tabindex="0" aria-label="' + img.alt + '">' +
             '<img src="' + encodeURI(img.src) + '" alt="' + img.alt + '" loading="lazy">' +
-            '<span class="camp-gallery-tag">' + img.cat + '</span>' +
             '</div>';
         }).join('');
       }
@@ -663,6 +671,73 @@
       });
 
       renderAll();
+    })();
+
+    /* ===== TEHNOLOĢIJU MODĀLIS ===== */
+    const TECH_DETAILS = {
+      '3D Printeris': {
+        desc: 'Ar FDM 3D printeri bērni iemācās veidot trīsdimensiju objektus no idejas līdz gatavam izstrādājumam — sākot ar CAD modeļa sagatavošanu un drukas iestatījumiem, līdz slāņu drukāšanai un pēcapstrādei.',
+        images: ['images/3d printeris/ALL-91 (1).jpg', 'images/3d printeris/ALL07642.jpg', 'images/3d printeris/ALL07747.jpg', 'images/3D printēta sēne ar taisnu malu.jpg']
+      },
+      'CO2 Lāzergriezējs': {
+        desc: 'CO2 lāzers precīzi griež un gravē koku, akrilu un citus materiālus. Bērni veido vektorgrafikas rasējumus un redz, kā gaismas stars pārvērš ideju gatavā izstrādājumā.',
+        images: ['images/CO2 lazeris/ALL-132.jpg', 'images/CO2 lazeris/ALL-134.jpg', 'images/CO2 lazeris/ALL05810.jpg', 'images/co2-lazeris.jpg']
+      },
+      'CNC Frēzēšana': {
+        desc: 'CNC frēze slāni pa slānim noņem materiālu, veidojot reljefus, formas un funkcionālas detaļas. Tiek apgūti G-koda pamati un koka, plastmasas apstrādes principi.',
+        images: ['images/Rokdarbi/ALL-16.jpg', 'images/Rokdarbi/ALL05975.jpg', 'images/Rokdarbi/ALL06005.jpg']
+      },
+      'Vinila Ploteris': {
+        desc: 'Vinila ploteris precīzi griež plēves, veidojot uzlīmes, šablonus un apģērbu apdrukas. Bērni sagatavo dizainu un iestata pareizos griešanas parametrus.',
+        images: ['images/ploteris/ALL-147.jpg', 'images/ploteris/ALL-155.jpg', 'images/ploteris/ALL-161.jpg']
+      },
+      'Fiber Lāzers': {
+        desc: 'Šķiedru lāzers marķē un gravē metālu ar industriālu precizitāti. Ieskats profesionālajā metālapstrādē un tās pielietojumos ražošanā.',
+        images: ['images/gravesana-ar-skiedru-lazeri.jpg']
+      }
+    };
+
+    (function () {
+      const modal = document.getElementById('techModal');
+      const title = document.getElementById('techModalTitle');
+      const desc = document.getElementById('techModalDesc');
+      const gallery = document.getElementById('techModalGallery');
+      const closeBtn = document.getElementById('techModalClose');
+
+      function openTech(name) {
+        const data = TECH_DETAILS[name];
+        if (!data || !modal) return;
+        title.textContent = name;
+        desc.textContent = data.desc;
+        gallery.innerHTML = (data.images || []).map(function (src) {
+          return '<img src="' + encodeURI(src) + '" alt="' + name + '" loading="lazy">';
+        }).join('');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeTech() {
+        if (!modal) return;
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.equipment-card').forEach(function (card) {
+        card.addEventListener('click', function () {
+          const h4 = card.querySelector('h4');
+          if (h4) openTech(h4.textContent.trim());
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeTech);
+      if (modal) {
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal || e.target.closest('.tech-modal-backdrop')) closeTech();
+        });
+      }
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('open')) closeTech();
+      });
     })();
   </script>
 </body>

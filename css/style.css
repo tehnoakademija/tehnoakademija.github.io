@@ -777,11 +777,20 @@ ul { list-style: none; }
   overflow: hidden;
   text-align: center;
   padding-bottom: 0.65rem;
+  cursor: pointer;
   transition: all 0.3s var(--ease);
 }
 .equipment-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.06); border-color: var(--accent); }
 .equipment-card img { width: 100%; height: 120px; object-fit: cover; }
 .equipment-card h4 { margin-top: 0.5rem; font-size: 0.82rem; font-weight: 500; color: var(--ink); }
+.equipment-card::after {
+  content: 'Skatīt vairāk +';
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+}
 
 /* ===== LOCATIONS ===== */
 .locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
@@ -1021,24 +1030,24 @@ ul { list-style: none; }
 .camp-filter.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 .camp-gallery-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem;
+  display: flex; gap: 1rem; overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--surface);
 }
 .camp-gallery-item {
   position: relative; overflow: hidden; margin: 0; padding: 0;
   border: 1px solid var(--border); background: #fff; cursor: pointer;
-  display: block;
+  flex: 0 0 auto; width: 260px;
+  scroll-snap-align: start;
 }
 .camp-gallery-item img {
-  width: 100%; height: 200px; object-fit: cover; display: block;
+  width: 260px; height: 180px; object-fit: cover; display: block;
   transition: transform 0.4s var(--ease);
 }
 .camp-gallery-item:hover img { transform: scale(1.06); }
-.camp-gallery-tag {
-  position: absolute; left: 0.5rem; top: 0.5rem;
-  background: rgba(31,21,1,0.65); color: #fff;
-  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.02em;
-  padding: 0.2rem 0.55rem; border-radius: 999px;
-}
 
 /* ===== NOMETNES LIGHTBOX ===== */
 .camp-lightbox {
@@ -1073,6 +1082,32 @@ ul { list-style: none; }
   position: absolute; top: 1.4rem; left: 1.5rem;
   color: rgba(255,255,255,0.85); font-size: 0.95rem; font-weight: 600;
 }
+
+/* ===== TEHNOLOĢIJU MODĀLIS ===== */
+.tech-modal {
+  position: fixed; inset: 0; z-index: 2500;
+  display: none; align-items: center; justify-content: center;
+  padding: 1.5rem;
+}
+.tech-modal.open { display: flex; }
+.tech-modal-backdrop { position: absolute; inset: 0; background: rgba(15,10,5,0.6); }
+.tech-modal-dialog {
+  position: relative; background: var(--bg); border: 1px solid var(--border);
+  max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto;
+  padding: 2rem;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.25);
+  animation: fadeInUp 0.35s var(--ease);
+}
+.tech-modal-close {
+  position: absolute; top: 0.75rem; right: 1rem;
+  background: none; border: none; font-size: 2rem; line-height: 1;
+  color: var(--ink2); cursor: pointer; padding: 0.25rem;
+}
+.tech-modal-close:hover { color: var(--accent); }
+.tech-modal-title { font-size: 1.5rem; font-weight: 300; margin-bottom: 0.75rem; padding-right: 2rem; }
+.tech-modal-desc { color: var(--ink2); line-height: 1.7; margin-bottom: 1.5rem; }
+.tech-modal-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+.tech-modal-gallery img { width: 100%; height: 150px; object-fit: cover; border: 1px solid var(--border); }
 
 /* ===== RESPONSĪVS ===== */
 @media (max-width: 900px) {
