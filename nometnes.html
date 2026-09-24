@@ -568,10 +568,10 @@
         if (!gridEl) return;
         currentImages = currentFiltered();
         gridEl.innerHTML = currentImages.map(function (img, idx) {
-          return '<button type="button" class="camp-gallery-item" data-index="' + idx + '" aria-label="' + img.alt + '" style="animation-delay:' + (idx * 40) + 'ms">' +
+          return '<div class="camp-gallery-item" data-index="' + idx + '" role="button" tabindex="0" aria-label="' + img.alt + '">' +
             '<img src="' + encodeURI(img.src) + '" alt="' + img.alt + '" loading="lazy">' +
             '<span class="camp-gallery-tag">' + img.cat + '</span>' +
-            '</button>';
+            '</div>';
         }).join('');
       }
 
