@@ -695,7 +695,15 @@
         }
       });
 
+      function preloadImages(list) {
+        (list || []).forEach(function (item) {
+          var pre = new Image();
+          pre.src = encodeURI(item.src);
+        });
+      }
+
       renderAll();
+      preloadImages(CAMP_GALLERY);
     })();
 
     /* ===== TEHNOLOĢIJU MODĀLIS ===== */
