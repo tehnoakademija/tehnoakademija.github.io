@@ -304,22 +304,26 @@
 <!-- ===== GALERIJA ===== -->
 <section class="section section-light" id="galerija">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header centered">
       <span class="section-label">CREATE CAMP 2025</span>
       <h2 class="section-title">Galerija</h2>
       <p class="section-subtitle">Foto no procesa, darbiem un atmosfēras iepriekšējā nometnē.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem;">
-      <div><img src="https://bratus.lv/cdn/shop/files/ALL05940_900x.jpg?v=15666474242664874327" alt="Bērni nometnē ar tehnoloģijām" loading="lazy" style="width:100%; height:auto; display:block;"></div>
-      <div><img src="https://bratus.lv/cdn/shop/files/ALL05802_900x.jpg?v=8142953341023955397" alt="Darbošanās ar iekārtām nometnē" loading="lazy" style="width:100%; height:auto; display:block;"></div>
-      <div><img src="https://bratus.lv/cdn/shop/files/ALL05913_900x.jpg?v=15173292601603000164" alt="Nometnes dalībnieki un viņu projekti" loading="lazy" style="width:100%; height:auto; display:block;"></div>
-      <div><img src="https://bratus.lv/cdn/shop/files/ALL05652_1_900x.jpg?v=12298902160965433450" alt="Radošais process nometnē" loading="lazy" style="width:100%; height:auto; display:block;"></div>
-      <div><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-78_900x.jpg?v=1785154629" alt="Tehnoloģiju apguve nometnē" loading="lazy" style="width:100%; height:auto; display:block;"></div>
-      <div><img src="https://cdn.shopify.com/s/files/1/0720/6325/4803/files/ALL-267_900x.jpg?v=1785154720" alt="Nometnes atmosfēra un darbs" loading="lazy" style="width:100%; height:auto; display:block;"></div>
-    </div>
+    <div class="camp-gallery-filters" id="campGalleryFilters" role="tablist" aria-label="Galerijas kategorijas"></div>
+    <div class="camp-gallery-grid" id="campGalleryGrid"></div>
   </div>
 </section>
+
+<!-- Nometnes galerijas lightbox -->
+<div class="camp-lightbox" id="campLightbox" role="dialog" aria-modal="true" aria-label="Attēlu galerija">
+  <button class="camp-lightbox-close" id="campLightboxClose" aria-label="Aizvērt">&times;</button>
+  <button class="camp-lightbox-nav camp-lightbox-prev" id="campLightboxPrev" aria-label="Iepriekšējais attēls">&#10094;</button>
+  <img src="" alt="" id="campLightboxImg">
+  <button class="camp-lightbox-nav camp-lightbox-next" id="campLightboxNext" aria-label="Nākamais attēls">&#10095;</button>
+  <div class="camp-lightbox-caption" id="campLightboxCaption"></div>
+  <div class="camp-lightbox-counter" id="campLightboxCounter"></div>
+</div>
 
 <!-- ===== CENAS UN ATLAIDES ===== -->
 <section class="section section-surface" id="cenas">
@@ -492,5 +496,174 @@
 
 <script src="js/main.js"></script>
   <script src="/assets/cookie-consent.js" defer></script>
+  <script>
+    /* ===== NOMETNES GALERIJA (filtri + lightbox) ===== */
+    const CAMP_GALLERY = [
+      { src: 'images/Skolotaji/ALL-162.jpg', alt: 'Draudzīgi skolotāji nometnē', cat: 'Skolotāji' },
+      { src: 'images/Skolotaji/ALL-277.jpg', alt: 'Skolotāji palīdz bērniem', cat: 'Skolotāji' },
+      { src: 'images/3d-printeris.jpg', alt: '3D printeris nometnē', cat: '3D printeris' },
+      { src: 'images/3D printēta sēne ar taisnu malu.jpg', alt: '3D printēta sēne', cat: '3D printeris' },
+      { src: 'images/3d printeris/ALL-91 (1).jpg', alt: '3D drukāšana nometnē', cat: '3D printeris' },
+      { src: 'images/3d printeris/ALL05715.jpg', alt: '3D printera darbs', cat: '3D printeris' },
+      { src: 'images/3d printeris/ALL07642.jpg', alt: '3D printēti modeļi', cat: '3D printeris' },
+      { src: 'images/3d printeris/ALL07646.jpg', alt: '3D drukāšanas process', cat: '3D printeris' },
+      { src: 'images/3d printeris/ALL07747.jpg', alt: '3D printeris darbībā', cat: '3D printeris' },
+      { src: 'images/3d printeris/ALL07752.jpg', alt: '3D printēti darbi', cat: '3D printeris' },
+      { src: 'images/ploteris.jpg', alt: 'Vinila ploteris', cat: 'Ploteris' },
+      { src: 'images/ploteris/ALL-147.jpg', alt: 'Ploteris griež uzlīmes', cat: 'Ploteris' },
+      { src: 'images/ploteris/ALL-155.jpg', alt: 'Uzlīmju izstrāde', cat: 'Ploteris' },
+      { src: 'images/ploteris/ALL-161.jpg', alt: 'Ploteris darbībā', cat: 'Ploteris' },
+      { src: 'images/co2-lazeris.jpg', alt: 'CO2 lāzergriezējs', cat: 'CO2 lāzeris' },
+      { src: 'images/CO2 lazeris/ALL-132.jpg', alt: 'Lāzergriešanas process', cat: 'CO2 lāzeris' },
+      { src: 'images/CO2 lazeris/ALL-134.jpg', alt: 'CO2 lāzera darbs', cat: 'CO2 lāzeris' },
+      { src: 'images/CO2 lazeris/ALL05810.jpg', alt: 'Lāzergravēšana', cat: 'CO2 lāzeris' },
+      { src: 'images/CO2 lazeris/ALL05835.jpg', alt: 'CO2 lāzergriezējs darbībā', cat: 'CO2 lāzeris' },
+      { src: 'images/mikroelektronika.jpg', alt: 'Mikroelektronikas apguve', cat: 'Mikroelektronika' },
+      { src: 'images/Mikroelektronikas korpus Balts.jpg', alt: 'Mikroelektronikas korpuss (balts)', cat: 'Mikroelektronika' },
+      { src: 'images/Mikroelektronikas korpus Galaxy Sarkans.jpg', alt: 'Mikroelektronikas korpuss (sarkans)', cat: 'Mikroelektronika' },
+      { src: 'images/Mikroelektronika/ALL-170.jpg', alt: 'Elektronikas shēmas', cat: 'Mikroelektronika' },
+      { src: 'images/Mikroelektronika/ALL-232.jpg', alt: 'Lodēšana nometnē', cat: 'Mikroelektronika' },
+      { src: 'images/Mikroelektronika/ALL-246.jpg', alt: 'Viedās sistēmas', cat: 'Mikroelektronika' },
+      { src: 'images/Mikroelektronika/ALL-27.jpg', alt: 'Komponentes un shēmas', cat: 'Mikroelektronika' },
+      { src: 'images/Mikroelektronika/ALL-58.jpg', alt: 'Darbs ar elektroniku', cat: 'Mikroelektronika' },
+      { src: 'images/Mikroelektronika/ALL-89.jpg', alt: 'Mikroelektronikas projekts', cat: 'Mikroelektronika' },
+      { src: 'images/materialu-un-projektu-apstrade.jpg', alt: 'Materiālu apstrāde', cat: 'Rokdarbi' },
+      { src: 'images/Rokdarbi/ALL-16.jpg', alt: 'Rokdarbi nometnē', cat: 'Rokdarbi' },
+      { src: 'images/Rokdarbi/ALL05975.jpg', alt: 'Projektu apstrāde', cat: 'Rokdarbi' },
+      { src: 'images/Rokdarbi/ALL06005.jpg', alt: 'Materiālu apstrādes process', cat: 'Rokdarbi' },
+      { src: 'images/apgerbu-apdruka.jpg', alt: 'Apģērbu apdruka', cat: 'Kreklu apdruka' },
+      { src: 'images/Kreklu apdruka/ALL-141.jpg', alt: 'Krekla apdruka', cat: 'Kreklu apdruka' },
+      { src: 'images/Kreklu apdruka/ALL-150.jpg', alt: 'Apdrukas process', cat: 'Kreklu apdruka' },
+      { src: 'images/Kreklu apdruka/ALL06021.jpg', alt: 'Apdrukāts krekls', cat: 'Kreklu apdruka' },
+      { src: 'images/gravesana-ar-skiedru-lazeri.jpg', alt: 'Gravēšana ar šķiedru lāzeri', cat: 'Šķiedru lāzers' },
+      { src: 'images/nodarbibas-atmosfera.jpg', alt: 'Nometnes atmosfēra', cat: 'Atmosfēra' },
+      { src: 'images/nodarbibas-darbs-ar-tehnologijam.jpg', alt: 'Darbs ar tehnoloģijām', cat: 'Atmosfēra' }
+    ];
+
+    (function () {
+      const filtersEl = document.getElementById('campGalleryFilters');
+      const gridEl = document.getElementById('campGalleryGrid');
+      let activeCat = 'Visi';
+      let currentImages = [];
+
+      const cats = ['Visi'].concat(
+        CAMP_GALLERY.map(function (i) { return i.cat; })
+          .filter(function (v, idx, a) { return a.indexOf(v) === idx; })
+      );
+
+      function currentFiltered() {
+        return activeCat === 'Visi'
+          ? CAMP_GALLERY.slice()
+          : CAMP_GALLERY.filter(function (i) { return i.cat === activeCat; });
+      }
+
+      function renderFilters() {
+        if (!filtersEl) return;
+        filtersEl.innerHTML = cats.map(function (c) {
+          return '<button type="button" class="camp-filter' + (c === activeCat ? ' active' : '') + '" data-cat="' + c + '">' + c + '</button>';
+        }).join('');
+      }
+
+      function renderGrid() {
+        if (!gridEl) return;
+        currentImages = currentFiltered();
+        gridEl.innerHTML = currentImages.map(function (img, idx) {
+          return '<button type="button" class="camp-gallery-item" data-index="' + idx + '" aria-label="' + img.alt + '" style="animation-delay:' + (idx * 40) + 'ms">' +
+            '<img src="' + encodeURI(img.src) + '" alt="' + img.alt + '" loading="lazy">' +
+            '<span class="camp-gallery-tag">' + img.cat + '</span>' +
+            '</button>';
+        }).join('');
+      }
+
+      function renderAll() { renderFilters(); renderGrid(); }
+
+      if (filtersEl) {
+        filtersEl.addEventListener('click', function (e) {
+          const btn = e.target.closest('.camp-filter');
+          if (!btn) return;
+          activeCat = btn.getAttribute('data-cat');
+          renderAll();
+        });
+      }
+
+      if (gridEl) {
+        gridEl.addEventListener('click', function (e) {
+          const item = e.target.closest('.camp-gallery-item');
+          if (!item) return;
+          openCampLightbox(parseInt(item.getAttribute('data-index'), 10));
+        });
+      }
+
+      /* Lightbox */
+      const lb = document.getElementById('campLightbox');
+      const lbImg = document.getElementById('campLightboxImg');
+      const lbCaption = document.getElementById('campLightboxCaption');
+      const lbCounter = document.getElementById('campLightboxCounter');
+      const lbClose = document.getElementById('campLightboxClose');
+      const lbPrev = document.getElementById('campLightboxPrev');
+      const lbNext = document.getElementById('campLightboxNext');
+      let lbIndex = 0;
+
+      function updateCampLbNav() {
+        const count = currentImages.length;
+        if (lbCounter) {
+          lbCounter.hidden = count <= 1;
+          if (count > 1) lbCounter.textContent = (lbIndex + 1) + ' / ' + count;
+        }
+        if (lbPrev) lbPrev.hidden = count <= 1;
+        if (lbNext) lbNext.hidden = count <= 1;
+      }
+
+      function renderCampLb() {
+        const img = currentImages[lbIndex];
+        if (!img) return;
+        lbImg.src = encodeURI(img.src);
+        lbImg.alt = img.alt;
+        lbCaption.textContent = img.alt;
+        updateCampLbNav();
+      }
+
+      function openCampLightbox(index) {
+        lbIndex = index;
+        renderCampLb();
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCampLightbox() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      function stepCampLb(delta) {
+        if (!currentImages.length) return;
+        lbIndex = (lbIndex + delta + currentImages.length) % currentImages.length;
+        renderCampLb();
+      }
+
+      if (lbClose) lbClose.addEventListener('click', closeCampLightbox);
+      if (lbPrev) lbPrev.addEventListener('click', function () { stepCampLb(-1); });
+      if (lbNext) lbNext.addEventListener('click', function () { stepCampLb(1); });
+      if (lb) {
+        lb.addEventListener('click', function (e) {
+          if (e.target === lb) closeCampLightbox();
+        });
+        let touchX = 0;
+        lb.addEventListener('touchstart', function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+        lb.addEventListener('touchend', function (e) {
+          const dx = e.changedTouches[0].clientX - touchX;
+          if (Math.abs(dx) > 50) stepCampLb(dx < 0 ? 1 : -1);
+        }, { passive: true });
+      }
+      document.addEventListener('keydown', function (e) {
+        if (!lb || !lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeCampLightbox();
+        else if (e.key === 'ArrowLeft') stepCampLb(-1);
+        else if (e.key === 'ArrowRight') stepCampLb(1);
+      });
+
+      renderAll();
+    })();
+  </script>
 </body>
 </html>
