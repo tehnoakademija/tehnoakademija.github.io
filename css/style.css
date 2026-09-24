@@ -1029,25 +1029,26 @@ ul { list-style: none; }
 .camp-filter:hover { border-color: var(--accent); color: var(--accent); }
 .camp-filter.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-.camp-gallery-grid {
-  display: flex; gap: 1rem; overflow-x: auto;
-  padding-bottom: 1rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent) var(--surface);
+.camp-gallery-viewer {
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
 }
-.camp-gallery-item {
-  position: relative; overflow: hidden; margin: 0; padding: 0;
-  border: 1px solid var(--border); background: #fff; cursor: pointer;
-  flex: 0 0 auto; width: 260px;
-  scroll-snap-align: start;
+.camp-viewer-figure { margin: 0; text-align: center; flex: 1 1 auto; min-width: 0; }
+.camp-viewer-figure img {
+  width: 100%; max-height: 560px; object-fit: contain;
+  background: #fff; border: 1px solid var(--border); cursor: pointer;
 }
-.camp-gallery-item img {
-  width: 260px; height: 180px; object-fit: cover; display: block;
-  transition: transform 0.4s var(--ease);
+.camp-viewer-figure figcaption { margin-top: 0.75rem; color: var(--ink2); font-size: 0.9rem; }
+.camp-viewer-nav {
+  flex: 0 0 auto;
+  width: 3rem; height: 3rem;
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; border: 1px solid var(--border);
+  color: var(--ink2); font-size: 1.2rem; line-height: 1;
+  border-radius: 50%; cursor: pointer; padding: 0;
+  transition: all 0.2s var(--ease);
 }
-.camp-gallery-item:hover img { transform: scale(1.06); }
+.camp-viewer-nav:hover { border-color: var(--accent); color: var(--accent); }
+.camp-gallery-counter { text-align: center; margin-top: 1rem; color: var(--ink2); font-size: 0.9rem; font-weight: 600; }
 
 /* ===== NOMETNES LIGHTBOX ===== */
 .camp-lightbox {
@@ -1154,6 +1155,8 @@ ul { list-style: none; }
   .camp-lightbox-nav { width: 2.5rem; height: 2.5rem; font-size: 1.1rem; }
   .camp-lightbox-prev { left: 0.5rem; }
   .camp-lightbox-next { right: 0.5rem; }
+  .camp-viewer-nav { width: 2.4rem; height: 2.4rem; font-size: 1rem; }
+  .camp-gallery-viewer { gap: 0.5rem; }
   .equipment-tags { justify-content: flex-start; }
   .hero-actions { flex-direction: column; width: 100%; }
   .hero-actions .btn { width: 100%; text-align: center; justify-content: center; }
