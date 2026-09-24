@@ -1037,7 +1037,6 @@ ul { list-style: none; }
   width: 100%; max-height: 560px; object-fit: contain;
   cursor: pointer;
 }
-.camp-viewer-figure figcaption { margin-top: 0.75rem; color: var(--ink2); font-size: 0.9rem; }
 .camp-viewer-nav {
   flex: 0 0 auto;
   width: 3rem; height: 3rem;

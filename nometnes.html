@@ -314,7 +314,6 @@
       <button type="button" class="camp-viewer-nav camp-viewer-prev" id="campGalleryPrev" aria-label="Iepriekšējais attēls">&#10094;</button>
       <figure class="camp-viewer-figure">
         <img src="" alt="" id="campGalleryMainImg">
-        <figcaption id="campGalleryMainCaption"></figcaption>
       </figure>
       <button type="button" class="camp-viewer-nav camp-viewer-next" id="campGalleryNext" aria-label="Nākamais attēls">&#10095;</button>
     </div>
@@ -560,7 +559,6 @@
     (function () {
       const filtersEl = document.getElementById('campGalleryFilters');
       const mainImg = document.getElementById('campGalleryMainImg');
-      const mainCaption = document.getElementById('campGalleryMainCaption');
       const galleryCounter = document.getElementById('campGalleryCounter');
       const prevBtn = document.getElementById('campGalleryPrev');
       const nextBtn = document.getElementById('campGalleryNext');
@@ -595,7 +593,6 @@
           mainImg.src = encodeURI(img.src);
           mainImg.alt = img.alt;
         }
-        if (mainCaption) mainCaption.textContent = img.alt;
         if (galleryCounter) galleryCounter.textContent = (currentImages.length ? (currentIndex + 1) : 0) + ' / ' + currentImages.length;
       }
 
