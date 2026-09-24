@@ -181,17 +181,19 @@
           <span class="school-accordion-icon" aria-hidden="true">+</span>
         </button>
 
-        <div class="school-accordion" id="schoolAccordion" hidden>
-          <div class="school-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="text" id="schoolSearch" placeholder="Meklēt savu skolu..." aria-label="Meklēt savu skolu">
-          </div>
+        <div class="school-accordion" id="schoolAccordion">
+          <div class="school-accordion-inner">
+            <div class="school-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="schoolSearch" placeholder="Meklēt savu skolu..." aria-label="Meklēt savu skolu">
+            </div>
 
-          <div id="schoolList" class="school-list-container"></div>
-          <p class="school-empty" id="schoolEmpty" hidden>Neviena skola neatbilst jūsu meklēšanai. Aizpildiet pieteikumu, un mēs sazināsimies ar jūsu skolu!</p>
+            <div id="schoolList" class="school-list-container"></div>
+            <p class="school-empty" id="schoolEmpty" hidden>Neviena skola neatbilst jūsu meklēšanai. Aizpildiet pieteikumu, un mēs sazināsimies ar jūsu skolu!</p>
 
-          <div class="school-map">
-            <div id="map" role="application" aria-label="Skolas kartē"></div>
+            <div class="school-map">
+              <div id="map" role="application" aria-label="Skolas kartē"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -685,16 +687,14 @@
     const schoolAccordion = document.getElementById('schoolAccordion');
     if (schoolAccordionToggle && schoolAccordion) {
       schoolAccordionToggle.addEventListener('click', function () {
-        const willOpen = schoolAccordion.hidden;
-        schoolAccordion.hidden = !willOpen;
+        const willOpen = !schoolAccordion.classList.contains('open');
+        schoolAccordion.classList.toggle('open', willOpen);
         schoolAccordionToggle.setAttribute('aria-expanded', String(willOpen));
-        const icon = schoolAccordionToggle.querySelector('.school-accordion-icon');
-        if (icon) icon.textContent = willOpen ? '−' : '+';
         if (willOpen && map) {
           window.setTimeout(function () {
             map.invalidateSize();
             if (mapBounds.length) map.fitBounds(mapBounds, { padding: [30, 30] });
-          }, 60);
+          }, 450);
         }
       });
     }
