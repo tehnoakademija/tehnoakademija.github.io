@@ -490,8 +490,8 @@
       { name: 'Garkalnes Mākslu un vispārizglītojošā pamatskola', group: 'Ropažu novads', lat: 57.0475736, lng: 24.4236922, addr: 'Vidzemes šoseja 34, Garkalne, Ropažu novads, LV-2137', times: [{ day: '', slots: 'Laiki tiks precizēti' }], start: 'Septembra 3. nedēļā', price: '52 €/mēnesī' },
       { name: 'Ikšķiles vidusskola', group: 'Ogres novads', lat: 56.8358911, lng: 24.4939340, addr: 'Skolas iela 2, Ikšķile, Ogres novads, LV-5052', times: [{ day: 'Otrdienu', slots: '14:00–15:20 (1. grupa) · 15:20–16:40 (2. grupa) · 16:40–18:00 (3. grupa)' }], start: '15.09.2026', price: '52 €/mēnesī' },
       { name: 'Jaunogres pamatskola', group: 'Ogres novads', lat: 56.8247799, lng: 24.5936310, addr: 'Mālkalnes prospekts 43, Ogre, LV-5001', times: [{ day: '', slots: 'Laiki tiks precizēti' }], start: 'Septembra 3. nedēļā', price: '52 €/mēnesī' },
-      { name: 'Salaspils pamatskola', group: 'Salaspils novads', lat: 56.8563278, lng: 24.3349427, addr: 'Skolas iela 6, Salaspils, Salaspils novads, LV-2121', times: [{ day: 'Otrdienu', slots: '13:30–14:50 (1. grupa) · 14:50–16:10 (2. grupa)' }], start: '06.10.2026', price: '52 €/mēnesī' },
-      { name: 'Salaspils 1. vidusskola', group: 'Salaspils novads', lat: 56.8560169, lng: 24.3388176, addr: 'Lauku iela 1, Salaspils, LV-2121', times: [{ day: 'Trešdienu', slots: '16:00–17:20 (1. grupa) · 17:20–18:40 (2. grupa)' }], start: '07.10.2026', price: '52 €/mēnesī' },
+      { name: 'Salaspils pamatskola', group: 'Salaspils novads', lat: 56.8563278, lng: 24.3349427, addr: 'Skolas iela 6, Salaspils, Salaspils novads, LV-2121', times: [{ day: 'Otrdienu', slots: '13:30–14:50 (1. grupa) · 14:50–16:10 (2. grupa)' }], start: 'Oktobra 1. nedēļā', price: 'Bezmaksas' },
+      { name: 'Salaspils 1. vidusskola', group: 'Salaspils novads', lat: 56.8560169, lng: 24.3388176, addr: 'Lauku iela 1, Salaspils, LV-2121', times: [{ day: 'Trešdienu', slots: '16:00–17:20 (1. grupa) · 17:20–18:40 (2. grupa)' }], start: 'Oktobra 1. nedēļā', price: 'Bezmaksas' },
       { name: 'Ādažu vidusskola', group: 'Ādažu novads', lat: 57.0790919, lng: 24.3393461, addr: 'Gaujas iela 30, Ādaži, Ādažu novads, LV-2164', times: [{ day: 'Ceturtdienu', slots: '16:00–17:20 (1. grupa) · 17:20–18:40 (2. grupa)' }], start: '08.10.2026', price: '52 €/mēnesī' },
       { name: 'Iecavas vidusskola', group: 'Bauskas novads', lat: 56.5995094, lng: 24.2128724, addr: 'Skolas iela 37, Iecava, Bauskas novads, LV-3913', times: [{ day: 'Trešdienu', slots: '16:00–17:20 (1. grupa) · 17:20–18:40 (2. grupa)' }], start: '23.09.2026', price: '52 €/mēnesī' },
       { name: 'Jūrmalas Majoru vidusskola', group: 'Jūrmala', lat: 56.9699389, lng: 23.8047419, addr: 'Rīgas iela 3, Jūrmala, LV-2015', times: [{ day: 'Otrdienu', slots: '14:30–15:50 (1. grupa) · 15:50–17:10 (2. grupa)' }], start: '22.09.2026', price: '52 €/mēnesī' },
@@ -596,7 +596,8 @@
       }
       if (schoolModalPrice) {
         if (s.price) {
-          schoolModalPrice.innerHTML = '<strong>Cena:</strong> ' + s.price;
+          const isFree = s.price.toLowerCase().indexOf('bezmaksas') !== -1 || s.price.toLowerCase().indexOf('bez maksas') !== -1;
+          schoolModalPrice.innerHTML = '<strong>Cena:</strong> ' + (isFree ? '<span class="school-modal-free">' + s.price + '</span>' : s.price);
           schoolModalPrice.hidden = false;
         } else {
           schoolModalPrice.hidden = true;
