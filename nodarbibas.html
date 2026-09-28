@@ -494,9 +494,9 @@
       { name: 'Salaspils 1. vidusskola', group: 'Salaspils novads', lat: 56.8560169, lng: 24.3388176, addr: 'Lauku iela 1, Salaspils, LV-2121', times: [{ day: 'Trešdienu', slots: '16:00–17:20 (1. grupa) · 17:20–18:40 (2. grupa)' }], start: 'Oktobra 1. nedēļā', price: 'Bezmaksas' },
       { name: 'Ādažu vidusskola', group: 'Ādažu novads', lat: 57.0790919, lng: 24.3393461, addr: 'Gaujas iela 30, Ādaži, Ādažu novads, LV-2164', times: [{ day: 'Ceturtdienu', slots: '16:00–17:20 (1. grupa) · 17:20–18:40 (2. grupa)' }], start: '08.10.2026', price: '52 €/mēnesī' },
       { name: 'Iecavas vidusskola', group: 'Bauskas novads', lat: 56.5995094, lng: 24.2128724, addr: 'Skolas iela 37, Iecava, Bauskas novads, LV-3913', times: [{ day: 'Trešdienu', slots: '16:00–17:20 (1. grupa) · 17:20–18:40 (2. grupa)' }], start: '23.09.2026', price: '52 €/mēnesī' },
-      { name: 'Jūrmalas Majoru vidusskola', group: 'Jūrmala', lat: 56.9699389, lng: 23.8047419, addr: 'Rīgas iela 3, Jūrmala, LV-2015', times: [{ day: 'Otrdienu', slots: '14:30–15:50 (1. grupa) · 15:50–17:10 (2. grupa)' }], start: '22.09.2026', price: '52 €/mēnesī' },
-      { name: 'Dārzciema vidusskola', group: 'Rīga', lat: 56.9459143, lng: 24.1906962, addr: 'Sesku iela 72, Rīga, LV-1082', times: [{ day: '', slots: 'Laiki tiks precizēti' }], start: 'Oktobra 1. nedēļā', price: '52 €/mēnesī' },
-      { name: 'Rīgas 75. pamatskola', group: 'Rīga', lat: 56.9271754, lng: 24.1629175, addr: 'Ogres iela 9, Rīga, LV-1019', times: [{ day: 'Ceturtdienu', slots: '14:10–15:30 (1. grupa) · 15:30–16:50 (2. grupa)' }], start: 'Oktobra 1. nedēļā', price: '52 €/mēnesī' },
+      { name: 'Jūrmalas Majoru vidusskola', group: 'Jūrmala', lat: 56.9699389, lng: 23.8047419, addr: 'Rīgas iela 3, Jūrmala, LV-2015', note: 'Pieteikšanās ir pārcelta' },
+      { name: 'Dārzciema vidusskola', group: 'Rīga', lat: 56.9459143, lng: 24.1906962, addr: 'Sesku iela 72, Rīga, LV-1082', note: 'Pieteikšanās ir pārcelta' },
+      { name: 'Rīgas 75. pamatskola', group: 'Rīga', lat: 56.9271754, lng: 24.1629175, addr: 'Ogres iela 9, Rīga, LV-1019', note: 'Pieteikšanās ir pārcelta' },
       { name: 'Babītes vidusskola', group: 'Mārupes novads', lat: null, lng: null, addr: 'Jūrmalas iela 17, Piņķi, Babītes pagasts, Mārupes novads, LV-2107', times: [{ day: 'Ceturtdienu', slots: '14:00–15:20 (3.–4. kl.) · 15:20–16:40 (5.–9. kl.)' }], start: '01.10.2026', price: '52 €/mēnesī' },
     ];
 
@@ -569,25 +569,36 @@
     function openSchoolModal(s) {
       if (!schoolModal) return;
       schoolModalTitle.textContent = s.name;
-      if (schoolModalAddr) schoolModalAddr.innerHTML = '<strong>Adrese:</strong> ' + (s.addr || '—');
-      if (schoolModalTimes) {
-        let timesHtml = '<strong>Nodarbību laiki:</strong>';
-        const lines = Array.isArray(s.times) ? s.times : (s.times ? [s.times] : []);
-        if (lines.length) {
-          timesHtml += '<div class="school-modal-slots">' + lines.map(function (line) {
-            if (line && typeof line === 'object') {
-              return '<div class="school-modal-slot">' +
-                (line.day ? '<span class="school-modal-day">' + line.day + '</span>' : '') +
-                '<span class="school-modal-slot-times">' + line.slots + '</span>' +
-                '</div>';
-            }
-            return '<div class="school-modal-slot"><span class="school-modal-slot-times">' + line + '</span></div>';
-          }).join('') + '</div>';
+      if (schoolModalAddr) {
+        if (s.note) {
+          schoolModalAddr.hidden = true;
+        } else {
+          schoolModalAddr.innerHTML = '<strong>Adrese:</strong> ' + (s.addr || '—');
+          schoolModalAddr.hidden = false;
         }
-        schoolModalTimes.innerHTML = timesHtml;
+      }
+      if (schoolModalTimes) {
+        if (s.note) {
+          schoolModalTimes.innerHTML = '<div class="school-modal-note">' + s.note + '</div>';
+        } else {
+          let timesHtml = '<strong>Nodarbību laiki:</strong>';
+          const lines = Array.isArray(s.times) ? s.times : (s.times ? [s.times] : []);
+          if (lines.length) {
+            timesHtml += '<div class="school-modal-slots">' + lines.map(function (line) {
+              if (line && typeof line === 'object') {
+                return '<div class="school-modal-slot">' +
+                  (line.day ? '<span class="school-modal-day">' + line.day + '</span>' : '') +
+                  '<span class="school-modal-slot-times">' + line.slots + '</span>' +
+                  '</div>';
+              }
+              return '<div class="school-modal-slot"><span class="school-modal-slot-times">' + line + '</span></div>';
+            }).join('') + '</div>';
+          }
+          schoolModalTimes.innerHTML = timesHtml;
+        }
       }
       if (schoolModalStart) {
-        if (s.start) {
+        if (!s.note && s.start) {
           schoolModalStart.innerHTML = '<strong>Sākums:</strong> ' + s.start;
           schoolModalStart.hidden = false;
         } else {
@@ -595,7 +606,7 @@
         }
       }
       if (schoolModalPrice) {
-        if (s.price) {
+        if (!s.note && s.price) {
           const isFree = s.price.toLowerCase().indexOf('bezmaksas') !== -1 || s.price.toLowerCase().indexOf('bez maksas') !== -1;
           schoolModalPrice.innerHTML = '<strong>Cena:</strong> ' + (isFree ? '<span class="school-modal-free">' + s.price + '</span>' : s.price);
           schoolModalPrice.hidden = false;

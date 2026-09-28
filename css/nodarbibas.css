@@ -766,6 +766,14 @@ ul { list-style: none; }
   padding: 0.1rem 0.55rem;
   border-radius: 999px;
 }
+.school-modal-note {
+  display: inline-block;
+  background: rgba(213, 118, 57, 0.14);
+  color: #b2571f;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+}
 
 /* ===== VIDEO SEKCIJA ===== */
 .video-wrap { max-width: 900px; margin: 0 auto; }
