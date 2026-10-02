@@ -43,8 +43,21 @@
     </div>
   </section>
 
+  <!-- ============ NORIŠU FILTRS ============ -->
+  <div class="norise-filter-bar">
+    <div class="container">
+      <div class="norise-filters" role="tablist" aria-label="Filtrēt pēc klasēm">
+        <button type="button" class="norise-filter active" data-filter="all">Visas klases</button>
+        <button type="button" class="norise-filter" data-filter="1-3">1.–3. klase</button>
+        <button type="button" class="norise-filter" data-filter="4-6">4.–6. klase</button>
+        <button type="button" class="norise-filter" data-filter="7-9">7.–9. klase</button>
+        <button type="button" class="norise-filter" data-filter="10-12">10.–12. klase</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ NORISE 372 ============ -->
-  <section class="section section-surface" id="norise-372">
+  <section class="section section-surface" id="norise-372" data-grades="10-12">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Norises identifikators: 2026/5/stem/372</span>
@@ -81,7 +94,7 @@
   </section>
 
   <!-- ============ NORISE 363 ============ -->
-  <section class="section section-light" id="norise-363">
+  <section class="section section-light" id="norise-363" data-grades="7-9">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Norises identifikators: 2026/5/stem/363</span>
@@ -118,7 +131,7 @@
   </section>
 
   <!-- ============ NORISE 384 ============ -->
-  <section class="section section-surface" id="norise-384">
+  <section class="section section-surface" id="norise-384" data-grades="4-6">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Norises identifikators: 2026/5/stem/384</span>
@@ -155,7 +168,7 @@
   </section>
 
   <!-- ============ NORISE 389 ============ -->
-  <section class="section section-light" id="norise-389">
+  <section class="section section-light" id="norise-389" data-grades="1-3">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Norises identifikators: 2026/5/stem/389</span>
@@ -192,7 +205,7 @@
   </section>
 
   <!-- ============ NORISE 367 ============ -->
-  <section class="section section-surface" id="norise-367">
+  <section class="section section-surface" id="norise-367" data-grades="4-6">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Norises identifikators: 2026/5/stem/367</span>
@@ -276,5 +289,69 @@
 
   <script src="js/main.js"></script>
   <script src="/assets/cookie-consent.js" defer></script>
+  <script>
+    /* ===== STEM NORISES — interaktivitāte ===== */
+    (function () {
+      const SUMMARIES = {
+        'norise-372': '10.–12. klašu skolēni ar ģeneratīvā MI asistentu palīdzību raksta un atkļūdo kodu ESP32-C3 mikrokontrolierim, montē un testē viedās ierīces prototipu.',
+        'norise-363': '7.–9. klašu skolēni iepazīst trīs 3D printeru uzbūves, Onshape vidē projektē kustīgu mehānismu un apgūst G-koda sagatavošanu.',
+        'norise-384': '4.–6. klašu skolēni modelē savu raķeti Onshape vidē un testē drukātos prototipus, lai noskaidrotu, kura forma lido augstāk un stabilāk.',
+        'norise-389': '1.–3. klašu skolēni divās stacijās apgūst dizainprogrammas pamatus un iepazīst modernās ražošanas iekārtas — no skices līdz gatavam suvenīram.',
+        'norise-367': '4.–6. klašu skolēni iepazīst CO2 un šķiedru lāzerus, apgūst vektorgrafikas pamatus un izgatavo paši savu dizaina darbu.'
+      };
+
+      // 1) Kopsavilkumi + pogas "Izvērst pilno aprakstu"
+      document.querySelectorAll('section[id^="norise-"]').forEach(function (sec) {
+        const id = sec.getAttribute('id');
+        const header = sec.querySelector('.section-header');
+        const desc = sec.querySelector('.norise-desc');
+
+        if (header && SUMMARIES[id]) {
+          const p = document.createElement('p');
+          p.className = 'norise-summary';
+          p.textContent = SUMMARIES[id];
+          header.insertAdjacentElement('afterend', p);
+        }
+
+        if (desc) {
+          desc.id = 'norise-desc-' + id;
+          desc.hidden = true;
+          const wrap = document.createElement('div');
+          wrap.className = 'norise-more';
+          wrap.innerHTML = '<button type="button" class="norise-toggle" data-target="norise-desc-' + id + '" aria-expanded="false"><span class="norise-toggle-label">Izvērst pilno aprakstu</span><span class="norise-toggle-icon">+</span></button>';
+          desc.insertAdjacentElement('beforebegin', wrap);
+        }
+      });
+
+      // 2) Pilnā apraksta izvēršana
+      document.addEventListener('click', function (e) {
+        const btn = e.target.closest('.norise-toggle');
+        if (!btn) return;
+        const target = document.getElementById(btn.getAttribute('data-target'));
+        if (!target) return;
+        const isOpen = !target.hidden;
+        target.hidden = isOpen;
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        const label = btn.querySelector('.norise-toggle-label');
+        const icon = btn.querySelector('.norise-toggle-icon');
+        if (label) label.textContent = isOpen ? 'Izvērst pilno aprakstu' : 'Savērt pilno aprakstu';
+        if (icon) icon.textContent = isOpen ? '+' : '−';
+      });
+
+      // 3) Filtrs pēc klasēm
+      const filterButtons = document.querySelectorAll('.norise-filter');
+      filterButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterButtons.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          const f = btn.getAttribute('data-filter');
+          document.querySelectorAll('section[id^="norise-"]').forEach(function (sec) {
+            const grades = (sec.getAttribute('data-grades') || '').split(' ');
+            sec.style.display = (f === 'all' || grades.indexOf(f) !== -1) ? '' : 'none';
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
