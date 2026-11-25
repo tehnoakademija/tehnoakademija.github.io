@@ -6,7 +6,7 @@ Bratus Tehnoloģiju Akadēmijas oficiālā mājaslapa — tehnoloģiju nodarbīb
 
 ## 🌐 Vietne
 
-[https://tehnoakademija.github.io](https://tehnoakademija.github.io)
+[https://tehnologijuakademija.lv](https://tehnologijuakademija.lv)
 
 ## 📋 Lapas
 
@@ -55,7 +55,7 @@ Bratus Tehnoloģiju Akadēmijas oficiālā mājaslapa — tehnoloģiju nodarbīb
 
 ## 🚀 Uzstādīšana (lokāli)
 
-1. `git clone https://github.com/tehnoakademija/tehnoakademija.github.io.git`
+1. `git clone https://github.com/tehnoakademija/tehnologijuakademija.lv.git`
 2. Atver `index.html` pārlūkprogrammā vai izmanto jebkuru lokālo serveri
 
 ---
